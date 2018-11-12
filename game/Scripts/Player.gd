@@ -2,7 +2,7 @@ extends KinematicBody2D
 
 var motion = Vector2()
 export var turn_speed = 1000
-export var basic_speed = 80
+export var forward_speed = 80
 export var speed_boost = 2
 export var slow_down = 0.5
 
@@ -12,10 +12,13 @@ var left_input
 var up_input
 var down_input
 
+var fly_type 
+
 func _ready():
 	# Called when the node is added to the scene for the first time.
 	# Initialization here
 	Global.Player = self 
+	fly_type = Global.fly_speed.normal
 
 
 func _process(delta):
@@ -25,6 +28,10 @@ func _process(delta):
 	left_input = Input.is_action_pressed("ui_left")
 	up_input = Input.is_action_pressed("ui_up")
 	down_input = Input.is_action_pressed("ui_down")
+	
+	update_animation(motion)
+	manage_plane_fuel(delta)
+	print(str(Global.GameState.fuel)) #DEBUG
 	
 func _physics_process(delta):
 	fly()
@@ -38,16 +45,22 @@ func fly():
 		motion.x = turn_speed
 	else:
 		motion.x = 0		
-#	motion = motion.normalized() * SPEED
 	if up_input: 
-		motion.y = -basic_speed * speed_boost
+		motion.y = -forward_speed * speed_boost
+		fly_type = Global.fly_speed.fast
 	elif down_input:
-		motion.y = -basic_speed * slow_down
+		motion.y = -forward_speed * slow_down
+		fly_type = Global.fly_speed.slow
 	else:
-		motion.y = -basic_speed
+		fly_type = Global.fly_speed.normal
+		motion.y = -forward_speed
 	
-	
-	
+func update_animation(motion):
+	$AnimatedSprite.update(motion)
+
+
+func manage_plane_fuel(delta):
+	Global.GameState.manage_fuel(delta, fly_type)
 #func _process(delta):
 #	# Called every frame. Delta is time since last frame.
 #	# Update game logic here.

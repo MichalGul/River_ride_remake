@@ -1,0 +1,35 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scripts/Border.gd" type="Script" id=1]
+[ext_resource path="res://GFX/Enviroment/rocks.png" type="Texture" id=2]
+
+[node name="Border" type="Area2D"]
+
+position = Vector2( 284.765, 183.934 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+collision_layer = 2
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 1 )
+_sections_unfolded = [ "Collision" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="." index="0"]
+
+texture = ExtResource( 2 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." index="1"]
+
+visible = false
+build_mode = 0
+polygon = PoolVector2Array( -18.9678, 12.9756, -16.1842, -9.40899, -6.09379, -13.5844, -2.15039, -20.8912, 8.05605, -21.2392, 14.4351, -7.55328, 20.3502, -3.37791, 21.278, 13.0916, 8.9839, 16.919, -10.7331, 16.3391, -17.576, 13.4395 )
+
+[connection signal="body_entered" from="." to="." method="_on_Border_body_entered"]
+
+
