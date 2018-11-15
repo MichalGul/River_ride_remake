@@ -31,9 +31,6 @@ func _ready():
 
 func _process(delta):
 	
-	#Procces user input
-	
-	
 	update_animation(motion)
 	manage_plane_fuel(delta)
 	manage_shooting()

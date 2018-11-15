@@ -25,7 +25,7 @@ func _process(delta):
 	update_GUI()
 
 func manage_fuel(delta, fly_speed):
-	print(fly_speed)
+#	print(fly_speed) DEBUG
 	if fly_speed == Global.fly_speed.normal:
 		fuel -= fuel_extinction_param * delta
 	elif fly_speed == Global.fly_speed.fast:
@@ -51,7 +51,6 @@ func tank_fuel(delta):
 	if is_tanking:
 		fuel += fuel_tank_speed *delta
 
-		
 		
 func update_GUI():
 	GUI.update_GUI(int(fuel), lives)

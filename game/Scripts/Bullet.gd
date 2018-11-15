@@ -10,7 +10,7 @@ func _ready():
 	pass
 
 func _process(delta):
-	position += velocity* delta
+	position += velocity * delta
 
 func start(pos, dir):
 	position = pos
@@ -23,4 +23,9 @@ func _on_VisibilityNotifier2D_screen_exited():
 
 func _on_Bullet_body_entered(body):
 	if body.is_in_group("Fuel"):
-		body.destroy()
+		print(body)
+
+func _on_Bullet_area_entered(area):
+	if area.is_in_group("Fuel"):
+		area.destroy()
+		queue_free()

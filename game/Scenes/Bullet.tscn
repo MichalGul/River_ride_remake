@@ -16,9 +16,9 @@ animations = [ {
 
 custom_solver_bias = 0.0
 radius = 5.42616
-height = 46.2109
+height = 45.5115
 
-[node name="Bullet" type="Area2D" groups=[
+[node name="Bullet" type="Area2D" index="0" groups=[
 "Projectile",
 ]]
 
@@ -27,9 +27,12 @@ gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
 linear_damp = 0.1
 angular_damp = 1.0
+collision_layer = 64
+collision_mask = 12
 audio_bus_override = false
 audio_bus_name = "Master"
 script = ExtResource( 1 )
+_sections_unfolded = [ "Collision" ]
 speed = 500
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="." index="0"]
@@ -37,6 +40,7 @@ speed = 500
 rotation = 1.56985
 frames = SubResource( 1 )
 animation = "idle"
+playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
 
@@ -45,6 +49,8 @@ shape = SubResource( 2 )
 [node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="." index="2"]
 
 rect = Rect2( -10, -10, 20, 20 )
+
+[connection signal="area_entered" from="." to="." method="_on_Bullet_area_entered"]
 
 [connection signal="body_entered" from="." to="." method="_on_Bullet_body_entered"]
 

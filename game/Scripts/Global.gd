@@ -16,6 +16,7 @@ enum fly_speed{
 var SplashScreen = ""
 var Level = "res://Scenes/Levels/Level.tscn"
 var GameOver = "res://Scenes/Levels/GameOver.tscn"
+var Bullet = "res://Scenes/Bullet.tscn"
 
 func _ready():
 	# Called when the node is added to the scene for the first time.

@@ -20,7 +20,7 @@ func _on_Fuel_body_entered(body):
 		Global.GameState.is_tanking = true
 		$AudioStreamPlayer.play()
 	elif body.is_in_group("Projectile"):
-		#Play destroy sound
+		print(body)
 		#Play destroy animation
 		destroy()
 #	#play tanking sound
@@ -33,4 +33,7 @@ func _on_Fuel_body_exited(body):
 	$AudioStreamPlayer.stop()
 	
 func destroy():
-	queue_free()	
+	#Play animation
+	#play sound 
+	#remove from scene
+	queue_free()	#must be called in animation player
