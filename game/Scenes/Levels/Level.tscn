@@ -381,11 +381,12 @@ _sections_unfolded = [ "Drag Margin", "Editor", "Limit" ]
 
 [node name="Enemy" parent="Enemies" index="0" instance=ExtResource( 7 )]
 
-position = Vector2( 350, -180 )
+position = Vector2( 380, -180 )
 
 [node name="LongEnemy" parent="Enemies" index="1" instance=ExtResource( 8 )]
 
 position = Vector2( 560, -440 )
+move_right = true
 
 [connection signal="shoot" from="Player" to="." method="_on_Player_shoot"]
 

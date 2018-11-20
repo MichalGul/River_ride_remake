@@ -18,7 +18,7 @@ gravity = 98.0
 linear_damp = 0.1
 angular_damp = 1.0
 collision_layer = 8
-collision_mask = 65
+collision_mask = 67
 audio_bus_override = false
 audio_bus_name = "Master"
 script = ExtResource( 1 )
@@ -41,6 +41,8 @@ enabled = true
 exclude_parent = true
 cast_to = Vector2( 0, 1000 )
 collision_mask = 1
+
+[connection signal="area_entered" from="." to="." method="_on_Enemy_area_entered"]
 
 [connection signal="body_entered" from="." to="." method="_on_Enemy_body_entered"]
 

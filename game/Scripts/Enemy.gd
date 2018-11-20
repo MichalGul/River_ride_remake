@@ -8,6 +8,7 @@ export (bool) var move_right = false
 #destination place in world
 var destination = Vector2()
 var saw_player = false
+var blocked = false
 #reposition  velocity
 var repos_velo = Vector2()
 var repos = Vector2()	
@@ -16,7 +17,7 @@ var repos = Vector2()
 
 func move(delta):
 	
-	if not(global_position.x == destination.x):
+	if global_position.x != destination.x:
 		repos.x = destination.x - global_position.x
 		repos_velo.x = repos.x * delta * speed
 		global_position.x += repos_velo.x
@@ -32,7 +33,7 @@ func _ready():
 
 func _process(delta):
 	check_if_saw_player()
-	if saw_player:
+	if saw_player and not blocked:
 		move(delta)
 				
 func check_if_saw_player():
@@ -51,3 +52,16 @@ func _on_Enemy_body_entered(body):
 		destroy()
 		Global.GameState.hurt()
 		
+func stop_moving():
+	print("BORDER ALERT")
+	blocked = true
+	
+
+func _on_Enemy_area_entered(area):
+	if area.is_in_group("Border"):
+		stop_moving()
+
+
+func _on_LongEnemy_area_entered(area):
+	if area.is_in_group("Border"):
+		stop_moving()
