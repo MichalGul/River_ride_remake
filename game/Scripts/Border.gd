@@ -16,4 +16,5 @@ func _ready():
 
 
 func _on_Border_body_entered(body):
-	Global.GameState.hurt()
+	if body.is_in_group("Player"):
+		Global.GameState.hurt()

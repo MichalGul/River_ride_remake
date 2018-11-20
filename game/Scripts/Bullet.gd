@@ -27,5 +27,8 @@ func _on_Bullet_body_entered(body):
 
 func _on_Bullet_area_entered(area):
 	if area.is_in_group("Fuel"):
-		area.destroy()
-		queue_free()
+		area.destroy() # begin destroying fuel 
+		queue_free() #destroy projectile
+	elif area.is_in_group("Enemy"):
+		area.destroy() # begin destroying fuel 
+		queue_free() #destroy projectile

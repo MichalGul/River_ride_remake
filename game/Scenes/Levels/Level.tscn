@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Scripts/GameState.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/EnviromentTiles.tres" type="TileSet" id=2]
@@ -6,8 +6,10 @@
 [ext_resource path="res://Scenes/Fuel.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/Camera2D.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/Enemies/Enemy.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/Enemies/LongEnemy.tscn" type="PackedScene" id=8]
 
-[node name="Level" type="Node2D"]
+[node name="Level" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 starting_lives = 3
@@ -374,6 +376,16 @@ limit_right = 1232
 drag_margin_left = 1.0
 drag_margin_right = 1.0
 _sections_unfolded = [ "Drag Margin", "Editor", "Limit" ]
+
+[node name="Enemies" type="Node2D" parent="." index="4"]
+
+[node name="Enemy" parent="Enemies" index="0" instance=ExtResource( 7 )]
+
+position = Vector2( 350, -180 )
+
+[node name="LongEnemy" parent="Enemies" index="1" instance=ExtResource( 8 )]
+
+position = Vector2( 560, -440 )
 
 [connection signal="shoot" from="Player" to="." method="_on_Player_shoot"]
 

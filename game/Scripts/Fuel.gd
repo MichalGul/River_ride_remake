@@ -19,19 +19,14 @@ func _on_Fuel_body_entered(body):
 	if body.is_in_group("Player"):
 		Global.GameState.is_tanking = true
 		$AudioStreamPlayer.play()
-	elif body.is_in_group("Projectile"):
-		print(body)
-		#Play destroy animation
-		destroy()
-#	#play tanking sound
-	
-	
 
+	
 	#end tanking
 func _on_Fuel_body_exited(body):
 	Global.GameState.is_tanking = false
 	$AudioStreamPlayer.stop()
 	
+	#TODO add sound and animation to fuel explosion
 func destroy():
 	#Play animation
 	#play sound 

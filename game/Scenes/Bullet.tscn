@@ -18,7 +18,7 @@ custom_solver_bias = 0.0
 radius = 5.42616
 height = 45.5115
 
-[node name="Bullet" type="Area2D" index="0" groups=[
+[node name="Bullet" type="Area2D" groups=[
 "Projectile",
 ]]
 
