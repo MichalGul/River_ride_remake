@@ -5,9 +5,8 @@ extends Area2D
 # var b = "textvar"
 
 func _ready():
-	# Called when the node is added to the scene for the first time.
-	# Initialization here
 	pass
+
 
 #func _process(delta):
 #	# Called every frame. Delta is time since last frame.
@@ -29,6 +28,10 @@ func _on_Fuel_body_exited(body):
 	#TODO add sound and animation to fuel explosion
 func destroy():
 	#Play animation
+	$AnimationPlayer.play("die")
 	#play sound 
 	#remove from scene
-	queue_free()	#must be called in animation player
+		#must be called in animation player
+	
+func die():
+	queue_free()

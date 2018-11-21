@@ -7,6 +7,7 @@ extends CanvasLayer
 func _ready():
 	Global.GUI = self
 
-func update_GUI(fuel, lives):
+func update_GUI(fuel, lives, points):
 	$VBoxContainer/Fuel.text = str(fuel)
 	$VBoxContainer/Lives.text = str(lives)
+	$VBoxContainer/Points.text = str(points)

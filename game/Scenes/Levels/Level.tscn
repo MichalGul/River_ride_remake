@@ -1,28 +1,31 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Scripts/GameState.gd" type="Script" id=1]
-[ext_resource path="res://Scenes/EnviromentTiles.tres" type="TileSet" id=2]
-[ext_resource path="res://Scenes/Border.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Scenes/Fuel.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Scenes/Camera2D.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Scenes/Enemies/Enemy.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Scenes/Enemies/LongEnemy.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scenes/Enemies/JetEnemy.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/EnviromentTiles.tres" type="TileSet" id=3]
+[ext_resource path="res://Scenes/Border.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/Fuel.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/Camera2D.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/Enemies/Enemy.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scenes/Enemies/LongEnemy.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scenes/Enemies/ScoutEnemy.tscn" type="PackedScene" id=10]
 
 [node name="Level" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 starting_lives = 3
 max_lives = 9
-starting_fuel = 100
+starting_fuel = 10000
 fuel_extinction_param = 10
 fuel_tank_speed = 20
 points_life_counter = 10000
+JetEnemy = ExtResource( 2 )
 
 [node name="TileMap" type="TileMap" parent="." index="0"]
 
 mode = 0
-tile_set = ExtResource( 2 )
+tile_set = ExtResource( 3 )
 cell_size = Vector2( 64, 64 )
 cell_quadrant_size = 16
 cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
@@ -44,303 +47,303 @@ _sections_unfolded = [ "Collision" ]
 
 editor/display_folded = true
 
-[node name="Border" parent="Borders" index="0" instance=ExtResource( 3 )]
+[node name="Border" parent="Borders" index="0" instance=ExtResource( 4 )]
 
 position = Vector2( 724.874, 318.129 )
 
-[node name="Border70" parent="Borders" index="1" instance=ExtResource( 3 )]
+[node name="Border70" parent="Borders" index="1" instance=ExtResource( 4 )]
 
 position = Vector2( 723.547, 357.934 )
 
-[node name="Border71" parent="Borders" index="2" instance=ExtResource( 3 )]
+[node name="Border71" parent="Borders" index="2" instance=ExtResource( 4 )]
 
 position = Vector2( 725.99, 395.401 )
 
-[node name="Border72" parent="Borders" index="3" instance=ExtResource( 3 )]
+[node name="Border72" parent="Borders" index="3" instance=ExtResource( 4 )]
 
 position = Vector2( 724.361, 439.385 )
 
-[node name="Border73" parent="Borders" index="4" instance=ExtResource( 3 )]
+[node name="Border73" parent="Borders" index="4" instance=ExtResource( 4 )]
 
 position = Vector2( 723.547, 485.812 )
 
-[node name="Border74" parent="Borders" index="5" instance=ExtResource( 3 )]
+[node name="Border74" parent="Borders" index="5" instance=ExtResource( 4 )]
 
 position = Vector2( 723.547, 528.981 )
 
-[node name="Border75" parent="Borders" index="6" instance=ExtResource( 3 )]
+[node name="Border75" parent="Borders" index="6" instance=ExtResource( 4 )]
 
 position = Vector2( 725.99, 585.182 )
 
-[node name="Border11" parent="Borders" index="7" instance=ExtResource( 3 )]
+[node name="Border11" parent="Borders" index="7" instance=ExtResource( 4 )]
 
 position = Vector2( 722.658, 92.0901 )
 
-[node name="Border17" parent="Borders" index="8" instance=ExtResource( 3 )]
+[node name="Border17" parent="Borders" index="8" instance=ExtResource( 4 )]
 
 position = Vector2( 725.113, -131.358 )
 
-[node name="Border20" parent="Borders" index="9" instance=ExtResource( 3 )]
+[node name="Border20" parent="Borders" index="9" instance=ExtResource( 4 )]
 
 position = Vector2( 723.885, -354.806 )
 
-[node name="Border30" parent="Borders" index="10" instance=ExtResource( 3 )]
+[node name="Border30" parent="Borders" index="10" instance=ExtResource( 4 )]
 
 position = Vector2( 171.964, 559.028 )
 
-[node name="Border35" parent="Borders" index="11" instance=ExtResource( 3 )]
+[node name="Border35" parent="Borders" index="11" instance=ExtResource( 4 )]
 
 position = Vector2( 171.149, 333.409 )
 
-[node name="Border42" parent="Borders" index="12" instance=ExtResource( 3 )]
+[node name="Border42" parent="Borders" index="12" instance=ExtResource( 4 )]
 
 position = Vector2( 171.149, 100.231 )
 
-[node name="Border45" parent="Borders" index="13" instance=ExtResource( 3 )]
+[node name="Border45" parent="Borders" index="13" instance=ExtResource( 4 )]
 
 position = Vector2( 171.149, -123.693 )
 
-[node name="Border52" parent="Borders" index="14" instance=ExtResource( 3 )]
+[node name="Border52" parent="Borders" index="14" instance=ExtResource( 4 )]
 
 position = Vector2( -21.4955, -550.52 )
 
-[node name="Border5" parent="Borders" index="15" instance=ExtResource( 3 )]
+[node name="Border5" parent="Borders" index="15" instance=ExtResource( 4 )]
 
 position = Vector2( 722.166, 283.834 )
 
-[node name="Border8" parent="Borders" index="16" instance=ExtResource( 3 )]
+[node name="Border8" parent="Borders" index="16" instance=ExtResource( 4 )]
 
 position = Vector2( 719.95, 57.7951 )
 
-[node name="Border13" parent="Borders" index="17" instance=ExtResource( 3 )]
+[node name="Border13" parent="Borders" index="17" instance=ExtResource( 4 )]
 
 position = Vector2( 722.406, -165.653 )
 
-[node name="Border24" parent="Borders" index="18" instance=ExtResource( 3 )]
+[node name="Border24" parent="Borders" index="18" instance=ExtResource( 4 )]
 
 position = Vector2( 721.178, -389.101 )
 
-[node name="Border25" parent="Borders" index="19" instance=ExtResource( 3 )]
+[node name="Border25" parent="Borders" index="19" instance=ExtResource( 4 )]
 
 position = Vector2( 169.256, 524.733 )
 
-[node name="Border31" parent="Borders" index="20" instance=ExtResource( 3 )]
+[node name="Border31" parent="Borders" index="20" instance=ExtResource( 4 )]
 
 position = Vector2( 168.442, 299.114 )
 
-[node name="Border39" parent="Borders" index="21" instance=ExtResource( 3 )]
+[node name="Border39" parent="Borders" index="21" instance=ExtResource( 4 )]
 
 position = Vector2( 168.442, 65.9364 )
 
-[node name="Border43" parent="Borders" index="22" instance=ExtResource( 3 )]
+[node name="Border43" parent="Borders" index="22" instance=ExtResource( 4 )]
 
 position = Vector2( 168.442, -157.988 )
 
-[node name="Border49" parent="Borders" index="23" instance=ExtResource( 3 )]
+[node name="Border49" parent="Borders" index="23" instance=ExtResource( 4 )]
 
 position = Vector2( -24.2029, -584.815 )
 
-[node name="Border2" parent="Borders" index="24" instance=ExtResource( 3 )]
+[node name="Border2" parent="Borders" index="24" instance=ExtResource( 4 )]
 
 position = Vector2( 722.98, 205.994 )
 
-[node name="Border9" parent="Borders" index="25" instance=ExtResource( 3 )]
+[node name="Border9" parent="Borders" index="25" instance=ExtResource( 4 )]
 
 position = Vector2( 720.764, -20.0447 )
 
-[node name="Border14" parent="Borders" index="26" instance=ExtResource( 3 )]
+[node name="Border14" parent="Borders" index="26" instance=ExtResource( 4 )]
 
 position = Vector2( 723.219, -243.493 )
 
-[node name="Border23" parent="Borders" index="27" instance=ExtResource( 3 )]
+[node name="Border23" parent="Borders" index="27" instance=ExtResource( 4 )]
 
 position = Vector2( 721.992, -466.941 )
 
-[node name="Border27" parent="Borders" index="28" instance=ExtResource( 3 )]
+[node name="Border27" parent="Borders" index="28" instance=ExtResource( 4 )]
 
 position = Vector2( 170.07, 446.893 )
 
-[node name="Border33" parent="Borders" index="29" instance=ExtResource( 3 )]
+[node name="Border33" parent="Borders" index="29" instance=ExtResource( 4 )]
 
 position = Vector2( 169.256, 221.274 )
 
-[node name="Border37" parent="Borders" index="30" instance=ExtResource( 3 )]
+[node name="Border37" parent="Borders" index="30" instance=ExtResource( 4 )]
 
 position = Vector2( 169.256, -11.9035 )
 
-[node name="Border47" parent="Borders" index="31" instance=ExtResource( 3 )]
+[node name="Border47" parent="Borders" index="31" instance=ExtResource( 4 )]
 
 position = Vector2( 169.256, -235.828 )
 
-[node name="Border51" parent="Borders" index="32" instance=ExtResource( 3 )]
+[node name="Border51" parent="Borders" index="32" instance=ExtResource( 4 )]
 
 position = Vector2( -23.389, -662.655 )
 
-[node name="Border6" parent="Borders" index="33" instance=ExtResource( 3 )]
+[node name="Border6" parent="Borders" index="33" instance=ExtResource( 4 )]
 
 position = Vector2( 723.666, 168.44 )
 
-[node name="Border12" parent="Borders" index="34" instance=ExtResource( 3 )]
+[node name="Border12" parent="Borders" index="34" instance=ExtResource( 4 )]
 
 position = Vector2( 721.45, -57.5989 )
 
-[node name="Border18" parent="Borders" index="35" instance=ExtResource( 3 )]
+[node name="Border18" parent="Borders" index="35" instance=ExtResource( 4 )]
 
 position = Vector2( 723.906, -281.047 )
 
-[node name="Border22" parent="Borders" index="36" instance=ExtResource( 3 )]
+[node name="Border22" parent="Borders" index="36" instance=ExtResource( 4 )]
 
 position = Vector2( 722.678, -504.496 )
 
-[node name="Border26" parent="Borders" index="37" instance=ExtResource( 3 )]
+[node name="Border26" parent="Borders" index="37" instance=ExtResource( 4 )]
 
 position = Vector2( 170.756, 409.338 )
 
-[node name="Border32" parent="Borders" index="38" instance=ExtResource( 3 )]
+[node name="Border32" parent="Borders" index="38" instance=ExtResource( 4 )]
 
 position = Vector2( 169.942, 183.72 )
 
-[node name="Border40" parent="Borders" index="39" instance=ExtResource( 3 )]
+[node name="Border40" parent="Borders" index="39" instance=ExtResource( 4 )]
 
 position = Vector2( 169.942, -49.4577 )
 
-[node name="Border44" parent="Borders" index="40" instance=ExtResource( 3 )]
+[node name="Border44" parent="Borders" index="40" instance=ExtResource( 4 )]
 
 position = Vector2( 169.942, -273.382 )
 
-[node name="Border50" parent="Borders" index="41" instance=ExtResource( 3 )]
+[node name="Border50" parent="Borders" index="41" instance=ExtResource( 4 )]
 
 position = Vector2( -22.7029, -700.209 )
 
-[node name="Border3" parent="Borders" index="42" instance=ExtResource( 3 )]
+[node name="Border3" parent="Borders" index="42" instance=ExtResource( 4 )]
 
 position = Vector2( 723.257, 243.61 )
 
-[node name="Border10" parent="Borders" index="43" instance=ExtResource( 3 )]
+[node name="Border10" parent="Borders" index="43" instance=ExtResource( 4 )]
 
 position = Vector2( 721.041, 17.5715 )
 
-[node name="Border15" parent="Borders" index="44" instance=ExtResource( 3 )]
+[node name="Border15" parent="Borders" index="44" instance=ExtResource( 4 )]
 
 position = Vector2( 723.496, -205.877 )
 
-[node name="Border19" parent="Borders" index="45" instance=ExtResource( 3 )]
+[node name="Border19" parent="Borders" index="45" instance=ExtResource( 4 )]
 
 position = Vector2( 722.268, -429.325 )
 
-[node name="Border28" parent="Borders" index="46" instance=ExtResource( 3 )]
+[node name="Border28" parent="Borders" index="46" instance=ExtResource( 4 )]
 
 position = Vector2( 170.347, 484.509 )
 
-[node name="Border34" parent="Borders" index="47" instance=ExtResource( 3 )]
+[node name="Border34" parent="Borders" index="47" instance=ExtResource( 4 )]
 
 position = Vector2( 169.532, 258.891 )
 
-[node name="Border38" parent="Borders" index="48" instance=ExtResource( 3 )]
+[node name="Border38" parent="Borders" index="48" instance=ExtResource( 4 )]
 
 position = Vector2( 169.532, 25.7129 )
 
-[node name="Border48" parent="Borders" index="49" instance=ExtResource( 3 )]
+[node name="Border48" parent="Borders" index="49" instance=ExtResource( 4 )]
 
 position = Vector2( 169.532, -198.212 )
 
-[node name="Border54" parent="Borders" index="50" instance=ExtResource( 3 )]
+[node name="Border54" parent="Borders" index="50" instance=ExtResource( 4 )]
 
 position = Vector2( -23.1124, -625.039 )
 
-[node name="Border4" parent="Borders" index="51" instance=ExtResource( 3 )]
+[node name="Border4" parent="Borders" index="51" instance=ExtResource( 4 )]
 
 position = Vector2( 723.883, 129.017 )
 
-[node name="Border7" parent="Borders" index="52" instance=ExtResource( 3 )]
+[node name="Border7" parent="Borders" index="52" instance=ExtResource( 4 )]
 
 position = Vector2( 721.667, -97.022 )
 
-[node name="Border16" parent="Borders" index="53" instance=ExtResource( 3 )]
+[node name="Border16" parent="Borders" index="53" instance=ExtResource( 4 )]
 
 position = Vector2( 724.123, -320.47 )
 
-[node name="Border21" parent="Borders" index="54" instance=ExtResource( 3 )]
+[node name="Border21" parent="Borders" index="54" instance=ExtResource( 4 )]
 
 position = Vector2( 722.895, -543.919 )
 
-[node name="Border29" parent="Borders" index="55" instance=ExtResource( 3 )]
+[node name="Border29" parent="Borders" index="55" instance=ExtResource( 4 )]
 
 position = Vector2( 170.973, 369.915 )
 
-[node name="Border36" parent="Borders" index="56" instance=ExtResource( 3 )]
+[node name="Border36" parent="Borders" index="56" instance=ExtResource( 4 )]
 
 position = Vector2( 170.159, 144.297 )
 
-[node name="Border41" parent="Borders" index="57" instance=ExtResource( 3 )]
+[node name="Border41" parent="Borders" index="57" instance=ExtResource( 4 )]
 
 position = Vector2( 170.159, -88.8808 )
 
-[node name="Border46" parent="Borders" index="58" instance=ExtResource( 3 )]
+[node name="Border46" parent="Borders" index="58" instance=ExtResource( 4 )]
 
 position = Vector2( 170.159, -312.806 )
 
-[node name="Border55" parent="Borders" index="59" instance=ExtResource( 3 )]
+[node name="Border55" parent="Borders" index="59" instance=ExtResource( 4 )]
 
 position = Vector2( 171.622, -352.307 )
 
-[node name="Border56" parent="Borders" index="60" instance=ExtResource( 3 )]
+[node name="Border56" parent="Borders" index="60" instance=ExtResource( 4 )]
 
 position = Vector2( 173.783, -391.213 )
 
-[node name="Border57" parent="Borders" index="61" instance=ExtResource( 3 )]
+[node name="Border57" parent="Borders" index="61" instance=ExtResource( 4 )]
 
 position = Vector2( 171.622, -434.442 )
 
-[node name="Border58" parent="Borders" index="62" instance=ExtResource( 3 )]
+[node name="Border58" parent="Borders" index="62" instance=ExtResource( 4 )]
 
 position = Vector2( 172.162, -478.751 )
 
-[node name="Border59" parent="Borders" index="63" instance=ExtResource( 3 )]
+[node name="Border59" parent="Borders" index="63" instance=ExtResource( 4 )]
 
 position = Vector2( 132.716, -493.882 )
 
-[node name="Border60" parent="Borders" index="64" instance=ExtResource( 3 )]
+[node name="Border60" parent="Borders" index="64" instance=ExtResource( 4 )]
 
 position = Vector2( 82.4625, -494.962 )
 
-[node name="Border61" parent="Borders" index="65" instance=ExtResource( 3 )]
+[node name="Border61" parent="Borders" index="65" instance=ExtResource( 4 )]
 
 position = Vector2( 25.7247, -498.204 )
 
-[node name="Border62" parent="Borders" index="66" instance=ExtResource( 3 )]
+[node name="Border62" parent="Borders" index="66" instance=ExtResource( 4 )]
 
 position = Vector2( -18.5849, -510.092 )
 
-[node name="Border63" parent="Borders" index="67" instance=ExtResource( 3 )]
+[node name="Border63" parent="Borders" index="67" instance=ExtResource( 4 )]
 
 position = Vector2( 687.232, -533.361 )
 
-[node name="Border64" parent="Borders" index="68" instance=ExtResource( 3 )]
+[node name="Border64" parent="Borders" index="68" instance=ExtResource( 4 )]
 
 position = Vector2( 645.127, -533.361 )
 
-[node name="Border65" parent="Borders" index="69" instance=ExtResource( 3 )]
+[node name="Border65" parent="Borders" index="69" instance=ExtResource( 4 )]
 
 position = Vector2( 607.454, -532.253 )
 
-[node name="Border66" parent="Borders" index="70" instance=ExtResource( 3 )]
+[node name="Border66" parent="Borders" index="70" instance=ExtResource( 4 )]
 
 position = Vector2( 571.307, -530.664 )
 
-[node name="Border67" parent="Borders" index="71" instance=ExtResource( 3 )]
+[node name="Border67" parent="Borders" index="71" instance=ExtResource( 4 )]
 
 position = Vector2( 529.6, -529.87 )
 
-[node name="Border68" parent="Borders" index="72" instance=ExtResource( 3 )]
+[node name="Border68" parent="Borders" index="72" instance=ExtResource( 4 )]
 
 position = Vector2( 531.586, -567.208 )
 
-[node name="Border69" parent="Borders" index="73" instance=ExtResource( 3 )]
+[node name="Border69" parent="Borders" index="73" instance=ExtResource( 4 )]
 
 position = Vector2( 529.6, -602.56 )
 
-[node name="Border53" parent="Borders" index="74" instance=ExtResource( 3 )]
+[node name="Border53" parent="Borders" index="74" instance=ExtResource( 4 )]
 
 position = Vector2( -22.4859, -739.632 )
 
@@ -348,26 +351,26 @@ position = Vector2( -22.4859, -739.632 )
 
 editor/display_folded = true
 
-[node name="Fuel" parent="FuelCollection" index="0" instance=ExtResource( 4 )]
+[node name="Fuel" parent="FuelCollection" index="0" instance=ExtResource( 5 )]
 
 position = Vector2( 564.565, -109.606 )
 
-[node name="Fuel2" parent="FuelCollection" index="1" instance=ExtResource( 4 )]
+[node name="Fuel2" parent="FuelCollection" index="1" instance=ExtResource( 5 )]
 
 position = Vector2( 217.167, -669.116 )
 
-[node name="Fuel3" parent="FuelCollection" index="2" instance=ExtResource( 4 )]
+[node name="Fuel3" parent="FuelCollection" index="2" instance=ExtResource( 5 )]
 
 position = Vector2( 437.538, -1369.28 )
 
-[node name="Player" parent="." index="3" instance=ExtResource( 5 )]
+[node name="Player" parent="." index="3" instance=ExtResource( 6 )]
 
 position = Vector2( 463.72, 400.463 )
 turn_speed = 500
 
-[node name="Camera2D" parent="Player" index="2" instance=ExtResource( 6 )]
+[node name="Camera2D" parent="Player" index="2" instance=ExtResource( 7 )]
 
-position = Vector2( 4.15466, -0.709412 )
+position = Vector2( 4.15466, -96.1365 )
 scale = Vector2( 1, 1.06409 )
 offset = Vector2( 0, -250 )
 zoom = Vector2( 1.25, 1.25 )
@@ -379,15 +382,47 @@ _sections_unfolded = [ "Drag Margin", "Editor", "Limit" ]
 
 [node name="Enemies" type="Node2D" parent="." index="4"]
 
-[node name="Enemy" parent="Enemies" index="0" instance=ExtResource( 7 )]
+[node name="Enemy" parent="Enemies" index="0" instance=ExtResource( 8 )]
 
 position = Vector2( 380, -180 )
 
-[node name="LongEnemy" parent="Enemies" index="1" instance=ExtResource( 8 )]
+[node name="Enemy2" parent="Enemies" index="1" instance=ExtResource( 8 )]
+
+position = Vector2( 310, -90 )
+
+[node name="Enemy3" parent="Enemies" index="2" instance=ExtResource( 8 )]
+
+position = Vector2( 460, -40 )
+score = 5000
+
+[node name="Enemy4" parent="Enemies" index="3" instance=ExtResource( 8 )]
+
+position = Vector2( 330, 60 )
+score = 5000
+
+[node name="LongEnemy" parent="Enemies" index="4" instance=ExtResource( 9 )]
 
 position = Vector2( 560, -440 )
 move_right = true
+score = 2000
+
+[node name="ScoutEnemy" parent="Enemies" index="5" instance=ExtResource( 10 )]
+
+position = Vector2( 200, -320 )
+
+[node name="JetEnemy" parent="Enemies" index="6" instance=ExtResource( 2 )]
+
+position = Vector2( 862.685, -263.82 )
+
+[node name="JetSpawnerTimer" type="Timer" parent="." index="5"]
+
+process_mode = 1
+wait_time = 2.0
+one_shot = false
+autostart = true
 
 [connection signal="shoot" from="Player" to="." method="_on_Player_shoot"]
+
+[connection signal="timeout" from="JetSpawnerTimer" to="." method="_on_JetSpawnerTimer_timeout"]
 
 

@@ -25,6 +25,7 @@ func _ready():
 	# Called when the node is added to the scene for the first time.
 	# Initialization here
 	Global.Player = self 
+	
 	fly_type = Global.fly_speed.normal
 	$GunTimer.wait_time = fire_rate
 
