@@ -20,6 +20,7 @@ starting_fuel = 10000
 fuel_extinction_param = 10
 fuel_tank_speed = 20
 points_life_counter = 10000
+jet_spawn_timer = 2
 JetEnemy = ExtResource( 2 )
 
 [node name="TileMap" type="TileMap" parent="." index="0"]

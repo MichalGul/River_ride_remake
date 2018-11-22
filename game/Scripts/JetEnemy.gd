@@ -6,6 +6,7 @@ export (int) var jet_speed = 200
 export (bool) var move_right = false
 export (int) var score = 1000
 
+
 #destination place in world
 var destination = Vector2()
 var saw_player = false
