@@ -67,3 +67,7 @@ func _on_Enemy_area_entered(area):
 func _on_LongEnemy_area_entered(area):
 	if area.is_in_group("Border"):
 		stop_moving()
+
+
+func _on_Enemy_area_shape_entered(area_id, area, area_shape, self_shape):
+	print(area_id)

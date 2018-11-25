@@ -56,8 +56,6 @@ func destroy():
 func die():
 	queue_free()	
 
-	
-
 func _on_JetEnemy_body_entered(body):
 	if body.is_in_group("Player"):
 		destroy()
