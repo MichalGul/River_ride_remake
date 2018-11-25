@@ -52,6 +52,7 @@ Shoot=[ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"",
 2d_physics/layer_5="Checkpoint"
 2d_physics/layer_6="SafeTerrain"
 2d_physics/layer_7="Projectile"
+2d_physics/layer_8="JetEnemy"
 
 [rendering]
 

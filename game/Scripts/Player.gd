@@ -41,6 +41,15 @@ func _process(delta):
 func _physics_process(delta):
 	fly()
 	move_and_slide(motion)
+	var collision = get_slide_collision(0)
+	proces_border_collision(collision)
+
+#process collision with border
+func proces_border_collision(collision):
+	if(collision):
+		if collision.get_collider().is_in_group("Border"):
+			Global.GameState.hurt()
+		
 
 func _process_input():
 	right_input = Input.is_action_pressed("ui_right")

@@ -56,7 +56,7 @@ func hurt():
 		end_game()
 	else:
 		print("Death, restart from checkpoint") #restart from last checkpoint
-		
+		#get_tree().reload_current_scene() restart from position dont restart level
 	
 func tank_fuel(delta):
 	if is_tanking:
@@ -74,6 +74,7 @@ func _on_Player_shoot(bullet, pos, dir):
 	projectile.start(pos, dir)
 	add_child(projectile)
 	
+	
 func update_score(amount):
 	current_score += amount
 	var life_up_point = (current_score % points_life_counter ) == 0
@@ -90,6 +91,7 @@ func spawn_jet():
 	var player_pos = Global.Player.global_position
 	var spawn_pos = Vector2()
 	spawn_pos.y = Global.Player.global_position.y - screen_size_y
+	
 	#randomly chose side 0 or one
 	var side = pick_random_side()
 	if side:

@@ -19,7 +19,7 @@ func init(move_r, pos):
 	#determine moving direction nnd position
 	move_right = move_r	
 	global_position = pos
-	print("JESTEM TUUU" ,position)
+#	print("JESTEM TUUU" ,position)
 	
 	
 func move(delta):
@@ -29,7 +29,7 @@ func move(delta):
 	else:
 		$AnimatedSprite.flip_h = true
 		global_position.x -= jet_speed * delta
-	print("LECE: ", global_position)
+#	print("LECE: ", global_position)
 
 
 func _ready():
