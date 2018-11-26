@@ -46,7 +46,7 @@ func destroy():
 	$AnimationPlayer.play("die")
 	#play sound 
 	#remove from scene
-	#must be called in animation player
+	
 func die():
 	queue_free()	
 

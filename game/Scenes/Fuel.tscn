@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Scripts/Fuel.gd" type="Script" id=1]
-[ext_resource path="res://GFX/Items/Fuel_1.png" type="Texture" id=2]
+[ext_resource path="res://GFX/Fuel_1.png" type="Texture" id=2]
 [ext_resource path="res://GFX/Items/Fuel_2.png" type="Texture" id=3]
 [ext_resource path="res://GFX/Enemies/explosion3.png" type="Texture" id=4]
 [ext_resource path="res://GFX/Enemies/explosion1.png" type="Texture" id=5]
@@ -97,6 +97,7 @@ __meta__ = {
 
 frames = SubResource( 1 )
 animation = "default"
+frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
@@ -106,7 +107,7 @@ shape = SubResource( 2 )
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="2"]
 
 stream = ExtResource( 7 )
-volume_db = 0.0
+volume_db = -35.0
 pitch_scale = 1.0
 autoplay = false
 mix_target = 0

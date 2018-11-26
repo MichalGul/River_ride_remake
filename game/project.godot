@@ -20,7 +20,8 @@ Global="*res://Scripts/Global.gd"
 
 [display]
 
-window/size/height=768
+window/size/width=1280
+window/size/height=720
 
 [input]
 
@@ -42,6 +43,8 @@ ui_down=[ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"
  ]
 Shoot=[ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":32,"unicode":0,"echo":false,"script":null)
  ]
+restart=[ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":80,"unicode":0,"echo":false,"script":null)
+ ]
 
 [layer_names]
 
@@ -53,6 +56,7 @@ Shoot=[ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"",
 2d_physics/layer_6="SafeTerrain"
 2d_physics/layer_7="Projectile"
 2d_physics/layer_8="JetEnemy"
+2d_physics/layer_9="Checkpoint"
 
 [rendering]
 

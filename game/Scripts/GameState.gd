@@ -12,21 +12,27 @@ export (PackedScene) var JetEnemy
 
 var lives
 var fuel 
-var current_score = 0
+var current_score 
 var is_tanking = false
 
 onready var GUI = Global.GUI
 var screen_size_x 
 var screen_size_y
-
+#position of the last checkpoint in game
+var last_checkpoint_position = Vector2()
 
 func _ready():
 	Global.GameState = self
-	lives = starting_lives
+	#init game scores
+	lives = Global.last_lives
+	current_score = Global.last_points
 	fuel = starting_fuel
+	
+	#init jet spawner
 	$JetSpawnerTimer.wait_time = jet_spawn_timer
 	$JetSpawnerTimer.autostart = true
-	
+	#init player position restart
+
 	screen_size_x = get_viewport().size.x
 	screen_size_y = get_viewport().size.y
 	# Called when the node is added to the scene for the first time.
@@ -34,9 +40,13 @@ func _ready():
 	
 func _process(delta):
 	update_GUI()
+	
+
+func remember_stats():
+	Global.last_points = current_score
+	Global.last_lives = lives
 
 func manage_fuel(delta, fly_speed):
-#	print(fly_speed) DEBUG
 	if fly_speed == Global.fly_speed.normal:
 		fuel -= fuel_extinction_param * delta
 	elif fly_speed == Global.fly_speed.fast:
@@ -55,8 +65,14 @@ func hurt():
 	if lives < 0:
 		end_game()
 	else:
-		print("Death, restart from checkpoint") #restart from last checkpoint
+		Global.Player.destroy()
+		#restart from last checkpoint
 		#get_tree().reload_current_scene() restart from position dont restart level
+	
+	
+func restart_player():
+	pass
+
 	
 func tank_fuel(delta):
 	if is_tanking:
@@ -68,6 +84,7 @@ func update_GUI():
 		
 func end_game():
 	get_tree().change_scene(Global.GameOver)
+
 
 func _on_Player_shoot(bullet, pos, dir):
 	var projectile = bullet.instance()
@@ -86,14 +103,22 @@ func life_up():
 	lives += 1
 	update_GUI()
 	
+
+#DEBUG RESTART
+func _input(event):
+	if Input.is_action_pressed("restart"):
+		Global.Player.restart_player(last_checkpoint_position)
+	
 func spawn_jet():
-#	#Acces palyer position
+	
+#	#Acces player position
 	var player_pos = Global.Player.global_position
 	var spawn_pos = Vector2()
 	spawn_pos.y = Global.Player.global_position.y - screen_size_y
 	
 	#randomly chose side 0 or one
 	var side = pick_random_side()
+	
 	if side:
 		spawn_pos.x = Global.Player.global_position.x - screen_size_x
 	else:
@@ -109,7 +134,7 @@ func _on_JetSpawnerTimer_timeout():
 func pick_random_side():
 	randomize()
 	var rand_num = round(rand_range(1,11))
-	if rand_num >5:
+	if rand_num > 5 :
 		return true
 	else:
 		return false

@@ -5,6 +5,7 @@ export (int) var turn_speed = 1000
 export (int) var forward_speed = 80
 export (int) var speed_boost = 2
 export (float) var slow_down = 0.5
+var is_dying = false
 
 #Controls
 var right_input
@@ -25,6 +26,7 @@ func _ready():
 	# Called when the node is added to the scene for the first time.
 	# Initialization here
 	Global.Player = self 
+	global_position = Global.last_checkpoint_pos
 	
 	fly_type = Global.fly_speed.normal
 	$GunTimer.wait_time = fire_rate
@@ -59,13 +61,17 @@ func _process_input():
 	shoot_input = Input.is_action_pressed("Shoot")
 	
 func manage_shooting():
-	if shoot_input and can_shoot:
-		shoot()
+	if not is_dying:
+		if shoot_input and can_shoot:
+			shoot()
 
 func shoot():
 	emit_signal("shoot", Bullet, $Muzzle.global_position, rotation)
 	can_shoot = false
 	$GunTimer.start()
+
+
+
 
 func fly():
 	if left_input and not right_input:
@@ -99,3 +105,24 @@ func manage_plane_fuel(delta):
 
 func _on_GunTimer_timeout():
 	can_shoot = true
+
+func die():
+	print("DYING RESTART FROM CHECKPOINT")
+	
+func destroy():
+	is_dying = true
+	#Play animation
+	$AnimationPlayer.play("die")
+	#play sound 
+
+
+
+func restart_player(position):
+	is_dying = false
+	$AnimationPlayer.play("straight")
+	#reposition player to last check_point
+	global_position = position
+	Global.GameState.remember_stats()
+	Global.restart_level_from_checkpoint()
+	#reset enemies ???
+	#restart level ale gracza w innej pozycji, ale trzeba zapamietac paliwo, punkty i zycia

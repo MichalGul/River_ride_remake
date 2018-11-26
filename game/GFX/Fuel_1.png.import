@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Fuel_1.png-895c85dd10b44c7e49dc662fe24c52db.stex"
+path="res://.import/Fuel_1.png-ba8597de9ab40905b50fa9ca04164733.stex"
 
 [deps]
 
-source_file="res://GFX/Items/Fuel_1.png"
-dest_files=[ "res://.import/Fuel_1.png-895c85dd10b44c7e49dc662fe24c52db.stex" ]
+source_file="res://GFX/Fuel_1.png"
+dest_files=[ "res://.import/Fuel_1.png-ba8597de9ab40905b50fa9ca04164733.stex" ]
 
 [params]
 
