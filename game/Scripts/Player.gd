@@ -42,7 +42,9 @@ func _process(delta):
 	
 func _physics_process(delta):
 	fly()
-	move_and_slide(motion)
+	if not is_dying:
+		move_and_slide(motion)
+		
 	var collision = get_slide_collision(0)
 	proces_border_collision(collision)
 
@@ -74,22 +76,22 @@ func shoot():
 
 
 func fly():
-	if left_input and not right_input:
-		motion.x = -turn_speed
-		#run right
-	elif right_input and not left_input:
-		motion.x = turn_speed
-	else:
-		motion.x = 0		
-	if up_input: 
-		motion.y = -forward_speed * speed_boost
-		fly_type = Global.fly_speed.fast
-	elif down_input:
-		motion.y = -forward_speed * slow_down
-		fly_type = Global.fly_speed.slow
-	else:
-		fly_type = Global.fly_speed.normal
-		motion.y = -forward_speed
+		if left_input and not right_input:
+			motion.x = -turn_speed
+			#run right
+		elif right_input and not left_input:
+			motion.x = turn_speed
+		else:
+			motion.x = 0		
+		if up_input: 
+			motion.y = -forward_speed * speed_boost
+			fly_type = Global.fly_speed.fast
+		elif down_input:
+			motion.y = -forward_speed * slow_down
+			fly_type = Global.fly_speed.slow
+		else:
+			fly_type = Global.fly_speed.normal
+			motion.y = -forward_speed
 	
 func update_animation(motion):
 	$AnimatedSprite.update(motion)
@@ -108,21 +110,30 @@ func _on_GunTimer_timeout():
 
 func die():
 	print("DYING RESTART FROM CHECKPOINT")
+	restart_player(Global.last_checkpoint_pos)
 	
 func destroy():
 	is_dying = true
+	$CollisionShape2D.disabled = true
 	#Play animation
 	$AnimationPlayer.play("die")
 	#play sound 
-
-
+	
+func end_game():
+	is_dying = true
+	$CollisionShape2D.disabled = true
+	#Play animation
+	$AnimationPlayer.play("die_end_game") #27.11.2018 ADD THIS ANIMATION TO END GAME
+	#play sound 
+	
 
 func restart_player(position):
 	is_dying = false
+	$CollisionShape2D.disabled = false
 	$AnimationPlayer.play("straight")
 	#reposition player to last check_point
 	global_position = position
+	#save player stats
 	Global.GameState.remember_stats()
 	Global.restart_level_from_checkpoint()
-	#reset enemies ???
 	#restart level ale gracza w innej pozycji, ale trzeba zapamietac paliwo, punkty i zycia

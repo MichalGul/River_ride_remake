@@ -1,9 +1,9 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Scripts/Player.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Bullet.tscn" type="PackedScene" id=2]
-[ext_resource path="res://GFX/plane/plane_right.png" type="Texture" id=3]
-[ext_resource path="res://GFX/plane/plane_left.png" type="Texture" id=4]
+[ext_resource path="res://GFX/plane/plane_left.png" type="Texture" id=3]
+[ext_resource path="res://GFX/plane/plane_right.png" type="Texture" id=4]
 [ext_resource path="res://GFX/plane/plane.png" type="Texture" id=5]
 [ext_resource path="res://GFX/Enemies/explosion3.png" type="Texture" id=6]
 [ext_resource path="res://GFX/Enemies/explosion1.png" type="Texture" id=7]
@@ -20,12 +20,12 @@ extents = Vector2( 30.8501, 31.233 )
 animations = [ {
 "frames": [ ExtResource( 3 ) ],
 "loop": true,
-"name": "right",
+"name": "left",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 4 ) ],
 "loop": true,
-"name": "left",
+"name": "right",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 5 ) ],
@@ -72,7 +72,14 @@ tracks/1/keys = {
 } ]
 }
 
-[node name="Player" type="KinematicBody2D" groups=[
+[sub_resource type="Animation" id=4]
+
+resource_name = "die_end_game"
+length = 1.0
+loop = false
+step = 0.1
+
+[node name="Player" type="KinematicBody2D" index="0" groups=[
 "Player",
 ]]
 
@@ -121,6 +128,7 @@ playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
 anims/die = SubResource( 3 )
+anims/die_end_game = SubResource( 4 )
 blend_times = [  ]
 
 [connection signal="timeout" from="GunTimer" to="." method="_on_GunTimer_timeout"]

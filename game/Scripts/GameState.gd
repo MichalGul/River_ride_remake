@@ -22,7 +22,9 @@ var screen_size_y
 var last_checkpoint_position = Vector2()
 
 func _ready():
+	
 	Global.GameState = self
+	
 	#init game scores
 	lives = Global.last_lives
 	current_score = Global.last_points
@@ -61,13 +63,16 @@ func check_for_empty():
 		end_game()
 		
 func hurt():
-	lives -= 1
+	if not Global.Player.is_dying:
+		lives -= 1
 	if lives < 0:
+		
+		#explode player than splash screen
 		end_game()
 	else:
 		Global.Player.destroy()
 		#restart from last checkpoint
-		#get_tree().reload_current_scene() restart from position dont restart level
+
 	
 	
 func restart_player():

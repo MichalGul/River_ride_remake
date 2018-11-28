@@ -121,9 +121,9 @@ animation = "alive"
 flip_h = true
 _sections_unfolded = [ "Transform" ]
 
-[connection signal="area_entered" from="." to="." method="_on_JetEnemy_area_entered"]
-
 [connection signal="area_entered" from="." to="." method="_on_Enemy_area_entered"]
+
+[connection signal="area_entered" from="." to="." method="_on_JetEnemy_area_entered"]
 
 [connection signal="body_entered" from="." to="." method="_on_Enemy_body_entered"]
 
