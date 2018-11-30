@@ -23,6 +23,7 @@ func _on_Fuel_body_exited(body):
 	
 	#TODO add sound and animation to fuel explosion
 func destroy():
+	$CollisionShape2D.disabled = true
 	#Play animation
 	$AnimationPlayer.play("die")
 	#play sound 

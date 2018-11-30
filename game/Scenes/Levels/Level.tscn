@@ -66,7 +66,7 @@ collision_layer = 2
 collision_mask = 9
 occluder_light_mask = 1
 format = 1
-tile_data = PoolIntArray( -2162685, 0, 0, -2162676, 0, 0, -2097149, 0, 0, -2097140, 0, 0, -2031613, 0, 0, -2031604, 0, 0, -1966077, 0, 0, -1966068, 0, 0, -1900541, 0, 0, -1900532, 0, 0, -1835005, 0, 0, -1835000, 0, 0, -1834996, 0, 0, -1769469, 0, 0, -1769460, 0, 0, -1703933, 0, 0, -1703924, 0, 0, -1638397, 0, 0, -1638388, 0, 0, -1572861, 0, 0, -1572852, 0, 0, -1507325, 0, 0, -1507316, 0, 0, -1441780, 0, 0 )
+tile_data = PoolIntArray(  )
 _sections_unfolded = [ "Collision" ]
 
 [node name="FuelCollection" type="Node2D" parent="." index="2"]
@@ -115,8 +115,6 @@ drag_margin_right = 1.0
 _sections_unfolded = [ "Drag Margin", "Editor", "Limit" ]
 
 [node name="Borders" type="Node2D" parent="." index="4"]
-
-editor/display_folded = true
 
 [node name="Border" parent="Borders" index="0" instance=ExtResource( 8 )]
 
@@ -180,7 +178,8 @@ position = Vector2( -21.4955, -550.52 )
 
 [node name="Border5" parent="Borders" index="15" instance=ExtResource( 8 )]
 
-position = Vector2( 722.166, 283.834 )
+position = Vector2( 494.987, 143.275 )
+scale = Vector2( 0.851933, 0.860685 )
 
 [node name="Border8" parent="Borders" index="16" instance=ExtResource( 8 )]
 
@@ -509,117 +508,162 @@ rotation = -0.00159425
 position = Vector2( 234.105, -1608.15 )
 rotation = -0.00159425
 
-[node name="Border113" parent="Borders" index="93" instance=ExtResource( 8 )]
+[node name="Border119" parent="Borders" index="93" instance=ExtResource( 8 )]
+
+position = Vector2( 234.92, -1556.84 )
+rotation = -0.00159425
+
+[node name="Border120" parent="Borders" index="94" instance=ExtResource( 8 )]
+
+position = Vector2( 234.92, -1507.15 )
+rotation = -0.00159425
+
+[node name="Border121" parent="Borders" index="95" instance=ExtResource( 8 )]
+
+position = Vector2( 234.92, -1455.02 )
+rotation = -0.00159425
+
+[node name="Border122" parent="Borders" index="96" instance=ExtResource( 8 )]
+
+position = Vector2( 240.621, -1393.94 )
+rotation = -0.00159425
+
+[node name="Border123" parent="Borders" index="97" instance=ExtResource( 8 )]
+
+position = Vector2( 238.992, -1714.85 )
+rotation = -0.00159425
+
+[node name="Border124" parent="Borders" index="98" instance=ExtResource( 8 )]
+
+position = Vector2( 239.807, -1762.91 )
+rotation = -0.00159425
+
+[node name="Border125" parent="Borders" index="99" instance=ExtResource( 8 )]
+
+position = Vector2( 241.436, -1808.52 )
+rotation = -0.00159425
+
+[node name="Border126" parent="Borders" index="100" instance=ExtResource( 8 )]
+
+position = Vector2( 241.436, -1808.52 )
+rotation = -0.00159425
+
+[node name="Border127" parent="Borders" index="101" instance=ExtResource( 8 )]
+
+position = Vector2( 238.495, -1851.15 )
+rotation = -0.00159425
+
+[node name="Border113" parent="Borders" index="102" instance=ExtResource( 8 )]
 
 position = Vector2( 26.7257, -1389.74 )
 rotation = -0.00159425
 
-[node name="Border114" parent="Borders" index="94" instance=ExtResource( 8 )]
+[node name="Border114" parent="Borders" index="103" instance=ExtResource( 8 )]
 
 position = Vector2( 80.8979, -1374.58 )
 rotation = -0.00159425
 
-[node name="Border115" parent="Borders" index="95" instance=ExtResource( 8 )]
+[node name="Border115" parent="Borders" index="104" instance=ExtResource( 8 )]
 
 position = Vector2( 134.643, -1361.28 )
 rotation = -0.00159425
 
-[node name="Border81" parent="Borders" index="96" instance=ExtResource( 8 )]
+[node name="Border81" parent="Borders" index="105" instance=ExtResource( 8 )]
 
 position = Vector2( -25.1934, -909.716 )
 rotation = -0.00159425
 
-[node name="Border82" parent="Borders" index="97" instance=ExtResource( 8 )]
+[node name="Border82" parent="Borders" index="106" instance=ExtResource( 8 )]
 
 position = Vector2( -25.1934, -909.716 )
 rotation = -0.00159425
 
-[node name="Border78" parent="Borders" index="98" instance=ExtResource( 8 )]
+[node name="Border78" parent="Borders" index="107" instance=ExtResource( 8 )]
 
 position = Vector2( 539.454, -652.949 )
 rotation = -0.00159425
 
-[node name="Border83" parent="Borders" index="99" instance=ExtResource( 8 )]
+[node name="Border83" parent="Borders" index="108" instance=ExtResource( 8 )]
 
 position = Vector2( 540.961, -698.17 )
 rotation = -0.00159425
 
-[node name="Border84" parent="Borders" index="100" instance=ExtResource( 8 )]
+[node name="Border84" parent="Borders" index="109" instance=ExtResource( 8 )]
 
 position = Vector2( 537.961, -634.17 )
 rotation = -0.00159425
 
-[node name="Border85" parent="Borders" index="101" instance=ExtResource( 8 )]
+[node name="Border85" parent="Borders" index="110" instance=ExtResource( 8 )]
 
 position = Vector2( 535.961, -733.17 )
 rotation = -0.00159425
 
-[node name="Border86" parent="Borders" index="102" instance=ExtResource( 8 )]
+[node name="Border86" parent="Borders" index="111" instance=ExtResource( 8 )]
 
 position = Vector2( 535.961, -784.17 )
 rotation = -0.00159425
 
-[node name="Border87" parent="Borders" index="103" instance=ExtResource( 8 )]
+[node name="Border87" parent="Borders" index="112" instance=ExtResource( 8 )]
 
 position = Vector2( 536.961, -828.17 )
 rotation = -0.00159425
 
-[node name="Border88" parent="Borders" index="104" instance=ExtResource( 8 )]
+[node name="Border88" parent="Borders" index="113" instance=ExtResource( 8 )]
 
 position = Vector2( 536.961, -875.17 )
 rotation = -0.00159425
 
-[node name="Border89" parent="Borders" index="105" instance=ExtResource( 8 )]
+[node name="Border89" parent="Borders" index="114" instance=ExtResource( 8 )]
 
 position = Vector2( 535.961, -924.17 )
 rotation = -0.00159425
 
-[node name="Border90" parent="Borders" index="106" instance=ExtResource( 8 )]
+[node name="Border90" parent="Borders" index="115" instance=ExtResource( 8 )]
 
 position = Vector2( 536.961, -970.17 )
 rotation = -0.00159425
 
-[node name="Border91" parent="Borders" index="107" instance=ExtResource( 8 )]
+[node name="Border91" parent="Borders" index="116" instance=ExtResource( 8 )]
 
 position = Vector2( 532.961, -1014.17 )
 rotation = -0.00159425
 
-[node name="Border92" parent="Borders" index="108" instance=ExtResource( 8 )]
+[node name="Border92" parent="Borders" index="117" instance=ExtResource( 8 )]
 
 position = Vector2( 532.961, -1056.17 )
 rotation = -0.00159425
 
-[node name="Border93" parent="Borders" index="109" instance=ExtResource( 8 )]
+[node name="Border93" parent="Borders" index="118" instance=ExtResource( 8 )]
 
 position = Vector2( 531.961, -1098.17 )
 rotation = -0.00159425
 
-[node name="Border94" parent="Borders" index="110" instance=ExtResource( 8 )]
+[node name="Border94" parent="Borders" index="119" instance=ExtResource( 8 )]
 
 position = Vector2( 532.961, -1146.17 )
 rotation = -0.00159425
 
-[node name="Border95" parent="Borders" index="111" instance=ExtResource( 8 )]
+[node name="Border95" parent="Borders" index="120" instance=ExtResource( 8 )]
 
 position = Vector2( 532.961, -1188.17 )
 rotation = -0.00159425
 
-[node name="Border96" parent="Borders" index="112" instance=ExtResource( 8 )]
+[node name="Border96" parent="Borders" index="121" instance=ExtResource( 8 )]
 
 position = Vector2( 532.961, -1228.17 )
 rotation = -0.00159425
 
-[node name="Border97" parent="Borders" index="113" instance=ExtResource( 8 )]
+[node name="Border97" parent="Borders" index="122" instance=ExtResource( 8 )]
 
 position = Vector2( 533.961, -1270.17 )
 rotation = -0.00159425
 
-[node name="Border98" parent="Borders" index="114" instance=ExtResource( 8 )]
+[node name="Border98" parent="Borders" index="123" instance=ExtResource( 8 )]
 
 position = Vector2( 532.961, -1312.17 )
 rotation = -0.00159425
 
-[node name="Border99" parent="Borders" index="115" instance=ExtResource( 8 )]
+[node name="Border99" parent="Borders" index="124" instance=ExtResource( 8 )]
 
 position = Vector2( 532.961, -1312.17 )
 rotation = -0.00159425
