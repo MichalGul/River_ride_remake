@@ -60,3 +60,6 @@ func _on_JetEnemy_body_entered(body):
 	if body.is_in_group("Player"):
 		destroy()
 		Global.GameState.hurt()
+		
+func on_Enemy_area_entered(area):
+	pass

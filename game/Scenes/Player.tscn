@@ -4,10 +4,10 @@
 [ext_resource path="res://Scenes/Bullet.tscn" type="PackedScene" id=2]
 [ext_resource path="res://GFX/plane/plane_left.png" type="Texture" id=3]
 [ext_resource path="res://GFX/plane/plane_right.png" type="Texture" id=4]
-[ext_resource path="res://GFX/plane/plane.png" type="Texture" id=5]
-[ext_resource path="res://GFX/Enemies/explosion3.png" type="Texture" id=6]
-[ext_resource path="res://GFX/Enemies/explosion1.png" type="Texture" id=7]
-[ext_resource path="res://GFX/Enemies/explosion2.png" type="Texture" id=8]
+[ext_resource path="res://GFX/Enemies/explosion3.png" type="Texture" id=5]
+[ext_resource path="res://GFX/Enemies/explosion1.png" type="Texture" id=6]
+[ext_resource path="res://GFX/Enemies/explosion2.png" type="Texture" id=7]
+[ext_resource path="res://GFX/plane/plane.png" type="Texture" id=8]
 [ext_resource path="res://Scripts/AnimatePlayer.gd" type="Script" id=9]
 
 [sub_resource type="RectangleShape2D" id=1]
@@ -28,14 +28,14 @@ animations = [ {
 "name": "right",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 5 ) ],
-"loop": true,
-"name": "straight",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ) ],
+"frames": [ ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ) ],
 "loop": true,
 "name": "dying",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 8 ) ],
+"loop": true,
+"name": "straight",
 "speed": 5.0
 } ]
 
@@ -79,7 +79,7 @@ length = 1.0
 loop = false
 step = 0.1
 
-[node name="Player" type="KinematicBody2D" index="0" groups=[
+[node name="Player" type="KinematicBody2D" groups=[
 "Player",
 ]]
 
@@ -130,6 +130,24 @@ playback_speed = 1.0
 anims/die = SubResource( 3 )
 anims/die_end_game = SubResource( 4 )
 blend_times = [  ]
+
+[node name="Shoot" type="AudioStreamPlayer" parent="." index="5"]
+
+stream = null
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="Flying" type="AudioStreamPlayer" parent="." index="6"]
+
+stream = null
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
 
 [connection signal="timeout" from="GunTimer" to="." method="_on_GunTimer_timeout"]
 
