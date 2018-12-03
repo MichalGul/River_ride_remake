@@ -4,13 +4,13 @@
 [ext_resource path="res://GFX/Enemies/explosion1.png" type="Texture" id=2]
 [ext_resource path="res://GFX/Enemies/explosion2.png" type="Texture" id=3]
 [ext_resource path="res://GFX/Enemies/explosion3.png" type="Texture" id=4]
-[ext_resource path="res://GFX/Enemies/planeRed1.png" type="Texture" id=5]
+[ext_resource path="res://GFX/Enemies/RAKIETA.png" type="Texture" id=5]
 [ext_resource path="res://SFX/Explosion_15.wav" type="AudioStream" id=6]
 
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 40, 30 )
+extents = Vector2( 27.3992, 16.6918 )
 
 [sub_resource type="Animation" id=2]
 
@@ -71,7 +71,7 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[node name="JetEnemy" type="Area2D" groups=[
+[node name="JetEnemy" type="Area2D" index="0" groups=[
 "JetEnemy",
 ]]
 
@@ -117,6 +117,7 @@ blend_times = [  ]
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="." index="3"]
 
+scale = Vector2( 2, 2 )
 frames = SubResource( 3 )
 animation = "alive"
 flip_h = true
@@ -131,8 +132,8 @@ autoplay = false
 mix_target = 0
 bus = "Master"
 
-[connection signal="body_entered" from="." to="." method="_on_JetEnemy_body_entered"]
-
 [connection signal="body_entered" from="." to="." method="_on_Enemy_body_entered"]
+
+[connection signal="body_entered" from="." to="." method="_on_JetEnemy_body_entered"]
 
 

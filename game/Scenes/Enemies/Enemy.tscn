@@ -4,13 +4,13 @@
 [ext_resource path="res://GFX/Enemies/explosion3.png" type="Texture" id=2]
 [ext_resource path="res://GFX/Enemies/explosion1.png" type="Texture" id=3]
 [ext_resource path="res://GFX/Enemies/explosion2.png" type="Texture" id=4]
-[ext_resource path="res://GFX/Enemies/ship (10).png" type="Texture" id=5]
+[ext_resource path="res://GFX/Enemies/KACZKA.png" type="Texture" id=5]
 [ext_resource path="res://SFX/Explosion_15.wav" type="AudioStream" id=6]
 
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 54.3962, 30 )
+extents = Vector2( 30, 30 )
 
 [sub_resource type="Animation" id=2]
 
@@ -126,9 +126,11 @@ blend_times = [  ]
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="." index="3"]
 
+scale = Vector2( 2, 2 )
 frames = SubResource( 3 )
 animation = "alive"
 playing = true
+_sections_unfolded = [ "Transform" ]
 
 [node name="Death" type="AudioStreamPlayer" parent="." index="4"]
 

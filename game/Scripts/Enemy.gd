@@ -55,6 +55,8 @@ func _on_Enemy_body_entered(body):
 	if body.is_in_group("Player"):
 		destroy()
 		Global.GameState.hurt()
+	if body.is_in_group("Border"):
+		stop_moving()
 		
 func stop_moving():
 	blocked = true

@@ -67,7 +67,7 @@ collision_layer = 2
 collision_mask = 9
 occluder_light_mask = 1
 format = 1
-tile_data = PoolIntArray(  )
+tile_data = PoolIntArray( -983035, 0, 0, -983034, 0, 0, -917498, 0, 0, -851962, 0, 0, -786426, 0, 0, -720890, 0, 0, -655354, 0, 0, -589818, 0, 0, -524282, 0, 0, -458746, 0, 0, -393210, 0, 0, -327674, 0, 0, -262141, 0, 0, -196605, 0, 0, -196601, 0, 0, -131069, 0, 0, -131065, 0, 0, -65533, 0, 0, -65529, 0, 0, 3, 0, 0, 7, 0, 0, 65539, 0, 0, 65543, 0, 0 )
 _sections_unfolded = [ "Collision" ]
 
 [node name="FuelCollection" type="Node2D" parent="." index="2"]
@@ -674,7 +674,7 @@ rotation = -0.00159425
 
 [node name="Enemy3" parent="Enemies" index="0" instance=ExtResource( 9 )]
 
-position = Vector2( 382.75, -919.292 )
+position = Vector2( 119.189, -919.292 )
 score = 5000
 
 [node name="Enemy5" parent="Enemies" index="1" instance=ExtResource( 9 )]
@@ -689,7 +689,7 @@ score = 5000
 
 [node name="Enemy4" parent="Enemies" index="3" instance=ExtResource( 9 )]
 
-position = Vector2( 330, 60 )
+position = Vector2( 304, 64.0001 )
 score = 5000
 
 [node name="LongEnemy2" parent="Enemies" index="4" instance=ExtResource( 10 )]
@@ -698,27 +698,15 @@ position = Vector2( 164.659, -842.157 )
 move_right = true
 score = 2000
 
-[node name="ScoutEnemy" parent="Enemies" index="5" instance=ExtResource( 11 )]
-
-position = Vector2( 314.18, -358.06 )
-
-[node name="ScoutEnemy2" parent="Enemies" index="6" instance=ExtResource( 11 )]
-
-position = Vector2( 522.895, -435.407 )
-
-[node name="ScoutEnemy3" parent="Enemies" index="7" instance=ExtResource( 11 )]
-
-position = Vector2( 511.24, -24.7383 )
-
-[node name="ScoutEnemy4" parent="Enemies" index="8" instance=ExtResource( 11 )]
+[node name="ScoutEnemy4" parent="Enemies" index="5" instance=ExtResource( 11 )]
 
 position = Vector2( 413.158, 271.36 )
 
-[node name="JetEnemy" parent="Enemies" index="9" instance=ExtResource( 2 )]
+[node name="JetEnemy" parent="Enemies" index="6" instance=ExtResource( 2 )]
 
 position = Vector2( 862.685, -263.82 )
 
-[node name="LongEnemy4" parent="Enemies" index="10" instance=ExtResource( 10 )]
+[node name="LongEnemy4" parent="Enemies" index="7" instance=ExtResource( 10 )]
 
 position = Vector2( 356.795, -139.437 )
 
