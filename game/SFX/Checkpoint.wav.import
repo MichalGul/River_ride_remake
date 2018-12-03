@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Checkpoint.wav-aabb2045c1edfe0452d6feedccb7c9dd.sample"
+
+[deps]
+
+source_file="res://SFX/Checkpoint.wav"
+dest_files=[ "res://.import/Checkpoint.wav-aabb2045c1edfe0452d6feedccb7c9dd.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

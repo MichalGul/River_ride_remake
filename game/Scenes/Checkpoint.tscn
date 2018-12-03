@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Scripts/Checkpoint.gd" type="Script" id=1]
 [ext_resource path="res://GFX/Items/Fuel_2.png" type="Texture" id=2]
+[ext_resource path="res://SFX/Checkpoint.wav" type="AudioStream" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -25,7 +26,6 @@ _sections_unfolded = [ "Collision" ]
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
-visible = false
 modulate = Color( 0.115476, 0.953125, 0.0670166, 1 )
 texture = ExtResource( 2 )
 _sections_unfolded = [ "Visibility" ]
@@ -33,6 +33,15 @@ _sections_unfolded = [ "Visibility" ]
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
 
 shape = SubResource( 1 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="2"]
+
+stream = ExtResource( 3 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
 
 [connection signal="area_entered" from="." to="." method="_on_Checkpoint_area_entered"]
 

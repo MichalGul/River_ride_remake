@@ -17,5 +17,7 @@ func _ready():
 func _on_Checkpoint_body_entered(body):
 	if body.is_in_group("Player"):
 		Global.last_checkpoint_pos = global_position
+		#Play sound on checkpoint/or destroy
+		$AudioStreamPlayer.play()
 		print("JEST PLAYER")
 		

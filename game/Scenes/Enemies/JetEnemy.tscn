@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Scripts/JetEnemy.gd" type="Script" id=1]
-[ext_resource path="res://GFX/Enemies/planeRed1.png" type="Texture" id=2]
-[ext_resource path="res://GFX/Enemies/explosion1.png" type="Texture" id=3]
-[ext_resource path="res://GFX/Enemies/explosion2.png" type="Texture" id=4]
-[ext_resource path="res://GFX/Enemies/explosion3.png" type="Texture" id=5]
+[ext_resource path="res://GFX/Enemies/explosion1.png" type="Texture" id=2]
+[ext_resource path="res://GFX/Enemies/explosion2.png" type="Texture" id=3]
+[ext_resource path="res://GFX/Enemies/explosion3.png" type="Texture" id=4]
+[ext_resource path="res://GFX/Enemies/planeRed1.png" type="Texture" id=5]
+[ext_resource path="res://SFX/Explosion_15.wav" type="AudioStream" id=6]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -59,14 +60,14 @@ tracks/2/keys = {
 [sub_resource type="SpriteFrames" id=3]
 
 animations = [ {
-"frames": [ ExtResource( 2 ) ],
-"loop": true,
-"name": "alive",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ) ],
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ) ],
 "loop": true,
 "name": "dying",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 5 ) ],
+"loop": true,
+"name": "alive",
 "speed": 5.0
 } ]
 
@@ -121,8 +122,17 @@ animation = "alive"
 flip_h = true
 _sections_unfolded = [ "Transform" ]
 
-[connection signal="body_entered" from="." to="." method="_on_Enemy_body_entered"]
+[node name="Death" type="AudioStreamPlayer" parent="." index="4"]
+
+stream = ExtResource( 6 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
 
 [connection signal="body_entered" from="." to="." method="_on_JetEnemy_body_entered"]
+
+[connection signal="body_entered" from="." to="." method="_on_Enemy_body_entered"]
 
 

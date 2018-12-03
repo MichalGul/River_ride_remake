@@ -11,7 +11,7 @@ config_version=3
 [application]
 
 config/name="RiverRideRemake"
-run/main_scene="res://Scenes/Levels/Level.tscn"
+run/main_scene="res://Scenes/Levels/Menu.tscn"
 config/icon="res://icon.png"
 
 [autoload]

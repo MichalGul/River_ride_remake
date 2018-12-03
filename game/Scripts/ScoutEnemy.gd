@@ -21,6 +21,7 @@ func destroy():
 	#Play animation
 	get_parent().get_node("AnimationPlayer").play("die")
 	#play sound 
+	get_parent().get_node("Death").play()
 	#remove from scene
 	#must be called in animation player
 func die():

@@ -118,6 +118,7 @@ func destroy():
 	#Play animation
 	$AnimationPlayer.play("die")
 	#play sound 
+	$Death.play()
 	
 func end_game():
 	is_dying = true
@@ -125,7 +126,7 @@ func end_game():
 	#Play animation
 	$AnimationPlayer.play("die_end_game") #27.11.2018 ADD THIS ANIMATION TO END GAME
 	#play sound 
-	
+	$Death.play()
 
 func restart_player(position):
 	is_dying = false
@@ -137,3 +138,6 @@ func restart_player(position):
 	Global.GameState.remember_stats()
 	Global.restart_level_from_checkpoint()
 	#restart level ale gracza w innej pozycji, ale trzeba zapamietac paliwo, punkty i zycia
+	
+func end():
+	Global.GameState.end_game()

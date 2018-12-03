@@ -5,9 +5,7 @@ var velocity = Vector2()
 
 
 func _ready():
-	# Called when the node is added to the scene for the first time.
-	# Initialization here
-	pass
+	$Shoot.play()
 
 func _process(delta):
 	position += velocity * delta
@@ -28,8 +26,8 @@ func _on_Bullet_body_entered(body):
 func _on_Bullet_area_entered(area):
 	if area.is_in_group("Fuel"):
 		area.destroy() # begin destroying fuel 
-		
 		queue_free() #destroy projectile
+		
 	elif area.is_in_group("Enemy") or area.is_in_group("JetEnemy"):
 		area.destroy() # begin destroying fuel 
 		Global.GameState.update_score(area.score)

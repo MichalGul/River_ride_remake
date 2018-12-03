@@ -50,8 +50,7 @@ func destroy():
 	#Play animation
 	$AnimationPlayer.play("die")
 	#play sound 
-	#remove from scene
-	#must be called in animation player
+	$Death.play()
 	
 func die():
 	queue_free()	

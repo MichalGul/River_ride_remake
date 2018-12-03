@@ -39,6 +39,7 @@ func _ready():
 	screen_size_y = get_viewport().size.y
 	# Called when the node is added to the scene for the first time.
 	# Initialization here
+	$Sounds/Background_Sound.playing = true
 	
 func _process(delta):
 	update_GUI()
@@ -66,9 +67,8 @@ func hurt():
 	if not Global.Player.is_dying:
 		lives -= 1
 	if lives < 0:
-		
 		#explode player than splash screen
-		end_game()
+		Global.Player.end_game()
 	else:
 		Global.Player.destroy()
 		#restart from last checkpoint
@@ -85,9 +85,11 @@ func tank_fuel(delta):
 
 		
 func update_GUI():
-	GUI.update_GUI(int(fuel), lives, current_score)
+	if lives >= 0:
+		GUI.update_GUI(int(fuel), lives, current_score)
 		
 func end_game():
+	$Sounds/Background_Sound.playing = false
 	get_tree().change_scene(Global.GameOver)
 
 

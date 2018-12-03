@@ -45,6 +45,7 @@ func destroy():
 	#Play animation
 	$AnimationPlayer.play("die")
 	#play sound 
+	$Death.play()
 	#remove from scene
 	
 func die():

@@ -5,7 +5,6 @@ var BEGIN_X_POS = 467.815796
 var BEGIN_Y_POS = 545.357483
 
 #Global script to hold reference to game objects - avoid string referencing
-
 var GameState
 var Player
 var GUI
@@ -13,6 +12,9 @@ var GUI
 #Starting values of the stats
 var last_points = 0
 var last_lives = 3
+
+#references to
+
 
 
 #remember last checkpoint initial value is defined from the top
