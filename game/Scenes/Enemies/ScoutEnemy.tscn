@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Scripts/ScoutEnemy.gd" type="Script" id=1]
-[ext_resource path="res://GFX/Enemies/planeBlue1.png" type="Texture" id=2]
+[ext_resource path="res://GFX/Enemies/RAKIETA.png" type="Texture" id=2]
 [ext_resource path="res://GFX/Enemies/explosion1.png" type="Texture" id=3]
 [ext_resource path="res://GFX/Enemies/explosion2.png" type="Texture" id=4]
 [ext_resource path="res://GFX/Enemies/explosion3.png" type="Texture" id=5]
@@ -24,7 +24,7 @@ animations = [ {
 [sub_resource type="RectangleShape2D" id=2]
 
 custom_solver_bias = 0.0
-extents = Vector2( 40, 30 )
+extents = Vector2( 24.5963, 9.45505 )
 
 [sub_resource type="Animation" id=3]
 
@@ -116,6 +116,7 @@ tracks/3/keys = {
 
 [node name="ScoutEnemy" type="Node2D"]
 
+position = Vector2( -0.291977, -2.04391 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -148,6 +149,7 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="1"]
 
+position = Vector2( -7.8837, -0.583977 )
 shape = SubResource( 2 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." index="1"]

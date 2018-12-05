@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/plane.png-5ee30a56e66e874ee34098a45b6bcff8.stex"
+path="res://.import/PIXIE_DUST.png-2ab0d49db76e28dc2c5f7594647458af.stex"
 
 [deps]
 
-source_file="res://GFX/plane/plane.png"
-dest_files=[ "res://.import/plane.png-5ee30a56e66e874ee34098a45b6bcff8.stex" ]
+source_file="res://GFX/Items/PIXIE_DUST.png"
+dest_files=[ "res://.import/PIXIE_DUST.png-2ab0d49db76e28dc2c5f7594647458af.stex" ]
 
 [params]
 

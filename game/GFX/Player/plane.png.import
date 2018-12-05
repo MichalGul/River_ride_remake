@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/plane_right.png-ceb5f063eaed6ba198a5c373a2919593.stex"
+path="res://.import/plane.png-e1d73830d3f4445e164f62b7d91b4ca9.stex"
 
 [deps]
 
-source_file="res://GFX/plane/plane_right.png"
-dest_files=[ "res://.import/plane_right.png-ceb5f063eaed6ba198a5c373a2919593.stex" ]
+source_file="res://GFX/Player/plane.png"
+dest_files=[ "res://.import/plane.png-e1d73830d3f4445e164f62b7d91b4ca9.stex" ]
 
 [params]
 

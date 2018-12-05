@@ -1,4 +1,4 @@
-extends Area2D
+extends "res://Scripts/Enemy.gd"
 
 # class member variables go here, for example:
 # var a = 2
@@ -13,12 +13,3 @@ func _ready():
 #	# Called every frame. Delta is time since last frame.
 #	# Update game logic here.
 #	pass
-
-func _on_Checkpoint_body_entered(body):
-	if body.is_in_group("Player"):
-		Global.last_checkpoint_pos = global_position
-		#Play sound on checkpoint/or destroy
-		$AudioStreamPlayer.play()
-
-		
-	

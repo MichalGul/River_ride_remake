@@ -1,16 +1,11 @@
 [gd_scene load_steps=10 format=2]
 
-[ext_resource path="res://Scripts/Enemy.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/Enemies/StaticEnemy.gd" type="Script" id=1]
 [ext_resource path="res://GFX/Enemies/explosion3.png" type="Texture" id=2]
 [ext_resource path="res://GFX/Enemies/explosion1.png" type="Texture" id=3]
 [ext_resource path="res://GFX/Enemies/explosion2.png" type="Texture" id=4]
-[ext_resource path="res://GFX/Enemies/KACZKA.png" type="Texture" id=5]
+[ext_resource path="res://GFX/Enemies/ship (19).png" type="Texture" id=5]
 [ext_resource path="res://SFX/Explosion_15.wav" type="AudioStream" id=6]
-
-[sub_resource type="RectangleShape2D" id=1]
-
-custom_solver_bias = 0.0
-extents = Vector2( 15.8959, 15.3453 )
 
 [sub_resource type="Animation" id=2]
 
@@ -83,7 +78,12 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[node name="Enemy" type="Area2D" groups=[
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 116.857, 31.734 )
+
+[node name="StaticEnemy" type="Area2D" groups=[
 "Enemy",
 ]]
 
@@ -98,23 +98,15 @@ audio_bus_override = false
 audio_bus_name = "Master"
 script = ExtResource( 1 )
 _sections_unfolded = [ "Collision" ]
+__meta__ = {
+"_edit_group_": true
+}
 units_to_move = 100
 speed = 1
 move_right = false
 score = 1000
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="0"]
-
-shape = SubResource( 1 )
-
-[node name="RayCast2D" type="RayCast2D" parent="." index="1"]
-
-enabled = true
-exclude_parent = true
-cast_to = Vector2( 0, 1000 )
-collision_mask = 1
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="2"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="0"]
 
 root_node = NodePath("..")
 autoplay = ""
@@ -124,15 +116,16 @@ playback_speed = 1.0
 anims/die = SubResource( 2 )
 blend_times = [  ]
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="." index="3"]
+[node name="AnimatedSprite" type="AnimatedSprite" parent="." index="1"]
 
 position = Vector2( 1.57342, 0.174824 )
+scale = Vector2( 2, 1 )
 frames = SubResource( 3 )
 animation = "alive"
 playing = true
 _sections_unfolded = [ "Transform" ]
 
-[node name="Death" type="AudioStreamPlayer" parent="." index="4"]
+[node name="Death" type="AudioStreamPlayer" parent="." index="2"]
 
 stream = ExtResource( 6 )
 volume_db = 0.0
@@ -140,6 +133,17 @@ pitch_scale = 1.0
 autoplay = false
 mix_target = 0
 bus = "Master"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="3"]
+
+shape = SubResource( 1 )
+
+[node name="RayCast2D" type="RayCast2D" parent="." index="4"]
+
+enabled = false
+exclude_parent = true
+cast_to = Vector2( 0, 50 )
+collision_mask = 1
 
 [connection signal="area_entered" from="." to="." method="_on_Enemy_area_entered"]
 

@@ -28,6 +28,7 @@ func _on_Bullet_area_entered(area):
 		area.destroy() # begin destroying fuel 
 		queue_free() #destroy projectile
 		
+		
 	elif area.is_in_group("Enemy") or area.is_in_group("JetEnemy"):
 		area.destroy() # begin destroying fuel 
 		Global.GameState.update_score(area.score)

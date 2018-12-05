@@ -19,17 +19,18 @@ func init(move_r, pos):
 	#determine moving direction nnd position
 	move_right = move_r	
 	global_position = pos
-#	print("JESTEM TUUU" ,position)
-	
+
 	
 func move(delta):
 	if move_right:
 		$AnimatedSprite.flip_h = false
+		$AnimatedSprite/Particles2D.rotation_degrees = 90
 		global_position.x += jet_speed * delta
 	else:
 		$AnimatedSprite.flip_h = true
+		$AnimatedSprite/Particles2D.rotation_degrees = 270
 		global_position.x -= jet_speed * delta
-#	print("LECE: ", global_position)
+
 
 
 func _ready():
@@ -47,6 +48,7 @@ func check_if_saw_player():
 	
 func destroy():
 	$CollisionShape2D.disabled = true
+	$AnimatedSprite/Particles2D.emitting = false
 	#Play animation
 	$AnimationPlayer.play("die")
 	#play sound 

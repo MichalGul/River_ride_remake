@@ -1,8 +1,8 @@
 extends Node
 
 #How to place initial player position ???
-var BEGIN_X_POS = 467.815796
-var BEGIN_Y_POS = 545.357483
+var BEGIN_X_POS = 0# 467.815796
+var BEGIN_Y_POS = 600# 545.357483
 
 #Global script to hold reference to game objects - avoid string referencing
 var GameState

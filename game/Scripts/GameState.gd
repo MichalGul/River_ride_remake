@@ -6,7 +6,8 @@ export (int) var starting_fuel = 100
 export (int) var fuel_extinction_param = 2 #fuel drop per second
 export (int) var fuel_tank_speed = 20 #unit fuel unit per second
 export (int) var points_life_counter = 10000 #How many points needs to be gain in order to gain life
-export (int) var jet_spawn_timer = 2
+export (int) var jet_spawn_timer = 8
+
 
 export (PackedScene) var JetEnemy
 

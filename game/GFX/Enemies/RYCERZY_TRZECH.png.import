@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/plane_left.png-bc8f0863ff9d28b086ba0ab26be515c1.stex"
+path="res://.import/RYCERZY_TRZECH.png-1d2e2f41660978635de1ab34e5de8001.stex"
 
 [deps]
 
-source_file="res://GFX/plane/plane_left.png"
-dest_files=[ "res://.import/plane_left.png-bc8f0863ff9d28b086ba0ab26be515c1.stex" ]
+source_file="res://GFX/Enemies/RYCERZY_TRZECH.png"
+dest_files=[ "res://.import/RYCERZY_TRZECH.png-1d2e2f41660978635de1ab34e5de8001.stex" ]
 
 [params]
 

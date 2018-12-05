@@ -1,40 +1,39 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Scripts/Player.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Bullet.tscn" type="PackedScene" id=2]
-[ext_resource path="res://GFX/plane/plane_right.png" type="Texture" id=3]
-[ext_resource path="res://GFX/plane/plane_left.png" type="Texture" id=4]
-[ext_resource path="res://GFX/Enemies/explosion3.png" type="Texture" id=5]
-[ext_resource path="res://GFX/Enemies/explosion1.png" type="Texture" id=6]
-[ext_resource path="res://GFX/Enemies/explosion2.png" type="Texture" id=7]
-[ext_resource path="res://GFX/plane/plane.png" type="Texture" id=8]
-[ext_resource path="res://Scripts/AnimatePlayer.gd" type="Script" id=9]
-[ext_resource path="res://SFX/Explosion_15.wav" type="AudioStream" id=10]
+[ext_resource path="res://GFX/Player/KROLEWNA.png" type="Texture" id=3]
+[ext_resource path="res://GFX/Enemies/explosion3.png" type="Texture" id=4]
+[ext_resource path="res://GFX/Enemies/explosion1.png" type="Texture" id=5]
+[ext_resource path="res://GFX/Enemies/explosion2.png" type="Texture" id=6]
+[ext_resource path="res://GFX/Player/KROLEWNAv2.png" type="Texture" id=7]
+[ext_resource path="res://Scripts/AnimatePlayer.gd" type="Script" id=8]
+[ext_resource path="res://SFX/Explosion_15.wav" type="AudioStream" id=9]
 
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 30.8501, 31.233 )
+extents = Vector2( 11.9904, 15.5042 )
 
 [sub_resource type="SpriteFrames" id=2]
 
 animations = [ {
 "frames": [ ExtResource( 3 ) ],
 "loop": true,
-"name": "right",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 4 ) ],
-"loop": true,
 "name": "left",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ) ],
+"frames": [ ExtResource( 3 ) ],
+"loop": true,
+"name": "right",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ) ],
 "loop": true,
 "name": "dying",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 8 ) ],
+"frames": [ ExtResource( 7 ) ],
 "loop": true,
 "name": "straight",
 "speed": 5.0
@@ -132,11 +131,12 @@ shape = SubResource( 1 )
 frames = SubResource( 2 )
 animation = "straight"
 playing = true
-script = ExtResource( 9 )
+script = ExtResource( 8 )
+_sections_unfolded = [ "Transform" ]
 
 [node name="Muzzle" type="Position2D" parent="." index="2"]
 
-position = Vector2( 0, -30 )
+position = Vector2( -0.19371, -15.4717 )
 rotation = -0.00729736
 _sections_unfolded = [ "Transform" ]
 
@@ -169,7 +169,7 @@ bus = "Master"
 
 [node name="Death" type="AudioStreamPlayer" parent="." index="6"]
 
-stream = ExtResource( 10 )
+stream = ExtResource( 9 )
 volume_db = 0.0
 pitch_scale = 1.0
 autoplay = false

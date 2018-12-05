@@ -3,8 +3,8 @@
 [ext_resource path="res://Scenes/Levels/Menu.gd" type="Script" id=1]
 [ext_resource path="res://GFX/Enviroment/water.png" type="Texture" id=2]
 [ext_resource path="res://Fonts/candles_.ttf" type="DynamicFontData" id=3]
-[ext_resource path="res://GFX/plane/plane_left.png" type="Texture" id=4]
-[ext_resource path="res://GFX/plane/plane_right.png" type="Texture" id=5]
+[ext_resource path="res://GFX/Player/plane_left.png" type="Texture" id=4]
+[ext_resource path="res://GFX/Player/plane_right.png" type="Texture" id=5]
 
 [sub_resource type="DynamicFont" id=1]
 
