@@ -18,11 +18,13 @@
 script = ExtResource( 1 )
 starting_lives = 3
 max_lives = 9
-starting_fuel = 100
+starting_fuel = 1000
 fuel_extinction_param = 5
 fuel_tank_speed = 20
 points_life_counter = 10000
-jet_spawn_timer = 8
+initial_jet_spawn_timer = 1
+down_timer_limit = 1
+up_timer_limit = 3
 JetEnemy = ExtResource( 2 )
 
 [node name="Enviroment" type="TileMap" parent="." index="0" groups=[
@@ -148,31 +150,49 @@ score = 2000
 
 [node name="ScoutEnemy4" parent="Enemies" index="6" instance=ExtResource( 10 )]
 
-position = Vector2( 380.18, -546.862 )
+position = Vector2( -129.962, -285.669 )
 
-[node name="JetEnemy" parent="Enemies" index="7" instance=ExtResource( 2 )]
+[node name="ScoutEnemy5" parent="Enemies" index="7" instance=ExtResource( 10 )]
+
+position = Vector2( -78.2672, -331.922 )
+
+[node name="ScoutEnemy6" parent="Enemies" index="8" instance=ExtResource( 10 )]
+
+position = Vector2( -183.016, -299.273 )
+
+[node name="ScoutEnemy7" parent="Enemies" index="9" instance=ExtResource( 10 )]
+
+position = Vector2( -71.4654, -240.777 )
+
+[node name="ScoutEnemy8" parent="Enemies" index="10" instance=ExtResource( 10 )]
+
+position = Vector2( -187.097, -193.164 )
+
+[node name="JetEnemy" parent="Enemies" index="11" instance=ExtResource( 2 )]
 
 position = Vector2( 96.2612, 332.71 )
 
-[node name="LongEnemy4" parent="Enemies" index="8" instance=ExtResource( 9 )]
+[node name="LongEnemy4" parent="Enemies" index="12" instance=ExtResource( 9 )]
 
 position = Vector2( -71.0019, 76.231 )
 
-[node name="LongEnemy5" parent="Enemies" index="9" instance=ExtResource( 9 )]
+[node name="LongEnemy5" parent="Enemies" index="13" instance=ExtResource( 9 )]
 
 position = Vector2( -65.8563, 396.732 )
 
-[node name="ScoutEnemy" parent="Enemies" index="10" instance=ExtResource( 10 )]
+[node name="ScoutEnemy" parent="Enemies" index="14" instance=ExtResource( 10 )]
 
 position = Vector2( 162.418, -567.396 )
 
-[node name="ScoutEnemy2" parent="Enemies" index="11" instance=ExtResource( 10 )]
+[node name="ScoutEnemy2" parent="Enemies" index="15" instance=ExtResource( 10 )]
 
 position = Vector2( 23.2693, -49.4464 )
 
-[node name="StaticEnemy" parent="Enemies" index="12" instance=ExtResource( 11 )]
+[node name="StaticEnemy" parent="Enemies" index="16" instance=ExtResource( 11 )]
 
 position = Vector2( 21.7571, 166.11 )
+
+[node name="ScoutEnemy3" parent="Enemies" index="17" instance=ExtResource( 10 )]
 
 [node name="JetSpawnerTimer" type="Timer" parent="." index="6"]
 

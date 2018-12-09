@@ -45,8 +45,10 @@ func _physics_process(delta):
 	if not is_dying:
 		move_and_slide(motion)
 		
-	var collision = get_slide_collision(0)
-	proces_border_collision(collision)
+	#Colided with something	
+	if get_slide_count() > 0: 
+		var collision = get_slide_collision(0)
+		proces_border_collision(collision)
 
 #process collision with border
 func proces_border_collision(collision):

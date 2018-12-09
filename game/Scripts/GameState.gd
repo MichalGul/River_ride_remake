@@ -6,8 +6,10 @@ export (int) var starting_fuel = 100
 export (int) var fuel_extinction_param = 2 #fuel drop per second
 export (int) var fuel_tank_speed = 20 #unit fuel unit per second
 export (int) var points_life_counter = 10000 #How many points needs to be gain in order to gain life
-export (int) var jet_spawn_timer = 8
+export (int) var initial_jet_spawn_timer = 1
 
+export (int) var down_timer_limit = 3
+export (int) var up_timer_limit = 8
 
 export (PackedScene) var JetEnemy
 
@@ -32,7 +34,7 @@ func _ready():
 	fuel = starting_fuel
 	
 	#init jet spawner
-	$JetSpawnerTimer.wait_time = jet_spawn_timer
+	$JetSpawnerTimer.wait_time = initial_jet_spawn_timer
 	$JetSpawnerTimer.autostart = true
 	#init player position restart
 
@@ -122,7 +124,7 @@ func spawn_jet():
 #	#Acces player position
 	var player_pos = Global.Player.global_position
 	var spawn_pos = Vector2()
-	spawn_pos.y = Global.Player.global_position.y - screen_size_y
+	spawn_pos.y = Global.Player.global_position.y - screen_size_y*0.7
 	
 	#randomly chose side 0 or one
 	var side = pick_random_side()
@@ -135,9 +137,12 @@ func spawn_jet():
 	var jet_enemy = JetEnemy.instance()
 	$Enemies.add_child(jet_enemy)
 	jet_enemy.init(side, spawn_pos)
+	
+	$JetSpawnerTimer.wait_time = rand_range(down_timer_limit, up_timer_limit)
 
 func _on_JetSpawnerTimer_timeout():
 	spawn_jet()
+	print("spawn rakiety")
 	
 func pick_random_side():
 	randomize()
