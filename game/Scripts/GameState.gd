@@ -6,12 +6,19 @@ export (int) var starting_fuel = 100
 export (int) var fuel_extinction_param = 2 #fuel drop per second
 export (int) var fuel_tank_speed = 20 #unit fuel unit per second
 export (int) var points_life_counter = 10000 #How many points needs to be gain in order to gain life
-export (int) var initial_jet_spawn_timer = 1
+export (int) var initial_spawn_timer = 3
 
-export (int) var down_timer_limit = 3
-export (int) var up_timer_limit = 8
+export (bool) var spawn_random_jets = false
+export (bool) var spawn_random_scouts = false
+
+export (int) var jet_down_timer_limit = 3
+export (int) var jet_up_timer_limit = 8
+
+export (int) var scout_down_timer_limit = 3
+export (int) var scout_up_timer_limit = 8
 
 export (PackedScene) var JetEnemy
+export (PackedScene) var ScoutEnemy
 
 var lives
 var fuel 
@@ -34,8 +41,12 @@ func _ready():
 	fuel = starting_fuel
 	
 	#init jet spawner
-	$JetSpawnerTimer.wait_time = initial_jet_spawn_timer
+	$JetSpawnerTimer.wait_time = initial_spawn_timer
 	$JetSpawnerTimer.autostart = true
+	
+	#Init scout spawner
+	$ScoutSpawnerTimer.wait_time = initial_spawn_timer
+	$ScoutSpawnerTimer.autostart = true
 	#init player position restart
 
 	screen_size_x = get_viewport().size.x
@@ -138,18 +149,37 @@ func spawn_jet():
 	$Enemies.add_child(jet_enemy)
 	jet_enemy.init(side, spawn_pos)
 	
-	$JetSpawnerTimer.wait_time = rand_range(down_timer_limit, up_timer_limit)
+	$JetSpawnerTimer.wait_time = rand_range(jet_down_timer_limit, jet_up_timer_limit)
+	
+func spawn_scout():
+	
+#	#Acces player position
+	var player_pos = Global.Player.global_position
+	var spawn_pos = Vector2()
+	spawn_pos.y = Global.Player.global_position.y - screen_size_y
+	spawn_pos.x = Global.Player.global_position.x
+
+	var scout_enemy = ScoutEnemy.instance()
+	$Enemies.add_child(scout_enemy)
+	scout_enemy.init(spawn_pos)
+	
+	$ScoutSpawnerTimer.wait_time = rand_range(scout_down_timer_limit, scout_up_timer_limit)
+	
 
 func _on_JetSpawnerTimer_timeout():
-	spawn_jet()
-	print("spawn rakiety")
+	if spawn_random_jets:
+		spawn_jet()
+		print("spawn rakiety")
 	
 func pick_random_side():
 	randomize()
-	var rand_num = round(rand_range(1,11))
+	var rand_num = round(rand_range(1,10))
 	if rand_num > 5 :
 		return true
 	else:
 		return false
 	
-	
+func _on_ScoutSpawnerTimer_timeout():
+	if spawn_random_scouts:
+		spawn_scout()
+		print("spawn scouta")

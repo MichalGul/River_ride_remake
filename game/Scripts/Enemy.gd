@@ -25,8 +25,10 @@ func move(delta):
 
 func _ready():
 	if move_right:
+		$AnimatedSprite.flip_h = false
 		destination.x = global_position.x + units_to_move
 	else:
+		$AnimatedSprite.flip_h = true
 		destination.x = global_position.x - units_to_move
 	destination.y = global_position.y
 

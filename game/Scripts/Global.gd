@@ -1,6 +1,6 @@
 extends Node
 
-#How to place initial player position ???
+
 var BEGIN_X_POS = 0# 467.815796
 var BEGIN_Y_POS = 600# 545.357483
 

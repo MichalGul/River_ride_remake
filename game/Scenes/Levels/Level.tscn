@@ -1,17 +1,18 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Scripts/GameState.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Enemies/JetEnemy.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Tilesets/TileEnvset_Ready.tres" type="TileSet" id=3]
-[ext_resource path="res://Scenes/PickUP/Checkpoint.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Scenes/PickUP/Fuel.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Scenes/Camera2D.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Scenes/Enemies/Enemy.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Scenes/Enemies/LongEnemy.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Scenes/Enemies/ScoutEnemy.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Scenes/Enemies/ScoutEnemy.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Tilesets/TileEnvset_Ready.tres" type="TileSet" id=4]
+[ext_resource path="res://Scenes/PickUP/Checkpoint.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/PickUP/Fuel.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/Camera2D.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scenes/Enemies/Enemy.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scenes/Enemies/LongEnemy.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Scenes/Enemies/StaticEnemy.tscn" type="PackedScene" id=11]
-[ext_resource path="res://SFX/Chiptune_Adventures_1.ogg" type="AudioStream" id=12]
+[ext_resource path="res://Scenes/Enemies/JetEnemyStationary.tscn" type="PackedScene" id=12]
+[ext_resource path="res://SFX/Chiptune_Adventures_1.ogg" type="AudioStream" id=13]
 
 [node name="Level" type="Node2D" index="0"]
 
@@ -22,17 +23,22 @@ starting_fuel = 1000
 fuel_extinction_param = 5
 fuel_tank_speed = 20
 points_life_counter = 10000
-initial_jet_spawn_timer = 1
-down_timer_limit = 1
-up_timer_limit = 3
+initial_spawn_timer = 3
+spawn_random_jets = false
+spawn_random_scouts = true
+jet_down_timer_limit = 3
+jet_up_timer_limit = 8
+scout_down_timer_limit = 1
+scout_up_timer_limit = 2
 JetEnemy = ExtResource( 2 )
+ScoutEnemy = ExtResource( 3 )
 
 [node name="Enviroment" type="TileMap" parent="." index="0" groups=[
 "Border",
 ]]
 
 mode = 0
-tile_set = ExtResource( 3 )
+tile_set = ExtResource( 4 )
 cell_size = Vector2( 32, 32 )
 cell_quadrant_size = 16
 cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
@@ -54,50 +60,52 @@ _sections_unfolded = [ "Cell", "Collision" ]
 
 position = Vector2( 600.603, 537.682 )
 
-[node name="Checkpoint" parent="Checkpoints" index="0" instance=ExtResource( 4 )]
+[node name="Checkpoint" parent="Checkpoints" index="0" instance=ExtResource( 5 )]
 
 position = Vector2( -566.57, -425.205 )
 scale = Vector2( 0.552407, 0.558528 )
 _sections_unfolded = [ "Collision", "Visibility" ]
 
-[node name="Checkpoint2" parent="Checkpoints" index="1" instance=ExtResource( 4 )]
+[node name="Checkpoint2" parent="Checkpoints" index="1" instance=ExtResource( 5 )]
 
 position = Vector2( -706.459, -1094.46 )
 scale = Vector2( 0.594572, 0.564421 )
 
 [node name="FuelCollection" type="Node2D" parent="." index="2"]
 
-[node name="Fuel" parent="FuelCollection" index="0" instance=ExtResource( 5 )]
+editor/display_folded = true
+
+[node name="Fuel" parent="FuelCollection" index="0" instance=ExtResource( 6 )]
 
 position = Vector2( 1.36731, 397.102 )
 
-[node name="Fuel2" parent="FuelCollection" index="1" instance=ExtResource( 5 )]
+[node name="Fuel2" parent="FuelCollection" index="1" instance=ExtResource( 6 )]
 
 position = Vector2( -161.914, -22.1434 )
 
-[node name="Fuel4" parent="FuelCollection" index="2" instance=ExtResource( 5 )]
+[node name="Fuel4" parent="FuelCollection" index="2" instance=ExtResource( 6 )]
 
 position = Vector2( 51.4742, -236.726 )
 
-[node name="Fuel3" parent="FuelCollection" index="3" instance=ExtResource( 5 )]
+[node name="Fuel3" parent="FuelCollection" index="3" instance=ExtResource( 6 )]
 
 position = Vector2( -150.654, -397.814 )
 
-[node name="Fuel5" parent="FuelCollection" index="4" instance=ExtResource( 5 )]
+[node name="Fuel5" parent="FuelCollection" index="4" instance=ExtResource( 6 )]
 
 position = Vector2( 10.2828, -698.136 )
 
-[node name="Fuel6" parent="FuelCollection" index="5" instance=ExtResource( 5 )]
+[node name="Fuel6" parent="FuelCollection" index="5" instance=ExtResource( 6 )]
 
 position = Vector2( -137.845, -760.749 )
 
-[node name="Player" parent="." index="3" instance=ExtResource( 6 )]
+[node name="Player" parent="." index="3" instance=ExtResource( 7 )]
 
 position = Vector2( -18.8827, 560.332 )
 turn_speed = 200
 forward_speed = 60
 
-[node name="Camera2D" parent="Player" index="2" instance=ExtResource( 7 )]
+[node name="Camera2D" parent="Player" index="2" instance=ExtResource( 8 )]
 
 modulate = Color( 0.992188, 0.992188, 0.992188, 1 )
 position = Vector2( -0.528564, 62.2491 )
@@ -117,74 +125,78 @@ position = Vector2( 586.648, 35.1619 )
 
 [node name="Enemies" type="Node2D" parent="." index="5"]
 
-[node name="Enemy3" parent="Enemies" index="0" instance=ExtResource( 8 )]
+_sections_unfolded = [ "Transform" ]
+
+[node name="Enemy3" parent="Enemies" index="0" instance=ExtResource( 9 )]
 
 position = Vector2( 119.189, -919.292 )
 score = 5000
 
-[node name="Enemy5" parent="Enemies" index="1" instance=ExtResource( 8 )]
+[node name="Enemy5" parent="Enemies" index="1" instance=ExtResource( 9 )]
 
 position = Vector2( 329.83, -1806.85 )
 score = 5000
 
-[node name="Enemy6" parent="Enemies" index="2" instance=ExtResource( 8 )]
+[node name="Enemy6" parent="Enemies" index="2" instance=ExtResource( 9 )]
 
 position = Vector2( 321.628, -1642.81 )
 score = 5000
 
-[node name="Enemy4" parent="Enemies" index="3" instance=ExtResource( 8 )]
+[node name="Enemy4" parent="Enemies" index="3" instance=ExtResource( 9 )]
 
 position = Vector2( -221.41, 146.301 )
 score = 5000
 
-[node name="Enemy7" parent="Enemies" index="4" instance=ExtResource( 8 )]
+[node name="Enemy8" parent="Enemies" index="4" instance=ExtResource( 9 )]
+
+position = Vector2( -61.1596, -3.6581 )
+move_right = true
+score = 5000
+
+[node name="Enemy7" parent="Enemies" index="5" instance=ExtResource( 9 )]
 
 position = Vector2( -151.576, 403.584 )
 score = 5000
 
-[node name="LongEnemy2" parent="Enemies" index="5" instance=ExtResource( 9 )]
+[node name="LongEnemy2" parent="Enemies" index="6" instance=ExtResource( 10 )]
 
 position = Vector2( 164.659, -842.157 )
 move_right = true
 score = 2000
 
-[node name="ScoutEnemy4" parent="Enemies" index="6" instance=ExtResource( 10 )]
+[node name="ScoutEnemy4" parent="Enemies" index="7" instance=ExtResource( 3 )]
 
 position = Vector2( -129.962, -285.669 )
 
-[node name="ScoutEnemy5" parent="Enemies" index="7" instance=ExtResource( 10 )]
+[node name="ScoutEnemy5" parent="Enemies" index="8" instance=ExtResource( 3 )]
 
 position = Vector2( -78.2672, -331.922 )
 
-[node name="ScoutEnemy6" parent="Enemies" index="8" instance=ExtResource( 10 )]
+[node name="ScoutEnemy6" parent="Enemies" index="9" instance=ExtResource( 3 )]
 
 position = Vector2( -183.016, -299.273 )
 
-[node name="ScoutEnemy7" parent="Enemies" index="9" instance=ExtResource( 10 )]
+[node name="ScoutEnemy7" parent="Enemies" index="10" instance=ExtResource( 3 )]
 
 position = Vector2( -71.4654, -240.777 )
 
-[node name="ScoutEnemy8" parent="Enemies" index="10" instance=ExtResource( 10 )]
+[node name="ScoutEnemy8" parent="Enemies" index="11" instance=ExtResource( 3 )]
 
 position = Vector2( -187.097, -193.164 )
 
-[node name="JetEnemy" parent="Enemies" index="11" instance=ExtResource( 2 )]
-
-position = Vector2( 96.2612, 332.71 )
-
-[node name="LongEnemy4" parent="Enemies" index="12" instance=ExtResource( 9 )]
+[node name="LongEnemy4" parent="Enemies" index="12" instance=ExtResource( 10 )]
 
 position = Vector2( -71.0019, 76.231 )
 
-[node name="LongEnemy5" parent="Enemies" index="13" instance=ExtResource( 9 )]
+[node name="LongEnemy5" parent="Enemies" index="13" instance=ExtResource( 10 )]
 
 position = Vector2( -65.8563, 396.732 )
 
-[node name="ScoutEnemy" parent="Enemies" index="14" instance=ExtResource( 10 )]
+[node name="ScoutEnemy" parent="Enemies" index="14" instance=ExtResource( 3 )]
 
 position = Vector2( 162.418, -567.396 )
 
-[node name="ScoutEnemy2" parent="Enemies" index="15" instance=ExtResource( 10 )]
+[node name="ScoutEnemy2" parent="Enemies" index="15" instance=ExtResource( 3 )]
 
 position = Vector2( 23.2693, -49.4464 )
 
@@ -192,7 +204,37 @@ position = Vector2( 23.2693, -49.4464 )
 
 position = Vector2( 21.7571, 166.11 )
 
-[node name="ScoutEnemy3" parent="Enemies" index="17" instance=ExtResource( 10 )]
+[node name="ScoutEnemy3" parent="Enemies" index="17" instance=ExtResource( 3 )]
+
+[node name="JetEnemyStationary" parent="Enemies" index="18" instance=ExtResource( 12 )]
+
+position = Vector2( 470.89, 95.5663 )
+
+[node name="JetEnemyStationary4" parent="Enemies" index="19" instance=ExtResource( 12 )]
+
+position = Vector2( 511.887, -184.767 )
+
+[node name="JetEnemyStationary3" parent="Enemies" index="20" instance=ExtResource( 12 )]
+
+position = Vector2( 446.269, 400.099 )
+
+[node name="JetEnemyStationary2" parent="Enemies" index="21" instance=ExtResource( 12 )]
+
+position = Vector2( -538.271, 356.907 )
+jet_speed = 400
+move_right = true
+
+[node name="JetEnemyStationary5" parent="Enemies" index="22" instance=ExtResource( 12 )]
+
+position = Vector2( -598.398, 44.5826 )
+jet_speed = 400
+move_right = true
+
+[node name="JetEnemyStationary6" parent="Enemies" index="23" instance=ExtResource( 12 )]
+
+position = Vector2( -549.963, -160.85 )
+jet_speed = 400
+move_right = true
 
 [node name="JetSpawnerTimer" type="Timer" parent="." index="6"]
 
@@ -213,15 +255,24 @@ position = Vector2( 13.5052, -9.8219 )
 
 [node name="Background_Sound" type="AudioStreamPlayer" parent="Sounds" index="0"]
 
-stream = ExtResource( 12 )
+stream = ExtResource( 13 )
 volume_db = -15.0
 pitch_scale = 1.0
 autoplay = false
 mix_target = 0
 bus = "Master"
 
+[node name="ScoutSpawnerTimer" type="Timer" parent="." index="9"]
+
+process_mode = 1
+wait_time = 1.0
+one_shot = false
+autostart = true
+
 [connection signal="shoot" from="Player" to="." method="_on_Player_shoot"]
 
 [connection signal="timeout" from="JetSpawnerTimer" to="." method="_on_JetSpawnerTimer_timeout"]
+
+[connection signal="timeout" from="ScoutSpawnerTimer" to="." method="_on_ScoutSpawnerTimer_timeout"]
 
 

@@ -1,6 +1,6 @@
 [gd_scene load_steps=15 format=2]
 
-[ext_resource path="res://Scripts/JetEnemy.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/Enemies/JetEnemyStationary.gd" type="Script" id=1]
 [ext_resource path="res://GFX/Enviroment/Animations/Explosion/wybuch_animacja_001_0001.png" type="Texture" id=2]
 [ext_resource path="res://GFX/Enviroment/Animations/Explosion/wybuch_animacja_001_0002.png" type="Texture" id=3]
 [ext_resource path="res://GFX/Enviroment/Animations/Explosion/wybuch_animacja_001_0003.png" type="Texture" id=4]
@@ -115,7 +115,7 @@ anim_offset_random = 0.0
 anim_loop = false
 _sections_unfolded = [ "Color", "Emission Shape" ]
 
-[node name="JetEnemy" type="Area2D" groups=[
+[node name="JetEnemyStationary" type="Area2D" groups=[
 "JetEnemy",
 ]]
 
@@ -131,17 +131,20 @@ audio_bus_override = false
 audio_bus_name = "Master"
 script = ExtResource( 1 )
 _sections_unfolded = [ "Collision", "Transform" ]
-units_to_move = 100
-jet_speed = 200
+__meta__ = {
+"_edit_group_": true
+}
+jet_speed = 500
 move_right = false
 score = 1000
+raycast_launch_angle = 80
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="0"]
 
 position = Vector2( -9.96501, 0.524471 )
 shape = SubResource( 1 )
 
-[node name="RayCast2D" type="RayCast2D" parent="." index="1"]
+[node name="RayCastStop" type="RayCast2D" parent="." index="1"]
 
 enabled = true
 exclude_parent = true
@@ -199,6 +202,15 @@ pitch_scale = 1.0
 autoplay = false
 mix_target = 0
 bus = "Master"
+
+[node name="RayCastMove" type="RayCast2D" parent="." index="5"]
+
+rotation = 1.39626
+enabled = true
+exclude_parent = true
+cast_to = Vector2( 0, 750 )
+collision_mask = 1
+_sections_unfolded = [ "Transform" ]
 
 [connection signal="body_entered" from="." to="." method="_on_JetEnemy_body_entered"]
 
