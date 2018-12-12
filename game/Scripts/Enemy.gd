@@ -2,7 +2,7 @@ extends Area2D
 
 export (int) var units_to_move = 100
 #speed simple speed multiplier
-export (int) var speed = 1
+export (int) var speed = 100
 export (bool) var move_right = false
 export (int) var score = 1000
 
@@ -10,6 +10,8 @@ export (int) var score = 1000
 var destination = Vector2()
 var saw_player = false
 var blocked = false
+#TO CHANGE ANIMATION WHEN MOVING
+var moving = false
 #reposition  velocity
 var repos_velo = Vector2()
 var repos = Vector2()	
@@ -19,7 +21,7 @@ func move(delta):
 	
 	if global_position.x != destination.x:
 		repos.x = destination.x - global_position.x
-		repos_velo.x = repos.x * delta * speed
+		repos_velo.x =  repos.x *delta * speed 
 		global_position.x += repos_velo.x
 
 
@@ -36,6 +38,7 @@ func _ready():
 func _process(delta):
 	check_if_saw_player()
 	if saw_player and not blocked:
+		moving = true
 		move(delta)
 				
 func check_if_saw_player():
