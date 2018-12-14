@@ -28,7 +28,7 @@ enum fly_speed{
 }
 
 var SplashScreen = ""
-var Level = "res://Scenes/Levels/Level.tscn"
+var Level = "res://Scenes/Levels/Level_1.tscn"
 var GameOver = "res://Scenes/Levels/GameOver.tscn"
 var Bullet = "res://Scenes/Bullet.tscn"
 

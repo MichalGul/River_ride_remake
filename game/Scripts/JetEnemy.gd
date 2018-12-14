@@ -64,3 +64,7 @@ func _on_JetEnemy_body_entered(body):
 		
 func on_Enemy_area_entered(area):
 	pass
+
+
+func _on_VisibilityNotifier2D_screen_exited():
+	queue_free()

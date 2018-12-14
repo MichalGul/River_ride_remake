@@ -9,12 +9,12 @@
 [ext_resource path="res://GFX/Enviroment/Animations/Explosion/wybuch_animacja_001_0006.png" type="Texture" id=7]
 [ext_resource path="res://GFX/Enviroment/Animations/Explosion/wybuch_animacja_001_0007.png" type="Texture" id=8]
 [ext_resource path="res://GFX/Enemies/RAKIETA.png" type="Texture" id=9]
-[ext_resource path="res://SFX/Explosion_15.wav" type="AudioStream" id=10]
+[ext_resource path="res://SFX/GameSounds_v1/rakieta śmierć.wav" type="AudioStream" id=10]
 
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 19.6502, 7.68729 )
+extents = Vector2( 22.0928, 7.68729 )
 
 [sub_resource type="Animation" id=2]
 
@@ -119,7 +119,7 @@ _sections_unfolded = [ "Color", "Emission Shape" ]
 "JetEnemy",
 ]]
 
-position = Vector2( -7.62939e-006, 3.8147e-006 )
+position = Vector2( 0.157776, 3.8147e-006 )
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -131,6 +131,9 @@ audio_bus_override = false
 audio_bus_name = "Master"
 script = ExtResource( 1 )
 _sections_unfolded = [ "Collision", "Transform" ]
+__meta__ = {
+"_edit_group_": true
+}
 units_to_move = 100
 jet_speed = 200
 move_right = false
@@ -138,8 +141,9 @@ score = 1000
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="0"]
 
-position = Vector2( -9.96501, 0.524471 )
+position = Vector2( -5.96501, 0.524471 )
 shape = SubResource( 1 )
+_sections_unfolded = [ "Transform" ]
 
 [node name="RayCast2D" type="RayCast2D" parent="." index="1"]
 
@@ -160,7 +164,6 @@ blend_times = [  ]
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="." index="3"]
 
-editor/display_folded = true
 position = Vector2( 2.09109, 0.899586 )
 frames = SubResource( 3 )
 animation = "alive"
@@ -200,8 +203,14 @@ autoplay = false
 mix_target = 0
 bus = "Master"
 
-[connection signal="body_entered" from="." to="." method="_on_JetEnemy_body_entered"]
+[node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="." index="5"]
+
+rect = Rect2( -10, -10, 20, 20 )
 
 [connection signal="body_entered" from="." to="." method="_on_Enemy_body_entered"]
+
+[connection signal="body_entered" from="." to="." method="_on_JetEnemy_body_entered"]
+
+[connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]
 
 

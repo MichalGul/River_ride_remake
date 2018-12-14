@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/OST - główny.wav-56b77960945453ec2e9b3d6d7b96dff9.sample"
+
+[deps]
+
+source_file="res://SFX/GameSounds_v1/OST - główny.wav"
+dest_files=[ "res://.import/OST - główny.wav-56b77960945453ec2e9b3d6d7b96dff9.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

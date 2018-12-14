@@ -16,7 +16,7 @@
 [ext_resource path="res://GFX/Enemies/Animations/rycerze/rycerze_animacja_002_0006.png" type="Texture" id=14]
 [ext_resource path="res://GFX/Enemies/Animations/rycerze/rycerze_animacja_002_0007.png" type="Texture" id=15]
 [ext_resource path="res://GFX/Enemies/Animations/rycerze/rycerze_animacja_002_0008.png" type="Texture" id=16]
-[ext_resource path="res://SFX/Explosion_15.wav" type="AudioStream" id=17]
+[ext_resource path="res://SFX/GameSounds_v1/żołnierze śmierć.wav" type="AudioStream" id=17]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -94,7 +94,7 @@ tracks/3/keys = {
 "values": [ true ]
 }
 
-[node name="LongEnemy" type="Area2D" index="0" groups=[
+[node name="LongEnemy" type="Area2D" groups=[
 "Enemy",
 ]]
 
@@ -110,7 +110,7 @@ audio_bus_name = "Master"
 script = ExtResource( 1 )
 _sections_unfolded = [ "Collision" ]
 units_to_move = 100
-speed = 100
+speed = 1
 move_right = false
 score = 1000
 
@@ -129,6 +129,7 @@ shape = SubResource( 1 )
 
 frames = SubResource( 2 )
 animation = "alive"
+frame = 4
 playing = true
 _sections_unfolded = [ "Transform" ]
 

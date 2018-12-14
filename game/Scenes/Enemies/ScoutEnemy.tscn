@@ -10,7 +10,7 @@
 [ext_resource path="res://GFX/Enviroment/Animations/Explosion/wybuch_animacja_001_0005.png" type="Texture" id=8]
 [ext_resource path="res://GFX/Enviroment/Animations/Explosion/wybuch_animacja_001_0006.png" type="Texture" id=9]
 [ext_resource path="res://GFX/Enviroment/Animations/Explosion/wybuch_animacja_001_0007.png" type="Texture" id=10]
-[ext_resource path="res://SFX/Explosion_15.wav" type="AudioStream" id=11]
+[ext_resource path="res://SFX/GameSounds_v1/rakieta śmierć.wav" type="AudioStream" id=11]
 
 [sub_resource type="SpriteFrames" id=1]
 

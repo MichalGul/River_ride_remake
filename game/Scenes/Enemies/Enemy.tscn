@@ -16,7 +16,7 @@
 [ext_resource path="res://GFX/Enemies/Animations/kaczka/kaczka_animacja_001_0006.png" type="Texture" id=14]
 [ext_resource path="res://GFX/Enemies/Animations/kaczka/kaczka_animacja_001_0007.png" type="Texture" id=15]
 [ext_resource path="res://GFX/Enemies/Animations/kaczka/kaczka_animacja_001_0008.png" type="Texture" id=16]
-[ext_resource path="res://SFX/Explosion_15.wav" type="AudioStream" id=17]
+[ext_resource path="res://SFX/GameSounds_v1/kaczka śmierć.wav" type="AudioStream" id=17]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -141,7 +141,7 @@ blend_times = [  ]
 position = Vector2( 1.57342, 0.174824 )
 frames = SubResource( 3 )
 animation = "alive"
-frame = 4
+frame = 5
 playing = true
 _sections_unfolded = [ "Transform" ]
 

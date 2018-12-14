@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/menu klik.wav-e13e60c8a19e0f934963fa738974dd4a.sample"
+
+[deps]
+
+source_file="res://SFX/GameSounds_v1/menu klik.wav"
+dest_files=[ "res://.import/menu klik.wav-e13e60c8a19e0f934963fa738974dd4a.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0
