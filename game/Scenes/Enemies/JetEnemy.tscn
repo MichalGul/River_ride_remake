@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Scripts/JetEnemy.gd" type="Script" id=1]
 [ext_resource path="res://GFX/Enviroment/Animations/Explosion/wybuch_animacja_001_0001.png" type="Texture" id=2]
@@ -75,6 +75,17 @@ animations = [ {
 "speed": 5.0
 } ]
 
+[sub_resource type="Gradient" id=5]
+
+offsets = PoolRealArray( 0, 0, 0.0228571, 0.697143, 0.845714, 1 )
+colors = PoolColorArray( 0.953125, 0.0893555, 0.0893555, 1, 0.921875, 0.907865, 0.0252075, 1, 0.922789, 0.136542, 0.0770774, 1, 0.923509, 0.908283, 0.117945, 1, 0.925536, 0.908802, 0.232939, 1, 0.9375, 0.911865, 0.911865, 1 )
+
+[sub_resource type="GradientTexture" id=6]
+
+flags = 4
+gradient = SubResource( 5 )
+width = 2048
+
 [sub_resource type="ParticlesMaterial" id=4]
 
 render_priority = 0
@@ -105,7 +116,7 @@ angle = 0.0
 angle_random = 0.0
 scale = 1.0
 scale_random = 0.0
-color = Color( 0.957031, 0.037384, 0.037384, 1 )
+color_ramp = SubResource( 6 )
 hue_variation = 0.0
 hue_variation_random = 0.0
 anim_speed = 0.0
@@ -119,7 +130,7 @@ _sections_unfolded = [ "Color", "Emission Shape" ]
 "JetEnemy",
 ]]
 
-position = Vector2( 0.157776, 3.8147e-006 )
+position = Vector2( 0.157776, 0.524479 )
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -206,8 +217,6 @@ bus = "Master"
 [node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="." index="5"]
 
 rect = Rect2( -10, -10, 20, 20 )
-
-[connection signal="body_entered" from="." to="." method="_on_Enemy_body_entered"]
 
 [connection signal="body_entered" from="." to="." method="_on_JetEnemy_body_entered"]
 

@@ -10,8 +10,10 @@ export (int) var score = 1000
 var destination = Vector2()
 var saw_player = false
 var blocked = false
+
 #TO CHANGE ANIMATION WHEN MOVING
 var moving = false
+
 #reposition  velocity
 var repos_velo = Vector2()
 var repos = Vector2()	
@@ -55,6 +57,7 @@ func destroy():
 	
 func die():
 	queue_free()	
+
 
 func _on_Enemy_body_entered(body):
 	if body.is_in_group("Player"):

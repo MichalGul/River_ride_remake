@@ -148,7 +148,7 @@ func spawn_jet():
 	var jet_enemy = JetEnemy.instance()
 	$Enemies.add_child(jet_enemy)
 	jet_enemy.init(side, spawn_pos)
-	
+	randomize()
 	$JetSpawnerTimer.wait_time = rand_range(jet_down_timer_limit, jet_up_timer_limit)
 	
 func spawn_scout():
@@ -162,7 +162,7 @@ func spawn_scout():
 	var scout_enemy = ScoutEnemy.instance()
 	$Enemies.add_child(scout_enemy)
 	scout_enemy.init(spawn_pos)
-	
+	randomize()
 	$ScoutSpawnerTimer.wait_time = rand_range(scout_down_timer_limit, scout_up_timer_limit)
 	
 

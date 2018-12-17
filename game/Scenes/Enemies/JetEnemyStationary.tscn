@@ -208,11 +208,9 @@ bus = "Master"
 rotation = 1.39626
 enabled = true
 exclude_parent = true
-cast_to = Vector2( 0, 750 )
+cast_to = Vector2( 0, 1000 )
 collision_mask = 1
 _sections_unfolded = [ "Transform" ]
-
-[connection signal="body_entered" from="." to="." method="_on_Enemy_body_entered"]
 
 [connection signal="body_entered" from="." to="." method="_on_JetEnemy_body_entered"]
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://Scripts/Player.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Bullet.tscn" type="PackedScene" id=2]
@@ -19,7 +19,59 @@
 custom_solver_bias = 0.0
 extents = Vector2( 11.9904, 15.5042 )
 
-[sub_resource type="SpriteFrames" id=2]
+[sub_resource type="Gradient" id=2]
+
+offsets = PoolRealArray( 0, 0, 0.0114286, 0.108571, 0.245714, 0.382857, 0.497143, 0.651429, 0.788571, 0.96, 2, 3 )
+colors = PoolColorArray( 0.953125, 0.0595703, 0.0595703, 1, 0.881571, 0.953125, 0.0372314, 1, 0.929688, 0.227485, 0.112579, 1, 0.9375, 0.342064, 0.0512695, 1, 0.831595, 0.973575, 0.0401486, 1, 0.928944, 0.980469, 0.0382996, 1, 0.101477, 0.921875, 0.0540161, 1, 0.0521851, 0.104588, 0.890625, 1, 0.103621, 0.0245972, 0.484375, 1, 0.782443, 0.0497742, 0.910156, 1, 0.921875, 0.540611, 0.050415, 1, 0.0296631, 0.949219, 0.0655832, 1 )
+_sections_unfolded = [ "Resource" ]
+
+[sub_resource type="GradientTexture" id=3]
+
+flags = 4
+gradient = SubResource( 2 )
+width = 2048
+
+[sub_resource type="ParticlesMaterial" id=4]
+
+render_priority = 0
+trail_divisor = 1
+emission_shape = 2
+emission_box_extents = Vector3( 7, 1, 1 )
+flag_align_y = false
+flag_rotate_y = false
+flag_disable_z = true
+spread = 20.0
+flatness = 0.0
+gravity = Vector3( 0, 98, 0 )
+initial_velocity = 1.0
+initial_velocity_random = 0.0
+angular_velocity = 0.0
+angular_velocity_random = 0.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+linear_accel = 0.0
+linear_accel_random = 0.0
+radial_accel = 0.0
+radial_accel_random = 0.0
+tangential_accel = 0.0
+tangential_accel_random = 0.0
+damping = 0.0
+damping_random = 0.0
+angle = 0.0
+angle_random = 0.0
+scale = 1.0
+scale_random = 0.0
+color_ramp = SubResource( 3 )
+hue_variation = 0.0
+hue_variation_random = 0.0
+anim_speed = 0.0
+anim_speed_random = 0.0
+anim_offset = 0.0
+anim_offset_random = 0.0
+anim_loop = false
+_sections_unfolded = [ "Color", "Emission Shape", "Flags", "Gravity", "Initial Velocity", "Spread" ]
+
+[sub_resource type="SpriteFrames" id=5]
 
 animations = [ {
 "frames": [ ExtResource( 3 ) ],
@@ -43,9 +95,8 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=6]
 
-resource_name = "die"
 length = 1.0
 loop = false
 step = 0.1
@@ -76,9 +127,8 @@ tracks/1/keys = {
 } ]
 }
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=7]
 
-resource_name = "die_end_game"
 length = 1.0
 loop = false
 step = 0.1
@@ -130,39 +180,62 @@ fire_rate = 0.5
 
 shape = SubResource( 1 )
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="." index="1"]
+[node name="Particles2D" type="Particles2D" parent="." index="1"]
 
-frames = SubResource( 2 )
+position = Vector2( -0.146538, 16.6646 )
+emitting = true
+amount = 250
+lifetime = 1.0
+one_shot = false
+preprocess = 0.0
+speed_scale = 1.5
+explosiveness = 0.0
+randomness = 1.0
+fixed_fps = 0
+fract_delta = true
+visibility_rect = Rect2( -100, -100, 200, 200 )
+local_coords = false
+draw_order = 0
+process_material = SubResource( 4 )
+texture = null
+normal_map = null
+h_frames = 1
+v_frames = 1
+_sections_unfolded = [ "Process Material", "Textures", "Time" ]
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="." index="2"]
+
+frames = SubResource( 5 )
 animation = "straight"
 playing = true
 script = ExtResource( 12 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="Muzzle" type="Position2D" parent="." index="2"]
+[node name="Muzzle" type="Position2D" parent="." index="3"]
 
 position = Vector2( -0.19371, -15.4717 )
 rotation = -0.00729736
 _sections_unfolded = [ "Transform" ]
 
-[node name="GunTimer" type="Timer" parent="." index="3"]
+[node name="GunTimer" type="Timer" parent="." index="4"]
 
 process_mode = 1
 wait_time = 1.0
 one_shot = true
 autostart = true
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="4"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="5"]
 
 root_node = NodePath("..")
 autoplay = ""
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
-anims/die = SubResource( 3 )
-anims/die_end_game = SubResource( 4 )
+anims/die = SubResource( 6 )
+anims/die_end_game = SubResource( 7 )
 blend_times = [  ]
 
-[node name="Flying" type="AudioStreamPlayer" parent="." index="5"]
+[node name="Flying" type="AudioStreamPlayer" parent="." index="6"]
 
 stream = null
 volume_db = 0.0
@@ -171,7 +244,7 @@ autoplay = false
 mix_target = 0
 bus = "Master"
 
-[node name="Death" type="AudioStreamPlayer" parent="." index="6"]
+[node name="Death" type="AudioStreamPlayer" parent="." index="7"]
 
 stream = ExtResource( 13 )
 volume_db = 0.0

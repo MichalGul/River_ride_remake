@@ -30,6 +30,7 @@ func _ready():
 	
 	fly_type = Global.fly_speed.normal
 	$GunTimer.wait_time = fire_rate
+	$Particles2D.emitting = true
 
 
 func _process(delta):
@@ -118,6 +119,7 @@ func die():
 func destroy():
 	is_dying = true
 	$CollisionShape2D.disabled = true
+	$Particles2D.emitting = false
 	#Play animation
 	$AnimationPlayer.play("die")
 	#play sound 
@@ -133,6 +135,7 @@ func end_game():
 
 func restart_player(position):
 	is_dying = false
+	$Particles2D.emitting = true
 	$CollisionShape2D.disabled = false
 	$AnimationPlayer.play("straight")
 	#reposition player to last check_point
