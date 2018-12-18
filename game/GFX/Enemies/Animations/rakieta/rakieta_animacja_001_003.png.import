@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/planeRed1.png-7c362a0e2308cc5b1fef18828bc92331.stex"
+path="res://.import/rakieta_animacja_001_003.png-8b92868708f966e688388c6c6284e482.stex"
 
 [deps]
 
-source_file="res://GFX/Enemies/planeRed1.png"
-dest_files=[ "res://.import/planeRed1.png-7c362a0e2308cc5b1fef18828bc92331.stex" ]
+source_file="res://GFX/Enemies/Animations/rakieta/rakieta_animacja_001_003.png"
+dest_files=[ "res://.import/rakieta_animacja_001_003.png-8b92868708f966e688388c6c6284e482.stex" ]
 
 [params]
 

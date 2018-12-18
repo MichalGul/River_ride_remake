@@ -1,6 +1,6 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=18 format=2]
 
-[ext_resource path="res://Scenes/Enemies/JetEnemyStationary.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/JetEnemyStationary.gd" type="Script" id=1]
 [ext_resource path="res://GFX/Enviroment/Animations/Explosion/wybuch_animacja_001_0001.png" type="Texture" id=2]
 [ext_resource path="res://GFX/Enviroment/Animations/Explosion/wybuch_animacja_001_0002.png" type="Texture" id=3]
 [ext_resource path="res://GFX/Enviroment/Animations/Explosion/wybuch_animacja_001_0003.png" type="Texture" id=4]
@@ -8,8 +8,11 @@
 [ext_resource path="res://GFX/Enviroment/Animations/Explosion/wybuch_animacja_001_0005.png" type="Texture" id=6]
 [ext_resource path="res://GFX/Enviroment/Animations/Explosion/wybuch_animacja_001_0006.png" type="Texture" id=7]
 [ext_resource path="res://GFX/Enviroment/Animations/Explosion/wybuch_animacja_001_0007.png" type="Texture" id=8]
-[ext_resource path="res://GFX/Enemies/RAKIETA.png" type="Texture" id=9]
-[ext_resource path="res://SFX/GameSounds_v1/rakieta śmierć.wav" type="AudioStream" id=10]
+[ext_resource path="res://GFX/Enemies/Animations/rakieta/rakieta_animacja_001_001.png" type="Texture" id=9]
+[ext_resource path="res://GFX/Enemies/Animations/rakieta/rakieta_animacja_001_002.png" type="Texture" id=10]
+[ext_resource path="res://GFX/Enemies/Animations/rakieta/rakieta_animacja_001_003.png" type="Texture" id=11]
+[ext_resource path="res://GFX/Enemies/Animations/rakieta/rakieta_animacja_001_004.png" type="Texture" id=12]
+[ext_resource path="res://SFX/GameSounds_v1/rakieta śmierć.wav" type="AudioStream" id=13]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -69,10 +72,10 @@ animations = [ {
 "name": "dying",
 "speed": 10.0
 }, {
-"frames": [ ExtResource( 9 ) ],
+"frames": [ ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ) ],
 "loop": true,
 "name": "alive",
-"speed": 5.0
+"speed": 12.0
 } ]
 
 [sub_resource type="ParticlesMaterial" id=4]
@@ -163,10 +166,10 @@ blend_times = [  ]
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="." index="3"]
 
-editor/display_folded = true
 position = Vector2( 2.09109, 0.899586 )
 frames = SubResource( 3 )
 animation = "alive"
+playing = true
 flip_h = true
 _sections_unfolded = [ "Transform" ]
 
@@ -174,7 +177,7 @@ _sections_unfolded = [ "Transform" ]
 
 position = Vector2( -0.108314, 0.262943 )
 rotation = 4.71239
-emitting = true
+emitting = false
 amount = 56
 lifetime = 0.8
 one_shot = false
@@ -196,7 +199,7 @@ _sections_unfolded = [ "Process Material", "Textures", "Time", "Transform" ]
 
 [node name="Death" type="AudioStreamPlayer" parent="." index="4"]
 
-stream = ExtResource( 10 )
+stream = ExtResource( 13 )
 volume_db = 0.0
 pitch_scale = 1.0
 autoplay = false

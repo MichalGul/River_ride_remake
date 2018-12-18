@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/explosion3.png-6dc6f2db55673dba1ef960e210e749d1.stex"
+path="res://.import/star.png-0c8e1b0ddf66e40ef7389e2c2680ce05.stex"
 
 [deps]
 
-source_file="res://GFX/Enemies/explosion3.png"
-dest_files=[ "res://.import/explosion3.png-6dc6f2db55673dba1ef960e210e749d1.stex" ]
+source_file="res://GFX/Items/star.png"
+dest_files=[ "res://.import/star.png-0c8e1b0ddf66e40ef7389e2c2680ce05.stex" ]
 
 [params]
 

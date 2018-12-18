@@ -1,14 +1,14 @@
 [gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://Scripts/LongEnemy.gd" type="Script" id=1]
-[ext_resource path="res://GFX/Enemies/Animations/rycerze/rycerze_animacja_002_0001.png" type="Texture" id=2]
-[ext_resource path="res://GFX/Enemies/Animations/rycerze/rycerze_animacja_002_0002.png" type="Texture" id=3]
-[ext_resource path="res://GFX/Enemies/Animations/rycerze/rycerze_animacja_002_0003.png" type="Texture" id=4]
-[ext_resource path="res://GFX/Enemies/Animations/rycerze/rycerze_animacja_002_0004.png" type="Texture" id=5]
-[ext_resource path="res://GFX/Enemies/Animations/rycerze/rycerze_animacja_002_0005.png" type="Texture" id=6]
-[ext_resource path="res://GFX/Enemies/Animations/rycerze/rycerze_animacja_002_0006.png" type="Texture" id=7]
-[ext_resource path="res://GFX/Enemies/Animations/rycerze/rycerze_animacja_002_0007.png" type="Texture" id=8]
-[ext_resource path="res://GFX/Enemies/Animations/rycerze/rycerze_animacja_002_0008.png" type="Texture" id=9]
+[ext_resource path="res://GFX/Enemies/Animations/rycerze/rycerze_animacja_002_0008.png" type="Texture" id=2]
+[ext_resource path="res://GFX/Enemies/Animations/rycerze/rycerze_animacja_002_0007.png" type="Texture" id=3]
+[ext_resource path="res://GFX/Enemies/Animations/rycerze/rycerze_animacja_002_0006.png" type="Texture" id=4]
+[ext_resource path="res://GFX/Enemies/Animations/rycerze/rycerze_animacja_002_0005.png" type="Texture" id=5]
+[ext_resource path="res://GFX/Enemies/Animations/rycerze/rycerze_animacja_002_0004.png" type="Texture" id=6]
+[ext_resource path="res://GFX/Enemies/Animations/rycerze/rycerze_animacja_002_0003.png" type="Texture" id=7]
+[ext_resource path="res://GFX/Enemies/Animations/rycerze/rycerze_animacja_002_0002.png" type="Texture" id=8]
+[ext_resource path="res://GFX/Enemies/Animations/rycerze/rycerze_animacja_002_0001.png" type="Texture" id=9]
 [ext_resource path="res://GFX/Enviroment/Animations/Explosion/wybuch_animacja_001_0001.png" type="Texture" id=10]
 [ext_resource path="res://GFX/Enviroment/Animations/Explosion/wybuch_animacja_001_0002.png" type="Texture" id=11]
 [ext_resource path="res://GFX/Enviroment/Animations/Explosion/wybuch_animacja_001_0003.png" type="Texture" id=12]
@@ -27,6 +27,11 @@ extents = Vector2( 32.908, 15.8476 )
 
 animations = [ {
 "frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ) ],
+"loop": true,
+"name": "move_right",
+"speed": 12.0
+}, {
+"frames": [ ExtResource( 9 ), ExtResource( 8 ), ExtResource( 7 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 4 ), ExtResource( 3 ), ExtResource( 2 ) ],
 "loop": true,
 "name": "alive",
 "speed": 12.0
@@ -94,7 +99,7 @@ tracks/3/keys = {
 "values": [ true ]
 }
 
-[node name="LongEnemy" type="Area2D" groups=[
+[node name="LongEnemy" type="Area2D" index="0" groups=[
 "Enemy",
 ]]
 
@@ -129,7 +134,6 @@ shape = SubResource( 1 )
 
 frames = SubResource( 2 )
 animation = "alive"
-frame = 2
 playing = true
 _sections_unfolded = [ "Transform" ]
 

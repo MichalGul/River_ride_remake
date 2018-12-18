@@ -26,6 +26,7 @@ _sections_unfolded = [ "Collision" ]
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
+visible = false
 modulate = Color( 0.115476, 0.953125, 0.0670166, 1 )
 texture = ExtResource( 2 )
 _sections_unfolded = [ "Visibility" ]

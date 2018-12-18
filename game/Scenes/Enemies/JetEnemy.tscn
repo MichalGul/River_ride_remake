@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://Scripts/JetEnemy.gd" type="Script" id=1]
 [ext_resource path="res://GFX/Enviroment/Animations/Explosion/wybuch_animacja_001_0001.png" type="Texture" id=2]
@@ -8,13 +8,16 @@
 [ext_resource path="res://GFX/Enviroment/Animations/Explosion/wybuch_animacja_001_0005.png" type="Texture" id=6]
 [ext_resource path="res://GFX/Enviroment/Animations/Explosion/wybuch_animacja_001_0006.png" type="Texture" id=7]
 [ext_resource path="res://GFX/Enviroment/Animations/Explosion/wybuch_animacja_001_0007.png" type="Texture" id=8]
-[ext_resource path="res://GFX/Enemies/RAKIETA.png" type="Texture" id=9]
-[ext_resource path="res://SFX/GameSounds_v1/rakieta śmierć.wav" type="AudioStream" id=10]
+[ext_resource path="res://GFX/Enemies/Animations/rakieta/rakieta_animacja_001_001.png" type="Texture" id=9]
+[ext_resource path="res://GFX/Enemies/Animations/rakieta/rakieta_animacja_001_002.png" type="Texture" id=10]
+[ext_resource path="res://GFX/Enemies/Animations/rakieta/rakieta_animacja_001_003.png" type="Texture" id=11]
+[ext_resource path="res://GFX/Enemies/Animations/rakieta/rakieta_animacja_001_004.png" type="Texture" id=12]
+[ext_resource path="res://SFX/GameSounds_v1/rakieta śmierć.wav" type="AudioStream" id=13]
 
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 22.0928, 7.68729 )
+extents = Vector2( 23.2994, 7.68729 )
 
 [sub_resource type="Animation" id=2]
 
@@ -69,24 +72,24 @@ animations = [ {
 "name": "dying",
 "speed": 10.0
 }, {
-"frames": [ ExtResource( 9 ) ],
+"frames": [ ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ) ],
 "loop": true,
 "name": "alive",
-"speed": 5.0
+"speed": 12.0
 } ]
 
-[sub_resource type="Gradient" id=5]
+[sub_resource type="Gradient" id=4]
 
 offsets = PoolRealArray( 0, 0, 0.0228571, 0.697143, 0.845714, 1 )
 colors = PoolColorArray( 0.953125, 0.0893555, 0.0893555, 1, 0.921875, 0.907865, 0.0252075, 1, 0.922789, 0.136542, 0.0770774, 1, 0.923509, 0.908283, 0.117945, 1, 0.925536, 0.908802, 0.232939, 1, 0.9375, 0.911865, 0.911865, 1 )
 
-[sub_resource type="GradientTexture" id=6]
+[sub_resource type="GradientTexture" id=5]
 
 flags = 4
-gradient = SubResource( 5 )
+gradient = SubResource( 4 )
 width = 2048
 
-[sub_resource type="ParticlesMaterial" id=4]
+[sub_resource type="ParticlesMaterial" id=6]
 
 render_priority = 0
 trail_divisor = 1
@@ -116,7 +119,7 @@ angle = 0.0
 angle_random = 0.0
 scale = 1.0
 scale_random = 0.0
-color_ramp = SubResource( 6 )
+color_ramp = SubResource( 5 )
 hue_variation = 0.0
 hue_variation_random = 0.0
 anim_speed = 0.0
@@ -178,6 +181,8 @@ blend_times = [  ]
 position = Vector2( 2.09109, 0.899586 )
 frames = SubResource( 3 )
 animation = "alive"
+frame = 2
+playing = true
 flip_h = true
 _sections_unfolded = [ "Transform" ]
 
@@ -185,7 +190,7 @@ _sections_unfolded = [ "Transform" ]
 
 position = Vector2( -0.108314, 0.262943 )
 rotation = 4.71239
-emitting = true
+emitting = false
 amount = 56
 lifetime = 0.8
 one_shot = false
@@ -198,7 +203,7 @@ fract_delta = true
 visibility_rect = Rect2( -100, -100, 200, 200 )
 local_coords = true
 draw_order = 0
-process_material = SubResource( 4 )
+process_material = SubResource( 6 )
 texture = null
 normal_map = null
 h_frames = 1
@@ -207,7 +212,7 @@ _sections_unfolded = [ "Process Material", "Textures", "Time", "Transform" ]
 
 [node name="Death" type="AudioStreamPlayer" parent="." index="4"]
 
-stream = ExtResource( 10 )
+stream = ExtResource( 13 )
 volume_db = 0.0
 pitch_scale = 1.0
 autoplay = false

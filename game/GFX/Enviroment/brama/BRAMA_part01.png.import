@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/explosion2.png-b4b1792ab6a4f35d965a68d60e8be8b5.stex"
+path="res://.import/BRAMA_part01.png-ad48ad32d02e61e842f940d6724355e0.stex"
 
 [deps]
 
-source_file="res://GFX/Enemies/explosion2.png"
-dest_files=[ "res://.import/explosion2.png-b4b1792ab6a4f35d965a68d60e8be8b5.stex" ]
+source_file="res://GFX/Enviroment/brama/BRAMA_part01.png"
+dest_files=[ "res://.import/BRAMA_part01.png-ad48ad32d02e61e842f940d6724355e0.stex" ]
 
 [params]
 

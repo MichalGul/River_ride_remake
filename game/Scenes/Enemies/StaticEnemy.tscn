@@ -1,13 +1,13 @@
 [gd_scene load_steps=10 format=2]
 
-[ext_resource path="res://Scenes/Enemies/StaticEnemy.gd" type="Script" id=1]
-[ext_resource path="res://GFX/Enemies/explosion3.png" type="Texture" id=2]
-[ext_resource path="res://GFX/Enemies/explosion1.png" type="Texture" id=3]
-[ext_resource path="res://GFX/Enemies/explosion2.png" type="Texture" id=4]
-[ext_resource path="res://GFX/Enemies/ship (19).png" type="Texture" id=5]
+[ext_resource path="res://Scripts/StaticEnemy.gd" type="Script" id=1]
+[ext_resource path="res://GFX/Enemies/Placeholders/explosion3.png" type="Texture" id=2]
+[ext_resource path="res://GFX/Enemies/Placeholders/explosion1.png" type="Texture" id=3]
+[ext_resource path="res://GFX/Enemies/Placeholders/explosion2.png" type="Texture" id=4]
+[ext_resource path="res://GFX/Enviroment/brama/BRAMA_CALA.png" type="Texture" id=5]
 [ext_resource path="res://SFX/Explosion_15.wav" type="AudioStream" id=6]
 
-[sub_resource type="Animation" id=2]
+[sub_resource type="Animation" id=1]
 
 resource_name = "die"
 length = 1.0
@@ -64,7 +64,7 @@ tracks/3/keys = {
 "values": [ true ]
 }
 
-[sub_resource type="SpriteFrames" id=3]
+[sub_resource type="SpriteFrames" id=2]
 
 animations = [ {
 "frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ) ],
@@ -78,10 +78,10 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="RectangleShape2D" id=3]
 
 custom_solver_bias = 0.0
-extents = Vector2( 116.857, 31.734 )
+extents = Vector2( 49.7395, 31.734 )
 
 [node name="StaticEnemy" type="Area2D" groups=[
 "Enemy",
@@ -113,14 +113,13 @@ autoplay = ""
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
-anims/die = SubResource( 2 )
+anims/die = SubResource( 1 )
 blend_times = [  ]
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="." index="1"]
 
 position = Vector2( 1.57342, 0.174824 )
-scale = Vector2( 2, 1 )
-frames = SubResource( 3 )
+frames = SubResource( 2 )
 animation = "alive"
 playing = true
 _sections_unfolded = [ "Transform" ]
@@ -136,7 +135,7 @@ bus = "Master"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="3"]
 
-shape = SubResource( 1 )
+shape = SubResource( 3 )
 
 [node name="RayCast2D" type="RayCast2D" parent="." index="4"]
 

@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/explosion1.png-1dabc04a8aee329a2f8ba681cbe45f68.stex"
+path="res://.import/explosion2.png-fce819119769555a13341bd09059ad9b.stex"
 
 [deps]
 
-source_file="res://GFX/Enemies/explosion1.png"
-dest_files=[ "res://.import/explosion1.png-1dabc04a8aee329a2f8ba681cbe45f68.stex" ]
+source_file="res://GFX/Enemies/Placeholders/explosion2.png"
+dest_files=[ "res://.import/explosion2.png-fce819119769555a13341bd09059ad9b.stex" ]
 
 [params]
 

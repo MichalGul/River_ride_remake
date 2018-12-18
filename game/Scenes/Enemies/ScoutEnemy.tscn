@@ -1,26 +1,29 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=19 format=2]
 
-[ext_resource path="res://Scenes/Enemies/ScoutEnemy.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/Enemies/ScoutEnemyNode.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/ScoutEnemy.gd" type="Script" id=2]
-[ext_resource path="res://GFX/Enemies/RAKIETA.png" type="Texture" id=3]
-[ext_resource path="res://GFX/Enviroment/Animations/Explosion/wybuch_animacja_001_0001.png" type="Texture" id=4]
-[ext_resource path="res://GFX/Enviroment/Animations/Explosion/wybuch_animacja_001_0002.png" type="Texture" id=5]
-[ext_resource path="res://GFX/Enviroment/Animations/Explosion/wybuch_animacja_001_0003.png" type="Texture" id=6]
-[ext_resource path="res://GFX/Enviroment/Animations/Explosion/wybuch_animacja_001_0004.png" type="Texture" id=7]
-[ext_resource path="res://GFX/Enviroment/Animations/Explosion/wybuch_animacja_001_0005.png" type="Texture" id=8]
-[ext_resource path="res://GFX/Enviroment/Animations/Explosion/wybuch_animacja_001_0006.png" type="Texture" id=9]
-[ext_resource path="res://GFX/Enviroment/Animations/Explosion/wybuch_animacja_001_0007.png" type="Texture" id=10]
-[ext_resource path="res://SFX/GameSounds_v1/rakieta śmierć.wav" type="AudioStream" id=11]
+[ext_resource path="res://GFX/Enemies/Animations/rakieta/rakieta_animacja_001_001.png" type="Texture" id=3]
+[ext_resource path="res://GFX/Enemies/Animations/rakieta/rakieta_animacja_001_002.png" type="Texture" id=4]
+[ext_resource path="res://GFX/Enemies/Animations/rakieta/rakieta_animacja_001_003.png" type="Texture" id=5]
+[ext_resource path="res://GFX/Enemies/Animations/rakieta/rakieta_animacja_001_004.png" type="Texture" id=6]
+[ext_resource path="res://GFX/Enviroment/Animations/Explosion/wybuch_animacja_001_0001.png" type="Texture" id=7]
+[ext_resource path="res://GFX/Enviroment/Animations/Explosion/wybuch_animacja_001_0002.png" type="Texture" id=8]
+[ext_resource path="res://GFX/Enviroment/Animations/Explosion/wybuch_animacja_001_0003.png" type="Texture" id=9]
+[ext_resource path="res://GFX/Enviroment/Animations/Explosion/wybuch_animacja_001_0004.png" type="Texture" id=10]
+[ext_resource path="res://GFX/Enviroment/Animations/Explosion/wybuch_animacja_001_0005.png" type="Texture" id=11]
+[ext_resource path="res://GFX/Enviroment/Animations/Explosion/wybuch_animacja_001_0006.png" type="Texture" id=12]
+[ext_resource path="res://GFX/Enviroment/Animations/Explosion/wybuch_animacja_001_0007.png" type="Texture" id=13]
+[ext_resource path="res://SFX/GameSounds_v1/rakieta śmierć.wav" type="AudioStream" id=14]
 
 [sub_resource type="SpriteFrames" id=1]
 
 animations = [ {
-"frames": [ ExtResource( 3 ) ],
+"frames": [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ) ],
 "loop": true,
 "name": "default",
-"speed": 5.0
+"speed": 12.0
 }, {
-"frames": [ ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ) ],
+"frames": [ ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ) ],
 "loop": true,
 "name": "dying",
 "speed": 10.0
@@ -149,6 +152,7 @@ score = 2000
 
 frames = SubResource( 1 )
 animation = "default"
+frame = 1
 playing = true
 flip_h = true
 _sections_unfolded = [ "Transform" ]
@@ -171,7 +175,7 @@ blend_times = [  ]
 
 [node name="Death" type="AudioStreamPlayer" parent="." index="2"]
 
-stream = ExtResource( 11 )
+stream = ExtResource( 14 )
 volume_db = 0.0
 pitch_scale = 1.0
 autoplay = false

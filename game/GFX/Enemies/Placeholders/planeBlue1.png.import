@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/planeBlue1.png-14ede4d97064fb26b4625466b17964db.stex"
+path="res://.import/planeBlue1.png-48d0011438c15812adfa7aa744aa26f0.stex"
 
 [deps]
 
-source_file="res://GFX/Enemies/planeBlue1.png"
-dest_files=[ "res://.import/planeBlue1.png-14ede4d97064fb26b4625466b17964db.stex" ]
+source_file="res://GFX/Enemies/Placeholders/planeBlue1.png"
+dest_files=[ "res://.import/planeBlue1.png-48d0011438c15812adfa7aa744aa26f0.stex" ]
 
 [params]
 

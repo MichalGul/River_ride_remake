@@ -8,6 +8,6 @@ func _ready():
 	Global.GUI = self
 
 func update_GUI(fuel, lives, points):
-	$VBoxContainer/Fuel.text = str(fuel)
-	$VBoxContainer/Lives.text = str(lives)
-	$VBoxContainer/Points.text = str(points)
+	$TextureRect/VBoxContainer/Fuel.text = str(fuel)
+	$TextureRect/VBoxContainer/Lives.text = str(lives)
+	$TextureRect/VBoxContainer/Points.text = str(points)

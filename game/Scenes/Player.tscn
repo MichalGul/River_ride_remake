@@ -1,18 +1,19 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://Scripts/Player.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Bullet.tscn" type="PackedScene" id=2]
-[ext_resource path="res://GFX/Player/KROLEWNA.png" type="Texture" id=3]
-[ext_resource path="res://GFX/Enviroment/Animations/Explosion/wybuch_animacja_001_0001.png" type="Texture" id=4]
-[ext_resource path="res://GFX/Enviroment/Animations/Explosion/wybuch_animacja_001_0002.png" type="Texture" id=5]
-[ext_resource path="res://GFX/Enviroment/Animations/Explosion/wybuch_animacja_001_0003.png" type="Texture" id=6]
-[ext_resource path="res://GFX/Enviroment/Animations/Explosion/wybuch_animacja_001_0004.png" type="Texture" id=7]
-[ext_resource path="res://GFX/Enviroment/Animations/Explosion/wybuch_animacja_001_0005.png" type="Texture" id=8]
-[ext_resource path="res://GFX/Enviroment/Animations/Explosion/wybuch_animacja_001_0006.png" type="Texture" id=9]
-[ext_resource path="res://GFX/Enviroment/Animations/Explosion/wybuch_animacja_001_0007.png" type="Texture" id=10]
-[ext_resource path="res://GFX/Player/KROLEWNAv2.png" type="Texture" id=11]
-[ext_resource path="res://Scripts/AnimatePlayer.gd" type="Script" id=12]
-[ext_resource path="res://SFX/Explosion_15.wav" type="AudioStream" id=13]
+[ext_resource path="res://GFX/Items/star.png" type="Texture" id=3]
+[ext_resource path="res://GFX/Player/KROLEWNA.png" type="Texture" id=4]
+[ext_resource path="res://GFX/Enviroment/Animations/Explosion/wybuch_animacja_001_0001.png" type="Texture" id=5]
+[ext_resource path="res://GFX/Enviroment/Animations/Explosion/wybuch_animacja_001_0002.png" type="Texture" id=6]
+[ext_resource path="res://GFX/Enviroment/Animations/Explosion/wybuch_animacja_001_0003.png" type="Texture" id=7]
+[ext_resource path="res://GFX/Enviroment/Animations/Explosion/wybuch_animacja_001_0004.png" type="Texture" id=8]
+[ext_resource path="res://GFX/Enviroment/Animations/Explosion/wybuch_animacja_001_0005.png" type="Texture" id=9]
+[ext_resource path="res://GFX/Enviroment/Animations/Explosion/wybuch_animacja_001_0006.png" type="Texture" id=10]
+[ext_resource path="res://GFX/Enviroment/Animations/Explosion/wybuch_animacja_001_0007.png" type="Texture" id=11]
+[ext_resource path="res://GFX/Player/KROLEWNAv2.png" type="Texture" id=12]
+[ext_resource path="res://Scripts/AnimatePlayer.gd" type="Script" id=13]
+[ext_resource path="res://SFX/Explosion_15.wav" type="AudioStream" id=14]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -40,7 +41,7 @@ emission_box_extents = Vector3( 7, 1, 1 )
 flag_align_y = false
 flag_rotate_y = false
 flag_disable_z = true
-spread = 20.0
+spread = 1.0
 flatness = 0.0
 gravity = Vector3( 0, 98, 0 )
 initial_velocity = 1.0
@@ -51,7 +52,7 @@ orbit_velocity = 0.0
 orbit_velocity_random = 0.0
 linear_accel = 0.0
 linear_accel_random = 0.0
-radial_accel = 0.0
+radial_accel = 25.0
 radial_accel_random = 0.0
 tangential_accel = 0.0
 tangential_accel_random = 0.0
@@ -59,7 +60,7 @@ damping = 0.0
 damping_random = 0.0
 angle = 0.0
 angle_random = 0.0
-scale = 1.0
+scale = 0.7
 scale_random = 0.0
 color_ramp = SubResource( 3 )
 hue_variation = 0.0
@@ -69,27 +70,27 @@ anim_speed_random = 0.0
 anim_offset = 0.0
 anim_offset_random = 0.0
 anim_loop = false
-_sections_unfolded = [ "Color", "Emission Shape", "Flags", "Gravity", "Initial Velocity", "Spread" ]
+_sections_unfolded = [ "Angle", "Angular Velocity", "Color", "Damping", "Emission Shape", "Flags", "Gravity", "Initial Velocity", "Linear Accel", "Orbit Velocity", "Radial Accel", "Scale", "Spread", "Tangential Accel" ]
 
 [sub_resource type="SpriteFrames" id=5]
 
 animations = [ {
-"frames": [ ExtResource( 3 ) ],
+"frames": [ ExtResource( 4 ) ],
 "loop": true,
 "name": "right",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 3 ) ],
+"frames": [ ExtResource( 4 ) ],
 "loop": true,
 "name": "left",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ) ],
+"frames": [ ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ) ],
 "loop": true,
 "name": "dying",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 11 ) ],
+"frames": [ ExtResource( 12 ) ],
 "loop": true,
 "name": "straight",
 "speed": 5.0
@@ -159,7 +160,7 @@ tracks/1/keys = {
 } ]
 }
 
-[node name="Player" type="KinematicBody2D" groups=[
+[node name="Player" type="KinematicBody2D" index="0" groups=[
 "Player",
 ]]
 
@@ -184,7 +185,7 @@ shape = SubResource( 1 )
 
 position = Vector2( -0.146538, 16.6646 )
 emitting = true
-amount = 250
+amount = 150
 lifetime = 1.0
 one_shot = false
 preprocess = 0.0
@@ -197,18 +198,18 @@ visibility_rect = Rect2( -100, -100, 200, 200 )
 local_coords = false
 draw_order = 0
 process_material = SubResource( 4 )
-texture = null
+texture = ExtResource( 3 )
 normal_map = null
 h_frames = 1
 v_frames = 1
-_sections_unfolded = [ "Process Material", "Textures", "Time" ]
+_sections_unfolded = [ "Drawing", "Process Material", "Textures", "Time", "Transform" ]
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="." index="2"]
 
 frames = SubResource( 5 )
 animation = "straight"
 playing = true
-script = ExtResource( 12 )
+script = ExtResource( 13 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Muzzle" type="Position2D" parent="." index="3"]
@@ -246,7 +247,7 @@ bus = "Master"
 
 [node name="Death" type="AudioStreamPlayer" parent="." index="7"]
 
-stream = ExtResource( 13 )
+stream = ExtResource( 14 )
 volume_db = 0.0
 pitch_scale = 1.0
 autoplay = false
