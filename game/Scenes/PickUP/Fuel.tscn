@@ -8,9 +8,6 @@
 [ext_resource path="res://SFX/GameSounds_v1/paliwo.wav" type="AudioStream" id=6]
 [ext_resource path="res://SFX/Explosion_15.wav" type="AudioStream" id=7]
 
-
-
-
 [sub_resource type="SpriteFrames" id=1]
 
 animations = [ {
@@ -79,8 +76,8 @@ tracks/2/keys = {
 "Fuel",
 ]]
 
-position = Vector2( 4.76656, 23.6797 )
-scale = Vector2( 1, 1.78964 )
+position = Vector2( 4.76656, 17.75 )
+scale = Vector2( 1, 1.14844 )
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
