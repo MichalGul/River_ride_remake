@@ -1,13 +1,12 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Scenes/Levels/Menu.gd" type="Script" id=1]
 [ext_resource path="res://GFX/Enviroment/water.png" type="Texture" id=2]
 [ext_resource path="res://Fonts/candles_.ttf" type="DynamicFontData" id=3]
 [ext_resource path="res://GFX/Player/plane_left.png" type="Texture" id=4]
-[ext_resource path="res://GFX/Player/KROLEWNAv2.png" type="Texture" id=5]
-[ext_resource path="res://SFX/GameSounds_v1/menu klik.wav" type="AudioStream" id=6]
-[ext_resource path="res://GFX/Player/plane_right.png" type="Texture" id=7]
-[ext_resource path="res://SFX/GameSounds_v1/OST - menu.wav" type="AudioStream" id=8]
+[ext_resource path="res://SFX/GameSounds_v1/menu klik.wav" type="AudioStream" id=5]
+[ext_resource path="res://GFX/Player/plane_right.png" type="Texture" id=6]
+[ext_resource path="res://SFX/GameSounds_v1/OST - menu.wav" type="AudioStream" id=7]
 
 [sub_resource type="DynamicFont" id=1]
 
@@ -46,7 +45,7 @@ tracks/0/keys = {
 } ]
 }
 
-[node name="Menu" type="Control"]
+[node name="Menu" type="Control" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -143,7 +142,6 @@ enabled_focus_mode = 2
 shortcut = null
 group = null
 texture_normal = ExtResource( 4 )
-texture_hover = ExtResource( 5 )
 _sections_unfolded = [ "Textures" ]
 
 [node name="Label" type="Label" parent="NewGame" index="0"]
@@ -171,7 +169,7 @@ _sections_unfolded = [ "Anchor", "Focus", "Grow Direction", "Hint", "Margin", "c
 
 [node name="Click" type="AudioStreamPlayer" parent="NewGame" index="1"]
 
-stream = ExtResource( 6 )
+stream = ExtResource( 5 )
 volume_db = 0.0
 pitch_scale = 1.0
 autoplay = false
@@ -199,7 +197,7 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-texture_normal = ExtResource( 7 )
+texture_normal = ExtResource( 6 )
 _sections_unfolded = [ "Textures" ]
 
 [node name="Label" type="Label" parent="Exit" index="0"]
@@ -227,7 +225,7 @@ _sections_unfolded = [ "Anchor", "Focus", "Grow Direction", "Hint", "Margin", "c
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="4"]
 
-stream = ExtResource( 8 )
+stream = ExtResource( 7 )
 volume_db = -10.0
 pitch_scale = 1.0
 autoplay = false
