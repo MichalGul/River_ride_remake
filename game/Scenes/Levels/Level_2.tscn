@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Scripts/GameState.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Enemies/JetEnemy.tscn" type="PackedScene" id=2]
@@ -13,9 +13,8 @@
 [ext_resource path="res://Scenes/Enemies/LongEnemy.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Scenes/Enemies/StaticEnemy.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Scenes/Enemies/JetEnemyStationary.tscn" type="PackedScene" id=13]
-[ext_resource path="res://Scenes/EndLevelPoint.tscn" type="PackedScene" id=14]
 
-[node name="Level" type="Node2D" index="0"]
+[node name="Level_2" type="Node2D"]
 
 script = ExtResource( 1 )
 starting_lives = 3
@@ -31,7 +30,7 @@ jet_down_timer_limit = 1
 jet_up_timer_limit = 4
 scout_down_timer_limit = 1
 scout_up_timer_limit = 2
-current_level = 1
+current_level = 2
 JetEnemy = ExtResource( 2 )
 ScoutEnemy = ExtResource( 3 )
 
@@ -90,63 +89,9 @@ position = Vector2( -610.32, -2048.04 )
 
 [node name="FuelCollection" type="Node2D" parent="." index="3"]
 
-editor/display_folded = true
-
 [node name="Fuel" parent="FuelCollection" index="0" instance=ExtResource( 7 )]
 
-position = Vector2( 111.403, 161.957 )
-
-[node name="Fuel2" parent="FuelCollection" index="1" instance=ExtResource( 7 )]
-
-position = Vector2( -161.914, -22.1434 )
-
-[node name="Fuel4" parent="FuelCollection" index="2" instance=ExtResource( 7 )]
-
-position = Vector2( 51.4742, -236.726 )
-
-[node name="Fuel3" parent="FuelCollection" index="3" instance=ExtResource( 7 )]
-
-position = Vector2( -150.654, -397.814 )
-
-[node name="Fuel5" parent="FuelCollection" index="4" instance=ExtResource( 7 )]
-
-position = Vector2( 39.8927, -823.978 )
-
-[node name="Fuel6" parent="FuelCollection" index="5" instance=ExtResource( 7 )]
-
-position = Vector2( -105.65, -810.455 )
-
-[node name="Fuel8" parent="FuelCollection" index="6" instance=ExtResource( 7 )]
-
-position = Vector2( 184.428, -3550.39 )
-
-[node name="Fuel7" parent="FuelCollection" index="7" instance=ExtResource( 7 )]
-
-position = Vector2( 125.526, -3123.37 )
-
-[node name="Fuel9" parent="FuelCollection" index="8" instance=ExtResource( 7 )]
-
-position = Vector2( -159.35, -2878.95 )
-
-[node name="Fuel10" parent="FuelCollection" index="9" instance=ExtResource( 7 )]
-
-position = Vector2( 71.5, -2496.1 )
-
-[node name="Fuel11" parent="FuelCollection" index="10" instance=ExtResource( 7 )]
-
-position = Vector2( -210.917, -2240.39 )
-
-[node name="Fuel12" parent="FuelCollection" index="11" instance=ExtResource( 7 )]
-
-position = Vector2( 86.592, -1845.14 )
-
-[node name="Fuel13" parent="FuelCollection" index="12" instance=ExtResource( 7 )]
-
-position = Vector2( -157.76, -1380.45 )
-
-[node name="Fuel14" parent="FuelCollection" index="13" instance=ExtResource( 7 )]
-
-position = Vector2( 84.0199, -1055.5 )
+position = Vector2( -14.9126, 229.547 )
 
 [node name="Player" parent="." index="4" instance=ExtResource( 8 )]
 
@@ -170,262 +115,27 @@ _sections_unfolded = [ "Drag Margin", "Editor", "Limit", "Visibility" ]
 
 [node name="Enemies" type="Node2D" parent="." index="5"]
 
-[node name="Enemy3" parent="Enemies" index="0" instance=ExtResource( 10 )]
+[node name="Enemy7" parent="Enemies" index="0" instance=ExtResource( 10 )]
 
-position = Vector2( 119.189, -919.292 )
+position = Vector2( 21.0528, 292.608 )
 score = 5000
 
-[node name="Enemy5" parent="Enemies" index="1" instance=ExtResource( 10 )]
+[node name="ScoutEnemy4" parent="Enemies" index="1" instance=ExtResource( 3 )]
 
-position = Vector2( 143.117, -1745.1 )
-score = 5000
+position = Vector2( 23.1234, 220.252 )
 
-[node name="Enemy6" parent="Enemies" index="2" instance=ExtResource( 10 )]
+[node name="LongEnemy11" parent="Enemies" index="2" instance=ExtResource( 11 )]
 
-position = Vector2( -62.825, -1631.78 )
-score = 5000
-
-[node name="Enemy4" parent="Enemies" index="3" instance=ExtResource( 10 )]
-
-position = Vector2( -146.475, 143.857 )
-score = 5000
-
-[node name="Enemy7" parent="Enemies" index="4" instance=ExtResource( 10 )]
-
-position = Vector2( -80.731, 240.791 )
-score = 5000
-
-[node name="LongEnemy2" parent="Enemies" index="5" instance=ExtResource( 11 )]
-
-position = Vector2( -68.6111, -902.933 )
-score = 2000
-
-[node name="LongEnemy10" parent="Enemies" index="6" instance=ExtResource( 11 )]
-
-position = Vector2( -3.45058, -902.933 )
-move_right = true
-score = 2000
-
-[node name="ScoutEnemy4" parent="Enemies" index="7" instance=ExtResource( 3 )]
-
-position = Vector2( 380.18, -546.862 )
-
-[node name="JetEnemy" parent="Enemies" index="8" instance=ExtResource( 2 )]
-
-position = Vector2( 313.318, 293.519 )
-
-[node name="LongEnemy4" parent="Enemies" index="9" instance=ExtResource( 11 )]
-
-position = Vector2( -68.2811, -122.384 )
-speed = 2
-
-[node name="LongEnemy5" parent="Enemies" index="10" instance=ExtResource( 11 )]
-
-position = Vector2( -125.149, 370.792 )
-
-[node name="LongEnemy11" parent="Enemies" index="11" instance=ExtResource( 11 )]
-
-position = Vector2( 25.3228, 421.297 )
+position = Vector2( 104.899, 293.605 )
 move_right = true
 
-[node name="ScoutEnemy" parent="Enemies" index="12" instance=ExtResource( 3 )]
-
-position = Vector2( -52.228, 151.66 )
-
-[node name="ScoutEnemy2" parent="Enemies" index="13" instance=ExtResource( 3 )]
-
-position = Vector2( -1.236, -44.5314 )
-
-[node name="StaticEnemy" parent="Enemies" index="14" instance=ExtResource( 12 )]
+[node name="StaticEnemy" parent="Enemies" index="3" instance=ExtResource( 12 )]
 
 position = Vector2( -17.5549, -656.177 )
 
-[node name="JetEnemyStationary" parent="Enemies" index="15" instance=ExtResource( 13 )]
+[node name="JetEnemyStationary2" parent="Enemies" index="4" instance=ExtResource( 13 )]
 
-position = Vector2( 416.261, 196.852 )
-
-[node name="JetEnemyStationary2" parent="Enemies" index="16" instance=ExtResource( 13 )]
-
-position = Vector2( 438.817, -69.7186 )
-
-[node name="JetEnemyStationary4" parent="Enemies" index="17" instance=ExtResource( 13 )]
-
-position = Vector2( 426.453, -1030.98 )
-
-[node name="JetEnemyStationary13" parent="Enemies" index="18" instance=ExtResource( 13 )]
-
-position = Vector2( -682.251, -1371.22 )
-jet_speed = 600
-move_right = true
-raycast_launch_angle = 90
-
-[node name="JetEnemyStationary16" parent="Enemies" index="19" instance=ExtResource( 13 )]
-
-position = Vector2( -634.605, -1243.8 )
-jet_speed = 600
-move_right = true
-raycast_launch_angle = 90
-
-[node name="JetEnemyStationary17" parent="Enemies" index="20" instance=ExtResource( 13 )]
-
-position = Vector2( -603.58, -1509.72 )
-jet_speed = 600
-move_right = true
-raycast_launch_angle = 90
-
-[node name="JetEnemyStationary18" parent="Enemies" index="21" instance=ExtResource( 13 )]
-
-position = Vector2( -604.688, -1415.54 )
-jet_speed = 600
-move_right = true
-raycast_launch_angle = 90
-
-[node name="JetEnemyStationary19" parent="Enemies" index="22" instance=ExtResource( 13 )]
-
-position = Vector2( -603.58, -1303.63 )
-jet_speed = 600
-move_right = true
-raycast_launch_angle = 90
-
-[node name="JetEnemyStationary20" parent="Enemies" index="23" instance=ExtResource( 13 )]
-
-position = Vector2( -599.148, -1188.4 )
-jet_speed = 600
-move_right = true
-raycast_launch_angle = 90
-
-[node name="JetEnemyStationary21" parent="Enemies" index="24" instance=ExtResource( 13 )]
-
-position = Vector2( -595.824, -1099.75 )
-jet_speed = 600
-move_right = true
-raycast_launch_angle = 90
-
-[node name="JetEnemyStationary14" parent="Enemies" index="25" instance=ExtResource( 13 )]
-
-position = Vector2( -614.602, -1001.06 )
-jet_speed = 600
-move_right = true
-
-[node name="JetEnemyStationary15" parent="Enemies" index="26" instance=ExtResource( 13 )]
-
-position = Vector2( -587.686, -791.101 )
-move_right = true
-
-[node name="JetEnemyStationary5" parent="Enemies" index="27" instance=ExtResource( 13 )]
-
-position = Vector2( 454.271, -1132.98 )
-
-[node name="JetEnemyStationary6" parent="Enemies" index="28" instance=ExtResource( 13 )]
-
-position = Vector2( 417.181, -1256.61 )
-
-[node name="JetEnemyStationary7" parent="Enemies" index="29" instance=ExtResource( 13 )]
-
-position = Vector2( -562.523, -2253.14 )
-move_right = true
-
-[node name="JetEnemyStationary8" parent="Enemies" index="30" instance=ExtResource( 13 )]
-
-position = Vector2( -566.728, -1975.62 )
-move_right = true
-
-[node name="JetEnemyStationary9" parent="Enemies" index="31" instance=ExtResource( 13 )]
-
-position = Vector2( -566.728, -2609.35 )
-move_right = true
-
-[node name="JetEnemyStationary10" parent="Enemies" index="32" instance=ExtResource( 13 )]
-
-position = Vector2( -574.318, -2799.09 )
-move_right = true
-
-[node name="JetEnemyStationary11" parent="Enemies" index="33" instance=ExtResource( 13 )]
-
-position = Vector2( -555.344, -2677.66 )
-move_right = true
-
-[node name="JetEnemyStationary12" parent="Enemies" index="34" instance=ExtResource( 13 )]
-
-position = Vector2( -570.523, -2874.98 )
-move_right = true
-
-[node name="JetEnemyStationary3" parent="Enemies" index="35" instance=ExtResource( 13 )]
-
-position = Vector2( -449.085, -116.054 )
-move_right = true
-
-[node name="Enemy10" parent="Enemies" index="36" instance=ExtResource( 10 )]
-
-position = Vector2( 48.3911, -3816.74 )
-
-[node name="Enemy9" parent="Enemies" index="37" instance=ExtResource( 10 )]
-
-position = Vector2( 168.677, -3642.04 )
-
-[node name="LongEnemy6" parent="Enemies" index="38" instance=ExtResource( 11 )]
-
-position = Vector2( -180.725, -3561.85 )
-
-[node name="LongEnemy7" parent="Enemies" index="39" instance=ExtResource( 11 )]
-
-position = Vector2( -54.7109, -3451.58 )
-
-[node name="Enemy8" parent="Enemies" index="40" instance=ExtResource( 10 )]
-
-position = Vector2( 170.771, -2818.99 )
-
-[node name="LongEnemy8" parent="Enemies" index="41" instance=ExtResource( 11 )]
-
-position = Vector2( 65.4427, -3259.02 )
-
-[node name="Enemy11" parent="Enemies" index="42" instance=ExtResource( 10 )]
-
-position = Vector2( 69.36, -2700.3 )
-
-[node name="Enemy12" parent="Enemies" index="43" instance=ExtResource( 10 )]
-
-position = Vector2( -104.25, -2851.2 )
-
-[node name="JetEnemy2" parent="Enemies" index="44" instance=ExtResource( 2 )]
-
-position = Vector2( -321.8, -2742.9 )
-
-[node name="Enemy13" parent="Enemies" index="45" instance=ExtResource( 10 )]
-
-position = Vector2( 9.74994, -2565.25 )
-
-[node name="LongEnemy3" parent="Enemies" index="46" instance=ExtResource( 11 )]
-
-position = Vector2( -94.75, -2391.4 )
-
-[node name="LongEnemy9" parent="Enemies" index="47" instance=ExtResource( 11 )]
-
-position = Vector2( -167.9, -2130.15 )
-
-[node name="LongEnemy" parent="Enemies" index="48" instance=ExtResource( 11 )]
-
-position = Vector2( 150.35, -2010.45 )
-
-[node name="Enemy14" parent="Enemies" index="49" instance=ExtResource( 10 )]
-
-position = Vector2( -154.6, -1777.7 )
-
-[node name="Enemy15" parent="Enemies" index="50" instance=ExtResource( 10 )]
-
-position = Vector2( 94.3127, -1317.71 )
-
-[node name="Enemy2" parent="Enemies" index="51" instance=ExtResource( 10 )]
-
-position = Vector2( -108.064, -1297.12 )
-
-[node name="Enemy" parent="Enemies" index="52" instance=ExtResource( 10 )]
-
-position = Vector2( -27.1113, -1430.15 )
-
-[node name="ScoutEnemy3" parent="Enemies" index="53" instance=ExtResource( 3 )]
-
-position = Vector2( 66.0658, 42.706 )
+position = Vector2( 237.1, 285.599 )
 
 [node name="JetSpawnerTimer" type="Timer" parent="." index="6"]
 
@@ -445,10 +155,6 @@ process_mode = 1
 wait_time = 1.0
 one_shot = false
 autostart = true
-
-[node name="EndScenePoint" parent="." index="9" instance=ExtResource( 14 )]
-
-position = Vector2( 63.9802, 342.404 )
 
 [connection signal="shoot" from="Player" to="." method="_on_Player_shoot"]
 

@@ -45,7 +45,7 @@ tracks/0/keys = {
 } ]
 }
 
-[node name="Menu" type="Control" index="0"]
+[node name="Menu" type="Control"]
 
 anchor_left = 0.0
 anchor_top = 0.0

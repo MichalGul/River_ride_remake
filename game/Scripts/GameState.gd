@@ -16,6 +16,7 @@ export (int) var jet_up_timer_limit = 8
 
 export (int) var scout_down_timer_limit = 3
 export (int) var scout_up_timer_limit = 8
+export (int) var current_level = 1
 
 export (PackedScene) var JetEnemy
 export (PackedScene) var ScoutEnemy
@@ -31,10 +32,12 @@ var screen_size_y
 #position of the last checkpoint in game
 var last_checkpoint_position = Vector2()
 
+
+
 func _ready():
 	
 	Global.GameState = self
-	
+	determine_level()
 	#init game scores
 	lives = Global.last_lives
 	current_score = Global.last_points
@@ -58,6 +61,14 @@ func _ready():
 func _process(delta):
 	update_GUI()
 	
+	
+	
+func determine_level():
+	match current_level:
+    1:
+        Global.change_level(Global.Level)
+    2:
+        Global.change_level(Global.Level_2)
 
 func remember_stats():
 	Global.last_points = current_score

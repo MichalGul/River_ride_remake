@@ -7,7 +7,7 @@
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 31.9915, 32.0492 )
+extents = Vector2( 139.657, 32.0492 )
 
 [node name="Checkpoint" type="Area2D" groups=[
 "Checkpoint",
@@ -28,6 +28,8 @@ _sections_unfolded = [ "Collision" ]
 
 visible = false
 modulate = Color( 0.115476, 0.953125, 0.0670166, 1 )
+position = Vector2( 54.0077, 0 )
+scale = Vector2( 2.68774, 1 )
 texture = ExtResource( 2 )
 _sections_unfolded = [ "Visibility" ]
 
