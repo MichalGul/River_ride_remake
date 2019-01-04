@@ -18,6 +18,7 @@ export (int) var scout_down_timer_limit = 3
 export (int) var scout_up_timer_limit = 8
 export (int) var current_level = 1
 
+
 export (PackedScene) var JetEnemy
 export (PackedScene) var ScoutEnemy
 
@@ -31,8 +32,6 @@ var screen_size_x
 var screen_size_y
 #position of the last checkpoint in game
 var last_checkpoint_position = Vector2()
-
-
 
 func _ready():
 	
@@ -139,7 +138,8 @@ func life_up():
 #DEBUG RESTART
 func _input(event):
 	if Input.is_action_pressed("restart"):
-		Global.Player.restart_player(last_checkpoint_position)
+		#get_tree().paused = true
+		pass
 	
 func spawn_jet():
 	

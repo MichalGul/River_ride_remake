@@ -26,6 +26,7 @@ next_level_number = 2
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
+visible = false
 modulate = Color( 0.115476, 0.953125, 0.0670166, 1 )
 position = Vector2( 54.0077, 0 )
 scale = Vector2( 2.68774, 1 )

@@ -14,7 +14,7 @@
 [ext_resource path="res://Scenes/Enemies/StaticEnemy.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Scenes/Enemies/JetEnemyStationary.tscn" type="PackedScene" id=13]
 
-[node name="Level_2" type="Node2D"]
+[node name="Level_2" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 starting_lives = 3
