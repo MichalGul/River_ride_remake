@@ -1,23 +1,30 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Scripts/Bullet.gd" type="Script" id=1]
-[ext_resource path="res://GFX/Items/laser.png" type="Texture" id=2]
-[ext_resource path="res://SFX/GameSounds_v1/strzał.wav" type="AudioStream" id=3]
+[ext_resource path="res://GFX/Items/Animations/STRZAL_animacja/STRZAL_animacja_001.png" type="Texture" id=2]
+[ext_resource path="res://GFX/Items/Animations/STRZAL_animacja/STRZAL_animacja_002.png" type="Texture" id=3]
+[ext_resource path="res://GFX/Items/Animations/STRZAL_animacja/STRZAL_animacja_003.png" type="Texture" id=4]
+[ext_resource path="res://GFX/Items/Animations/STRZAL_animacja/STRZAL_animacja_004.png" type="Texture" id=5]
+[ext_resource path="res://GFX/Items/Animations/STRZAL_animacja/STRZAL_animacja_005.png" type="Texture" id=6]
+[ext_resource path="res://GFX/Items/Animations/STRZAL_animacja/STRZAL_animacja_007.png" type="Texture" id=7]
+[ext_resource path="res://GFX/Items/Animations/STRZAL_animacja/STRZAL_animacja_006.png" type="Texture" id=8]
+[ext_resource path="res://GFX/Items/Animations/STRZAL_animacja/STRZAL_animacja_008.png" type="Texture" id=9]
+[ext_resource path="res://SFX/GameSounds_v1/strzał 2.wav" type="AudioStream" id=10]
 
 [sub_resource type="SpriteFrames" id=1]
 
 animations = [ {
-"frames": [ ExtResource( 2 ) ],
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ) ],
 "loop": true,
 "name": "idle",
-"speed": 5.0
+"speed": 10.0
 } ]
 
 [sub_resource type="CapsuleShape2D" id=2]
 
 custom_solver_bias = 0.0
-radius = 5.42616
-height = 16.0395
+radius = 4.14963
+height = 10.3929
 
 [node name="Bullet" type="Area2D" groups=[
 "Projectile",
@@ -34,12 +41,12 @@ audio_bus_override = false
 audio_bus_name = "Master"
 script = ExtResource( 1 )
 _sections_unfolded = [ "Collision" ]
-speed = 500
+speed = 350
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="." index="0"]
 
-rotation = 1.56985
-scale = Vector2( 0.5, 0.5 )
+position = Vector2( 0.506969, -0.475061 )
+scale = Vector2( 0.754397, 0.667561 )
 frames = SubResource( 1 )
 animation = "idle"
 playing = true
@@ -47,15 +54,17 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
 
+position = Vector2( 0.0565643, 0.565617 )
 shape = SubResource( 2 )
 
 [node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="." index="2"]
 
+position = Vector2( -0.113125, 0.226248 )
 rect = Rect2( -10, -10, 20, 20 )
 
 [node name="Shoot" type="AudioStreamPlayer" parent="." index="3"]
 
-stream = ExtResource( 3 )
+stream = ExtResource( 10 )
 volume_db = 0.0
 pitch_scale = 1.0
 autoplay = false

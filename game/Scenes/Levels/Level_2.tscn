@@ -1,10 +1,10 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Scripts/GameState.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Enemies/JetEnemy.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/Enemies/ScoutEnemy.tscn" type="PackedScene" id=3]
 [ext_resource path="res://SFX/GameSounds_v1/OST - główny.wav" type="AudioStream" id=4]
-[ext_resource path="res://Tilesets/TileEnvset_Ready.tres" type="TileSet" id=5]
+[ext_resource path="res://Tilesets/TileEnvset_Ready_Updated.tres" type="TileSet" id=5]
 [ext_resource path="res://Scenes/PickUP/Checkpoint.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scenes/PickUP/Fuel.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=8]
@@ -13,8 +13,9 @@
 [ext_resource path="res://Scenes/Enemies/LongEnemy.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Scenes/Enemies/StaticEnemy.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Scenes/Enemies/JetEnemyStationary.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Scenes/Pause.tscn" type="PackedScene" id=14]
 
-[node name="Level_2" type="Node2D" index="0"]
+[node name="Level_2" type="Node2D"]
 
 script = ExtResource( 1 )
 starting_lives = 3
@@ -155,6 +156,8 @@ process_mode = 1
 wait_time = 1.0
 one_shot = false
 autostart = true
+
+[node name="Pause" parent="." index="9" instance=ExtResource( 14 )]
 
 [connection signal="shoot" from="Player" to="." method="_on_Player_shoot"]
 

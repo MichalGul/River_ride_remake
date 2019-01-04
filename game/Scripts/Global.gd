@@ -49,6 +49,8 @@ func restart_stats():
 func restart_level_from_checkpoint():
 	get_tree().change_scene(currentLevel)
 
+func restart_last_checkpoint():
+	last_checkpoint_pos = begin_position
 
 func load_level_scene():
 	get_tree().change_scene(currentLevel)

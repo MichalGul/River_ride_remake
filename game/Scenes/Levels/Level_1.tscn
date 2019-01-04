@@ -21,13 +21,13 @@
 script = ExtResource( 1 )
 starting_lives = 3
 max_lives = 9
-starting_fuel = 1000
+starting_fuel = 100
 fuel_extinction_param = 5
 fuel_tank_speed = 20
 points_life_counter = 10000
 initial_spawn_timer = 3
-spawn_random_jets = true
-spawn_random_scouts = true
+spawn_random_jets = false
+spawn_random_scouts = false
 jet_down_timer_limit = 1
 jet_up_timer_limit = 4
 scout_down_timer_limit = 1
@@ -168,6 +168,7 @@ _sections_unfolded = [ "Drag Margin", "Editor", "Limit", "Visibility" ]
 [node name="Enemies" type="Node2D" parent="." index="5"]
 
 editor/display_folded = true
+_sections_unfolded = [ "Transform" ]
 
 [node name="Enemy3" parent="Enemies" index="0" instance=ExtResource( 10 )]
 
@@ -447,7 +448,7 @@ autostart = true
 
 [node name="EndScenePoint" parent="." index="9" instance=ExtResource( 14 )]
 
-position = Vector2( -10.1382, -3939.36 )
+position = Vector2( -8.93996, -3939.36 )
 
 [node name="Pause" parent="." index="10" instance=ExtResource( 15 )]
 

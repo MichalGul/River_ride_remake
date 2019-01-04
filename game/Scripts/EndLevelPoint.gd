@@ -15,6 +15,7 @@ func _ready():
 
 func _on_EndScenePoint_body_entered(body):
 	if body.is_in_group("Player"):
+		Global.restart_last_checkpoint()
 		Global.GameState.remember_stats()
 		Global.change_level(Global.Level_2)
 		Global.load_level_scene()
