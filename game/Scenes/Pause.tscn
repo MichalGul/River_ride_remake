@@ -29,15 +29,14 @@ transform = Transform2D( 1, 0, 0, 1, 0, 0 )
 
 [node name="Popup" type="Popup" parent="CanvasLayer" index="0"]
 
-editor/display_folded = true
 visible = false
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_right = 1285.0
-margin_bottom = 720.0
-rect_min_size = Vector2( 1000, 700 )
+margin_right = 640.0
+margin_bottom = 360.0
+rect_min_size = Vector2( 640, 360 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
@@ -90,10 +89,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 571.0
-margin_top = 334.0
-margin_right = 714.0
-margin_bottom = 385.0
+margin_left = 248.0
+margin_top = 154.0
+margin_right = 391.0
+margin_bottom = 205.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2

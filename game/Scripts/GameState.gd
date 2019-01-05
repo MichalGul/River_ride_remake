@@ -85,6 +85,7 @@ func manage_fuel(delta, fly_speed):
 	
 func check_for_empty():
 	if fuel <= 0:
+		#Global.Player.end_game()
 		end_game()
 		
 func hurt():
@@ -106,7 +107,6 @@ func restart_player():
 func tank_fuel(delta):
 	if is_tanking and fuel <= 100:
 		fuel += fuel_tank_speed *delta
-		print(fuel)
 
 		
 func update_GUI():
