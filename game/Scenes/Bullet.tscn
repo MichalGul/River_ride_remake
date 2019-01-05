@@ -9,7 +9,7 @@
 [ext_resource path="res://GFX/Items/Animations/STRZAL_animacja/STRZAL_animacja_007.png" type="Texture" id=7]
 [ext_resource path="res://GFX/Items/Animations/STRZAL_animacja/STRZAL_animacja_006.png" type="Texture" id=8]
 [ext_resource path="res://GFX/Items/Animations/STRZAL_animacja/STRZAL_animacja_008.png" type="Texture" id=9]
-[ext_resource path="res://SFX/GameSounds_v1/strzał 2.wav" type="AudioStream" id=10]
+[ext_resource path="res://SFX/GameSounds_v1/strzał.wav" type="AudioStream" id=10]
 
 [sub_resource type="SpriteFrames" id=1]
 
@@ -49,6 +49,7 @@ position = Vector2( 0.506969, -0.475061 )
 scale = Vector2( 0.754397, 0.667561 )
 frames = SubResource( 1 )
 animation = "idle"
+frame = 1
 playing = true
 _sections_unfolded = [ "Transform" ]
 

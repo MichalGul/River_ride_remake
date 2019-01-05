@@ -1,28 +1,46 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Scenes/Levels/Menu.gd" type="Script" id=1]
-[ext_resource path="res://GFX/Enviroment/water.png" type="Texture" id=2]
-[ext_resource path="res://Fonts/candles_.ttf" type="DynamicFontData" id=3]
-[ext_resource path="res://GFX/Player/plane_left.png" type="Texture" id=4]
-[ext_resource path="res://SFX/GameSounds_v1/menu klik.wav" type="AudioStream" id=5]
-[ext_resource path="res://GFX/Player/plane_right.png" type="Texture" id=6]
-[ext_resource path="res://SFX/GameSounds_v1/OST - menu.wav" type="AudioStream" id=7]
+[ext_resource path="res://GFX/Interface/metalPanel.png" type="Texture" id=2]
+[ext_resource path="res://new_theme.tres" type="Theme" id=3]
+[ext_resource path="res://Fonts/LuckiestGuy.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://GFX/Interface/MENU_V2/MENU_GAME_OVER_przycisk_NEW_GAME_nieWcisniety.png" type="Texture" id=5]
+[ext_resource path="res://GFX/Interface/MENU_V2/MENU_GAME_OVER_przycisk_NEW_GAME_wcisniety.png" type="Texture" id=6]
+[ext_resource path="res://SFX/GameSounds_v1/menu klik.wav" type="AudioStream" id=7]
+[ext_resource path="res://GFX/Interface/MENU_V2/MENU_GLOWNE_przycisk_CREDITS_nieWcisniety.png" type="Texture" id=8]
+[ext_resource path="res://GFX/Interface/MENU_V2/MENU_GLOWNE_przycisk_CREDITS_wcisniety.png" type="Texture" id=9]
+[ext_resource path="res://GFX/Interface/MENU_V2/MENU_GLOWNE_przycisk_EXIT_nieWcisniety.png" type="Texture" id=10]
+[ext_resource path="res://GFX/Interface/MENU_V2/MENU_GLOWNE_przycisk_EXIT_wcisniety.png" type="Texture" id=11]
+[ext_resource path="res://SFX/GameSounds_v1/OST - menu.wav" type="AudioStream" id=12]
 
 [sub_resource type="DynamicFont" id=1]
 
-size = 50
-use_mipmaps = false
+size = 80
+use_mipmaps = true
 use_filter = true
-font_data = ExtResource( 3 )
+font_data = ExtResource( 4 )
 _sections_unfolded = [ "Font", "Settings" ]
 
-[sub_resource type="DynamicFont" id=2]
+[sub_resource type="Animation" id=5]
 
-size = 30
-use_mipmaps = false
-use_filter = true
-font_data = ExtResource( 3 )
-_sections_unfolded = [ "Font", "Resource", "Settings" ]
+resource_name = "load_credits"
+length = 2.0
+loop = false
+step = 0.1
+tracks/0/type = "method"
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 1.2 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "load_credits"
+} ]
+}
 
 [sub_resource type="Animation" id=3]
 
@@ -45,30 +63,25 @@ tracks/0/keys = {
 } ]
 }
 
-[node name="Menu" type="Control"]
+[node name="Menu" type="CanvasLayer" index="0"]
 
+layer = 1
+offset = Vector2( 0, 0 )
+rotation = 0.0
+scale = Vector2( 1, 1 )
+transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+script = ExtResource( 1 )
+
+[node name="TextureRect" type="TextureRect" parent="." index="0"]
+
+self_modulate = Color( 0.117176, 0.0306667, 0.0306667, 0.502745 )
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_right = 40.0
 margin_bottom = 40.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-script = ExtResource( 1 )
-
-[node name="TextureRect" type="TextureRect" parent="." index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_right = 1281.0
-margin_bottom = 732.0
+rect_min_size = Vector2( 1280, 720 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
@@ -78,6 +91,7 @@ size_flags_vertical = 1
 texture = ExtResource( 2 )
 expand = true
 stretch_mode = 0
+_sections_unfolded = [ "Rect", "Visibility" ]
 
 [node name="CenterContainer" type="CenterContainer" parent="." index="1"]
 
@@ -85,10 +99,145 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 223.0
-margin_top = 36.0
-margin_right = 1068.0
-margin_bottom = 602.0
+margin_right = 1280.0
+margin_bottom = 720.0
+rect_min_size = Vector2( 1280, 720 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+use_top_left = false
+_sections_unfolded = [ "Rect" ]
+
+[node name="NinePatchRect" type="NinePatchRect" parent="CenterContainer" index="0"]
+
+self_modulate = Color( 0.396078, 0.615686, 0.423529, 1 )
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 320.0
+margin_top = 180.0
+margin_right = 960.0
+margin_bottom = 540.0
+rect_min_size = Vector2( 640, 360 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 2 )
+patch_margin_left = 12
+patch_margin_top = 12
+patch_margin_right = 12
+patch_margin_bottom = 12
+_sections_unfolded = [ "Patch Margin", "Rect", "Visibility" ]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/NinePatchRect" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_min_size = Vector2( 640, 360 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+theme = ExtResource( 3 )
+alignment = 1
+_sections_unfolded = [ "Margin", "Rect", "Theme" ]
+
+[node name="Label" type="Label" parent="CenterContainer/NinePatchRect/VBoxContainer" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 71.0
+margin_right = 640.0
+margin_bottom = 152.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = true
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 1 )
+text = "Retard Ride"
+align = 1
+autowrap = true
+uppercase = true
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Margin", "Rect", "Theme", "custom_fonts" ]
+
+[node name="CenterContainer" type="CenterContainer" parent="CenterContainer/NinePatchRect/VBoxContainer" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 156.0
+margin_right = 640.0
+margin_bottom = 200.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+use_top_left = false
+_sections_unfolded = [ "Margin" ]
+
+[node name="NewGame" type="TextureButton" parent="CenterContainer/NinePatchRect/VBoxContainer/CenterContainer" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 236.0
+margin_right = 404.0
+margin_bottom = 44.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+texture_normal = ExtResource( 5 )
+texture_hover = ExtResource( 6 )
+_sections_unfolded = [ "Textures", "custom_styles" ]
+
+[node name="Click" type="AudioStreamPlayer" parent="CenterContainer/NinePatchRect/VBoxContainer/CenterContainer/NewGame" index="0"]
+
+stream = ExtResource( 7 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="CenterContainer3" type="CenterContainer" parent="CenterContainer/NinePatchRect/VBoxContainer" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 204.0
+margin_right = 640.0
+margin_bottom = 244.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
@@ -97,39 +246,15 @@ size_flags_horizontal = 1
 size_flags_vertical = 1
 use_top_left = false
 
-[node name="Label" type="Label" parent="CenterContainer" index="0"]
+[node name="CreditsButton" type="TextureButton" parent="CenterContainer/NinePatchRect/VBoxContainer/CenterContainer3" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 259.0
-margin_top = 251.0
-margin_right = 586.0
-margin_bottom = 315.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
-custom_fonts/font = SubResource( 1 )
-text = "Retard Ride"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "custom_fonts" ]
-
-[node name="NewGame" type="TextureButton" parent="." index="2"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 537.0
-margin_top = 386.0
-margin_right = 624.0
-margin_bottom = 454.0
+margin_left = 236.0
+margin_right = 404.0
+margin_bottom = 40.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -141,51 +266,45 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-texture_normal = ExtResource( 4 )
-_sections_unfolded = [ "Textures" ]
+texture_normal = ExtResource( 8 )
+texture_hover = ExtResource( 9 )
+_sections_unfolded = [ "Textures", "custom_fonts" ]
 
-[node name="Label" type="Label" parent="NewGame" index="0"]
+[node name="Click2" type="AudioStreamPlayer" parent="CenterContainer/NinePatchRect/VBoxContainer/CenterContainer3/CreditsButton" index="0"]
 
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 95.0
-margin_top = 8.0
-margin_right = 257.0
-margin_bottom = 56.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
-custom_fonts/font = SubResource( 2 )
-text = "New Game"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Anchor", "Focus", "Grow Direction", "Hint", "Margin", "custom_fonts" ]
-
-[node name="Click" type="AudioStreamPlayer" parent="NewGame" index="1"]
-
-stream = ExtResource( 5 )
+stream = ExtResource( 7 )
 volume_db = 0.0
 pitch_scale = 1.0
 autoplay = false
 mix_target = 0
 bus = "Master"
 
-[node name="Exit" type="TextureButton" parent="." index="3"]
+[node name="CenterContainer2" type="CenterContainer" parent="CenterContainer/NinePatchRect/VBoxContainer" index="3"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 535.0
-margin_top = 480.0
-margin_right = 622.0
-margin_bottom = 548.0
+margin_top = 248.0
+margin_right = 640.0
+margin_bottom = 288.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+use_top_left = false
+
+[node name="Exit" type="TextureButton" parent="CenterContainer/NinePatchRect/VBoxContainer/CenterContainer2" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 236.0
+margin_right = 404.0
+margin_bottom = 40.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -197,53 +316,34 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-texture_normal = ExtResource( 6 )
+texture_normal = ExtResource( 10 )
+texture_hover = ExtResource( 11 )
 _sections_unfolded = [ "Textures" ]
 
-[node name="Label" type="Label" parent="Exit" index="0"]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="2"]
 
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 95.0
-margin_top = 10.0
-margin_right = 257.0
-margin_bottom = 58.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
-custom_fonts/font = SubResource( 2 )
-text = "Exit"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Anchor", "Focus", "Grow Direction", "Hint", "Margin", "custom_fonts" ]
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="4"]
-
-stream = ExtResource( 7 )
+stream = ExtResource( 12 )
 volume_db = -10.0
 pitch_scale = 1.0
 autoplay = false
 mix_target = 0
 bus = "Master"
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="5"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="3"]
 
 root_node = NodePath("..")
 autoplay = ""
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
+anims/load_credits = SubResource( 5 )
 anims/load_new_level = SubResource( 3 )
 blend_times = [  ]
 
-[connection signal="pressed" from="NewGame" to="." method="_on_NewGame_pressed"]
+[connection signal="pressed" from="CenterContainer/NinePatchRect/VBoxContainer/CenterContainer/NewGame" to="." method="_on_NewGame_pressed"]
 
-[connection signal="pressed" from="Exit" to="." method="_on_Exit_pressed"]
+[connection signal="pressed" from="CenterContainer/NinePatchRect/VBoxContainer/CenterContainer3/CreditsButton" to="." method="_on_CreditsButton_pressed"]
+
+[connection signal="pressed" from="CenterContainer/NinePatchRect/VBoxContainer/CenterContainer2/Exit" to="." method="_on_Exit_pressed"]
 
 

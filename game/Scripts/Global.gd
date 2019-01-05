@@ -27,14 +27,15 @@ enum fly_speed{
   fast,
   slow
 }
-
-var SplashScreen = ""
+#MUST BE CHANGED MANNUALY
+var SplashScreen = "res://Scenes/Levels/Menu.tscn"
 var Level = "res://Scenes/Levels/Level_1.tscn"
 var Level_2 = "res://Scenes/Levels/Level_2.tscn"
 var Level_3 ="" 
-var GameOver = "res://Scenes/Levels/GameOver.tscn"
+var GameOver = "res://Scenes/Levels/GameOverScreen.tscn"
 var Bullet = "res://Scenes/Bullet.tscn"
 var Menu = "res://Scenes/Levels/Menu.tscn"
+var Credits = "res://Scenes/Levels/CreditsScreen.tscn"
 
 
 func _ready():

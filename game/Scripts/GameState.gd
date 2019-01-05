@@ -104,8 +104,9 @@ func restart_player():
 
 	
 func tank_fuel(delta):
-	if is_tanking:
+	if is_tanking and fuel <= 100:
 		fuel += fuel_tank_speed *delta
+		print(fuel)
 
 		
 func update_GUI():
@@ -114,6 +115,7 @@ func update_GUI():
 		
 func end_game():
 	$Sounds/Background_Sound.playing = false
+	#$GameOverScreen.init()
 	get_tree().change_scene(Global.GameOver)
 
 

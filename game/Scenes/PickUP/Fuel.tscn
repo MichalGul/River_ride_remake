@@ -104,10 +104,12 @@ __meta__ = {
 
 frames = SubResource( 1 )
 animation = "default"
+frame = 3
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
 
+visible = false
 shape = SubResource( 2 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="2"]
