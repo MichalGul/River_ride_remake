@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=2]
+[gd_scene load_steps=36 format=2]
 
 [ext_resource path="res://Tilesets/GDS01_RiverRaid_TileSet01_014.png" type="Texture" id=1]
 [ext_resource path="res://Tilesets/GDS01_RiverRaid_TileSet01_014_updated.png" type="Texture" id=2]
@@ -142,6 +142,31 @@ extents = Vector2( 15.907, 15.4204 )
 
 custom_solver_bias = 0.0
 extents = Vector2( 16.0105, 15.4016 )
+
+[sub_resource type="RectangleShape2D" id=29]
+
+custom_solver_bias = 0.0
+extents = Vector2( 15.9397, 15.8703 )
+
+[sub_resource type="RectangleShape2D" id=30]
+
+custom_solver_bias = 0.0
+extents = Vector2( 15.9337, 15.7906 )
+
+[sub_resource type="RectangleShape2D" id=31]
+
+custom_solver_bias = 0.0
+extents = Vector2( 16.0036, 16.1101 )
+
+[sub_resource type="RectangleShape2D" id=32]
+
+custom_solver_bias = 0.0
+extents = Vector2( 15.87, 16.1516 )
+
+[sub_resource type="RectangleShape2D" id=33]
+
+custom_solver_bias = 0.0
+extents = Vector2( 15.6554, 15.9606 )
 
 [node name="Node" type="Node"]
 
@@ -2051,6 +2076,7 @@ constant_linear_velocity = Vector2( 0, 0 )
 constant_angular_velocity = 0.0
 friction = 1.0
 bounce = 0.0
+_sections_unfolded = [ "Collision" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="T0324/StaticBody2D" index="0"]
 
@@ -2077,6 +2103,7 @@ constant_linear_velocity = Vector2( 0, 0 )
 constant_angular_velocity = 0.0
 friction = 1.0
 bounce = 0.0
+_sections_unfolded = [ "Collision" ]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="T0325/StaticBody2D" index="0"]
 
@@ -2090,6 +2117,25 @@ texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 320, 0, 32, 32 )
 _sections_unfolded = [ "Region" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="T0401" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Collision" ]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="T0401/StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( 3.70444, 16.2362, 3.93527, 12.9276, 4.85861, 11.1579, 5.70502, 9.00342, 7.70557, 7.38757, 8.93671, 6.15645, 11.0142, 5.15617, 14.2459, 3.69421, 15.7848, 3.69421, 16.0926, 16.0824 )
 
 [node name="T0402" type="Sprite" parent="." index="96"]
 
@@ -2098,6 +2144,24 @@ texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 352, 0, 32, 32 )
 _sections_unfolded = [ "Region" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="T0402" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="T0402/StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -16.1245, 4.21523, -11.9376, 3.27316, -4.81976, 2.54045, 0.623291, 1.07501, 4.39157, 1.28436, 6.2757, 3.16849, 10.8813, 3.06382, 11.7188, 3.79653, 16.0104, 4.21523, 16.0104, 15.9387, -16.0199, 16.2527 )
 
 [node name="T0403" type="Sprite" parent="." index="97"]
 
@@ -2106,6 +2170,24 @@ texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 384, 0, 32, 32 )
 _sections_unfolded = [ "Region" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="T0403" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="T0403/StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -16.1299, 4.35696, -11.5035, 5.25655, -6.10599, 7.44125, -2.37915, 8.85489, 3.01837, 9.11191, 8.92993, 7.31274, 15.8696, 3.97143, 15.8696, 16.0516, -16.1299, 16.0516 )
 
 [node name="T0404" type="Sprite" parent="." index="98"]
 
@@ -2114,6 +2196,24 @@ texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 416, 0, 32, 32 )
 _sections_unfolded = [ "Region" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="T0404" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="T0404/StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -15.9655, 4.02762, -6.58411, 4.02762, -5.94153, 4.92721, 12.4357, 5.18423, 12.8212, 4.15613, 15.777, 4.15613, 16.1625, 15.8507, -15.9655, 16.2363 )
 
 [node name="T0405" type="Sprite" parent="." index="99"]
 
@@ -2122,6 +2222,24 @@ texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 448, 0, 32, 32 )
 _sections_unfolded = [ "Region" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="T0405" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="T0405/StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -16.3953, 3.81482, -14.2106, 3.68631, -13.9536, 4.97143, -10.3552, 5.09995, -9.58411, 5.99953, -8.42755, 5.99953, -7.78497, 7.41316, -5.72876, 8.31275, -5.72876, 10.2404, -3.92963, 12.2966, -3.92963, 15.6379, -16.1382, 16.152 )
 
 [node name="T0406" type="Sprite" parent="." index="100"]
 
@@ -2130,6 +2248,24 @@ texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 320, 32, 32, 32 )
 _sections_unfolded = [ "Region" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="T0406" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="T0406/StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( 4.01282, -16.0744, 16.0932, -15.8435, 16.0932, 16.1656, 3.93585, 16.0886, 3.93585, 9.00968, 5.24393, 9.08662, 5.16699, -4.22485, 3.93585, -3.99402 )
 
 [node name="T0407" type="Sprite" parent="." index="101"]
 
@@ -2138,6 +2274,23 @@ texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 352, 32, 32, 32 )
 _sections_unfolded = [ "Region" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="T0407" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="T0407/StaticBody2D" index="0"]
+
+shape = SubResource( 29 )
 
 [node name="T0408" type="Sprite" parent="." index="102"]
 
@@ -2146,6 +2299,24 @@ texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 384, 32, 32, 32 )
 _sections_unfolded = [ "Region" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="T0408" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="T0408/StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -15.9453, 16.2202, -15.9959, -15.9835, 15.9669, -16.0462, 16.1549, -4.07577, 13.1466, -4.07577, 13.1466, -3.19836, 9.95035, -3.07301, 10.1384, -2.1956, 7.00476, -1.94492, 7.13013, -1.0675, 5.18726, -1.19285, 5.1246, -0.0647507, 3.11908, -0.0647507, 2.99374, 1.00068, 2.11633, 1.00068, 1.92831, 1.87809, 0.925568, 1.94076, 1.0509, 3.94627, 0.298828, 4.00894, -0.139862, 5.0117, -1.01727, 4.82368, -1.20529, 7.0172, -2.0827, 7.07988, -2.14539, 9.83745, -3.02277, 10.1508, -3.02277, 12.783, -3.96286, 12.9711, -4.02554, 15.9793 )
 
 [node name="T0409" type="Sprite" parent="." index="103"]
 
@@ -2154,6 +2325,24 @@ texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 416, 32, 32, 32 )
 _sections_unfolded = [ "Region" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="T0409" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="T0409/StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -16.1371, -3.99488, -15.9832, -16.0752, 15.872, -15.9213, 15.9478, 16.1596, 4.10779, 16.0674, 3.9696, 14.1325, 2.95605, 13.9943, 2.90997, 11.9672, 1.98859, 12.0133, 1.9425, 8.05129, 0.928986, 8.05129, 0.928986, 5.94015, -0.130615, 5.98622, 0.0536499, 4.00522, -1.00595, 3.95915, -1.09808, 3.08382, -1.97342, 2.99168, -2.11163, 2.07029, -2.89481, 2.02422, -2.98694, 1.05675, -4.00049, 0.964615, -4.09262, 0.181427, -5.84329, -0.141064, -6.11969, -1.01639, -7.04111, -1.01639, -7.04111, -1.79958, -10.0817, -2.02992, -10.1278, -2.95132, -13.9976, -2.95132, -14.0898, -3.82664 )
 
 [node name="T0410" type="Sprite" parent="." index="104"]
 
@@ -2162,6 +2351,24 @@ texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 448, 32, 32, 32 )
 _sections_unfolded = [ "Region" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="T0410" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="T0410/StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -16.2892, -15.7059, -4.34302, -15.7059, -3.64709, -6.42731, -4.69092, -6.07936, -4.92291, 13.1737, -3.99506, 13.0577, -3.87903, 15.9573, -16.1732, 15.9573 )
 
 [node name="T0411" type="Sprite" parent="." index="105"]
 
@@ -2170,6 +2377,24 @@ texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 320, 64, 32, 32 )
 _sections_unfolded = [ "Region" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="T0411" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="T0411/StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( 3.93414, -16.0747, 16.0915, -15.9208, 16.0915, 16.0114, 3.08777, 16.3192, 3.08777, 14.2417, 2.08746, 13.78, 2.01053, 10.0866, 0.933289, 10.0866, 0.933289, 8.08605, 0.163849, 8.16299, -0.143921, 1.00711, -0.990326, 1.00711, -0.990326, -1.91679, -0.143921, -1.99374, 0.0869141, -5.76404, 0.625519, -6.07182, 0.856354, -10.073, 2.16443, -10.1499, 1.93359, -11.8427, 3.0108, -12.0735, 3.0108, -13.8433, 4.08804, -14.3049 )
 
 [node name="T0412" type="Sprite" parent="." index="106"]
 
@@ -2178,6 +2403,23 @@ texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 352, 64, 32, 32 )
 _sections_unfolded = [ "Region" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="T0412" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="T0412/StaticBody2D" index="0"]
+
+shape = SubResource( 30 )
 
 [node name="T0413" type="Sprite" parent="." index="107"]
 
@@ -2186,6 +2428,24 @@ texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 384, 64, 32, 32 )
 _sections_unfolded = [ "Region" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="T0413" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="T0413/StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -4.22192, -16.2541, -2.54715, -10.9158, 0.383728, -4.00728, 5.82675, 1.22643, 15.7708, 4.1573, 15.9801, 16.0901, -15.8408, 16.1948, -16.0501, -16.0448 )
 
 [node name="T0414" type="Sprite" parent="." index="108"]
 
@@ -2194,6 +2454,24 @@ texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 416, 64, 32, 32 )
 _sections_unfolded = [ "Region" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="T0414" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="T0414/StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -16.3696, 4.34351, -10.3385, 3.18369, -3.61151, -0.179802, 0.67981, -5.05106, 2.99945, -12.242, 3.81134, -15.9534, 15.9895, -15.8374, 16.1055, 16.4057, -16.0216, 16.2897 )
 
 [node name="T0415" type="Sprite" parent="." index="109"]
 
@@ -2202,6 +2480,24 @@ texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 448, 64, 32, 32 )
 _sections_unfolded = [ "Region" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="T0415" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="T0415/StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -15.9736, -15.7641, -4.02942, -16.0419, -5.1405, -13.1253, -7.22382, -9.51424, -8.61267, -5.69489, -8.9599, 1.80493, -6.95911, 4.52933, -6.53284, 8.1954, -3.80457, 13.3961, -3.1225, 15.9538, -15.9964, 15.9538 )
 
 [node name="T0416" type="Sprite" parent="." index="110"]
 
@@ -2210,6 +2506,24 @@ texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 320, 96, 32, 32 )
 _sections_unfolded = [ "Region" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="T0416" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="T0416/StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( 2.88474, -15.9605, 16.0961, -16.0142, 16.0638, 16.0161, 4.01611, 16.1292, 4.24237, 14.1496, 8.25824, 7.75812, 9.21979, 3.06351, 9.72885, 2.89381, 9.7854, -2.19673, 6.50912, -9.39848 )
 
 [node name="T0417" type="Sprite" parent="." index="111"]
 
@@ -2218,6 +2532,23 @@ texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 352, 96, 32, 32 )
 _sections_unfolded = [ "Region" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="T0417" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="T0417/StaticBody2D" index="0"]
+
+shape = SubResource( 31 )
 
 [node name="T0418" type="Sprite" parent="." index="112"]
 
@@ -2226,6 +2557,23 @@ texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 384, 96, 32, 32 )
 _sections_unfolded = [ "Region" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="T0418" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="T0418/StaticBody2D" index="0"]
+
+shape = SubResource( 32 )
 
 [node name="T0419" type="Sprite" parent="." index="113"]
 
@@ -2234,6 +2582,23 @@ texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 416, 96, 32, 32 )
 _sections_unfolded = [ "Region" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="T0419" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="T0419/StaticBody2D" index="0"]
+
+shape = SubResource( 33 )
 
 [node name="T0420" type="Sprite" parent="." index="114"]
 
@@ -2242,6 +2607,24 @@ texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 448, 96, 32, 32 )
 _sections_unfolded = [ "Region" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="T0420" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="T0420/StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -16.2864, -16.0355, -3.18042, -16.0355, -1.9046, -12.672, -1.09271, -7.68481, 1.22693, -6.29301, 0.994995, -3.1615, -0.0488892, 1.36182, -1.20868, 7.97279, -3.87628, 15.8596, -15.9384, 15.9756 )
 
 [node name="T0421" type="Sprite" parent="." index="115"]
 
@@ -2250,6 +2633,24 @@ texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 320, 128, 32, 32 )
 _sections_unfolded = [ "Region" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="T0421" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="T0421/StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( 4.17242, -16.2259, 4.38174, -11.6202, 7.94067, -7.53792, 12.7557, -4.39771, 15.8959, -3.979, 16.2099, -16.1212 )
 
 [node name="T0422" type="Sprite" parent="." index="116"]
 
@@ -2258,6 +2659,24 @@ texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 352, 128, 32, 32 )
 _sections_unfolded = [ "Region" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="T0422" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="T0422/StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -15.9751, -16.0165, -15.9751, -3.87433, -12.9395, -4.81641, 10.8214, -5.02574, 15.9505, -4.08368, 15.9505, -16.0165 )
 
 [node name="T0423" type="Sprite" parent="." index="117"]
 
@@ -2266,6 +2685,24 @@ texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 384, 128, 32, 32 )
 _sections_unfolded = [ "Region" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="T0423" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="T0423/StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -15.9443, -15.9697, 16.0186, -15.8444, 16.2065, -4.06201, 13.261, -3.81133, 9.75131, -2.62054, 5.92831, -1.36711, -3.78586, -1.11642, -8.42361, -1.86848, -16.1323, -3.87399 )
 
 [node name="T0424" type="Sprite" parent="." index="118"]
 
@@ -2274,6 +2711,24 @@ texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 416, 128, 32, 32 )
 _sections_unfolded = [ "Region" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="T0424" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="T0424/StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -16.0614, -4.05374, -16.0614, -16.0241, 15.9641, -16.0241, 16.0894, -3.99107, 12.2664, -4.6178, 9.00751, -6.30994, 3.1163, -7.87674, -4.21634, -8.00209, -8.54071, -6.30994, -12.8651, -4.93115 )
 
 [node name="T0425" type="Sprite" parent="." index="119"]
 
@@ -2282,6 +2737,24 @@ texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 448, 128, 32, 32 )
 _sections_unfolded = [ "Region" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="T0425" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="T0425/StaticBody2D" index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -15.9518, -16.0275, -16.1049, -3.72522, -13.9609, -4.28674, -10.2345, -6.37965, -8.19263, -8.21735, -6.20184, -10.8207, -4.31311, -14.2409, -4.00677, -15.8233 )
 
 [node name="T0426" type="Sprite" parent="." index="120"]
 
