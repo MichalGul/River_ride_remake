@@ -47,6 +47,10 @@ func restart_stats():
 	last_checkpoint_pos = Vector2(BEGIN_X_POS, BEGIN_Y_POS)
 	
 	
+func _input(event):
+	if Input.is_action_just_pressed("toggle_fullscreen"):
+    	OS.window_fullscreen = !OS.window_fullscreen
+		
 func restart_level_from_checkpoint():
 	get_tree().change_scene(currentLevel)
 

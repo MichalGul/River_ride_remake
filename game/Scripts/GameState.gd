@@ -142,6 +142,13 @@ func _input(event):
 	if Input.is_action_pressed("restart"):
 		#get_tree().paused = true
 		pass
+	if Input.is_action_pressed("exit"):
+		get_tree().change_scene(Global.SplashScreen)
+		
+#	if Input.is_action_just_pressed("toggle_fullscreen"):
+#    	OS.window_fullscreen = !OS.window_fullscreen
+		
+
 	
 func spawn_jet():
 	

@@ -63,7 +63,7 @@ tracks/0/keys = {
 } ]
 }
 
-[node name="Menu" type="CanvasLayer"]
+[node name="Menu" type="CanvasLayer" index="0"]
 
 layer = 1
 offset = Vector2( 0, 0 )
