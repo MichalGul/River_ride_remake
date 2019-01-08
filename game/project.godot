@@ -22,7 +22,9 @@ Global="*res://Scripts/Global.gd"
 
 window/size/width=640
 window/size/height=360
+window/size/fullscreen=true
 window/stretch/mode="2d"
+window/stretch/aspect="keep"
 
 [input]
 
