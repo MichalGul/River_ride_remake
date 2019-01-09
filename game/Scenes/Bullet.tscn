@@ -36,7 +36,7 @@ gravity = 98.0
 linear_damp = 0.1
 angular_damp = 1.0
 collision_layer = 64
-collision_mask = 268
+collision_mask = 270
 audio_bus_override = false
 audio_bus_name = "Master"
 script = ExtResource( 1 )
@@ -49,7 +49,7 @@ position = Vector2( 0.506969, -0.475061 )
 scale = Vector2( 0.754397, 0.667561 )
 frames = SubResource( 1 )
 animation = "idle"
-frame = 1
+frame = 4
 playing = true
 _sections_unfolded = [ "Transform" ]
 

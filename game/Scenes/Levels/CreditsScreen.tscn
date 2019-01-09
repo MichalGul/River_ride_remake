@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Scripts/CreditsScreen.gd" type="Script" id=1]
 [ext_resource path="res://GFX/Interface/MENU_CREDITS_layer01.png" type="Texture" id=2]
 [ext_resource path="res://new_theme.tres" type="Theme" id=3]
 [ext_resource path="res://GFX/Interface/MENU_V2/MENU_CREDITS_przycisk_MENU_nieWcisniety.png" type="Texture" id=4]
 [ext_resource path="res://GFX/Interface/MENU_V2/MENU_CREDITS_przycisk_MENU_wcisniety.png" type="Texture" id=5]
+[ext_resource path="res://SFX/GameSounds_v1/menu klik.wav" type="AudioStream" id=6]
 
 [node name="CanvasLayer" type="CanvasLayer"]
 
@@ -109,6 +110,15 @@ group = null
 texture_normal = ExtResource( 4 )
 texture_hover = ExtResource( 5 )
 _sections_unfolded = [ "Rect", "Textures", "Theme" ]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="CenterContainer/NinePatchRect/VBoxContainer/CenterContainer/MenuButton" index="0"]
+
+stream = ExtResource( 6 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
 
 [connection signal="pressed" from="CenterContainer/NinePatchRect/VBoxContainer/CenterContainer/MenuButton" to="." method="_on_MenuButton_pressed"]
 

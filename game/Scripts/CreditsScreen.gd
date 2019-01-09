@@ -16,4 +16,6 @@ func _ready():
 
 
 func _on_MenuButton_pressed():
-		get_tree().change_scene(Global.SplashScreen)
+	$CenterContainer/NinePatchRect/VBoxContainer/CenterContainer/MenuButton/AudioStreamPlayer.play()
+	Transition.fade_to(Global.SplashScreen)
+	#get_tree().change_scene(Global.SplashScreen)

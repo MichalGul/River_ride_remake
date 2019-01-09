@@ -2,7 +2,10 @@ extends Node
 
 
 var BEGIN_X_POS = 0# 467.815796
-var BEGIN_Y_POS = 600# 545.357483
+var BEGIN_Y_POS = 700# 545.357483
+
+var debug_Begin_x = 0
+var debug_Begin_y = -3720
 
 #Global script to hold reference to game objects - avoid string referencing
 var GameState
@@ -30,16 +33,18 @@ enum fly_speed{
 #MUST BE CHANGED MANNUALY
 var SplashScreen = "res://Scenes/Levels/Menu.tscn"
 var Level = "res://Scenes/Levels/Level_1.tscn"
-var Level_2 = "res://Scenes/Levels/Level_2.tscn"
+var Level_2 = "res://Scenes/Levels/Level_2_des.tscn" 
 var Level_3 ="" 
 var GameOver = "res://Scenes/Levels/GameOverScreen.tscn"
+var Victory = "res://Scenes/Levels/VictoryScreen.tscn"
 var Bullet = "res://Scenes/Bullet.tscn"
 var Menu = "res://Scenes/Levels/Menu.tscn"
 var Credits = "res://Scenes/Levels/CreditsScreen.tscn"
 
-
 func _ready():
 	currentLevel = Level
+	#DEBUG REMOVE THIS IN NORMAL GAME
+	last_checkpoint_pos = Vector2(debug_Begin_x, debug_Begin_y)
 
 func restart_stats():
 	last_points = 0

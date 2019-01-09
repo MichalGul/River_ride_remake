@@ -128,6 +128,7 @@ func destroy():
 func end_game():
 	is_dying = true
 	$CollisionShape2D.disabled = true
+	$Particles2D.emitting = false
 	#Play animation
 	$AnimationPlayer.play("die_end_game") #27.11.2018 ADD THIS ANIMATION TO END GAME
 	#play sound 

@@ -33,3 +33,7 @@ func destroy():
 	
 func die():
 	queue_free()
+
+
+func _on_Fuel2_body_entered(body):
+	pass # replace with function body

@@ -22,6 +22,9 @@ func _on_VisibilityNotifier2D_screen_exited():
 func _on_Bullet_body_entered(body):
 	if body.is_in_group("Fuel"):
 		print(body)
+	elif body.is_in_group("Border"):
+		pass
+		#queue_free() #destroy projectile
 
 func _on_Bullet_area_entered(area):
 	if area.is_in_group("Fuel"):
@@ -32,3 +35,6 @@ func _on_Bullet_area_entered(area):
 		area.destroy() # begin destroying fuel 
 		Global.GameState.update_score(area.score)
 		queue_free() #destroy projectile
+		
+
+		

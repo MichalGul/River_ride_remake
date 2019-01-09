@@ -98,12 +98,10 @@ func hurt():
 		Global.Player.destroy()
 		#restart from last checkpoint
 
-	
-	
+
 func restart_player():
 	pass
 
-	
 func tank_fuel(delta):
 	if is_tanking and fuel <= 100:
 		fuel += fuel_tank_speed *delta
@@ -116,7 +114,8 @@ func update_GUI():
 func end_game():
 	$Sounds/Background_Sound.playing = false
 	#$GameOverScreen.init()
-	get_tree().change_scene(Global.GameOver)
+	Transition.fade_to(Global.GameOver)
+	#get_tree().change_scene(Global.GameOver)
 
 
 func _on_Player_shoot(bullet, pos, dir):
@@ -137,7 +136,7 @@ func life_up():
 	update_GUI()
 	
 
-#DEBUG RESTART
+
 func _input(event):
 	if Input.is_action_pressed("restart"):
 		#get_tree().paused = true
@@ -203,3 +202,5 @@ func _on_ScoutSpawnerTimer_timeout():
 	if spawn_random_scouts:
 		spawn_scout()
 		print("spawn scouta")
+
+

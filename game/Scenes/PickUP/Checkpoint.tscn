@@ -7,7 +7,7 @@
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 139.657, 32.0492 )
+extents = Vector2( 139.657, 17.8228 )
 
 [node name="Checkpoint" type="Area2D" groups=[
 "Checkpoint",
