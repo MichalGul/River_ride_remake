@@ -16,7 +16,7 @@
 [ext_resource path="res://Scenes/Camera2D.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Scenes/EndGamePoint.tscn" type="PackedScene" id=15]
 
-[node name="Level_2" type="Node2D" index="0"]
+[node name="Level_2" type="Node2D"]
 
 script = ExtResource( 1 )
 starting_lives = 3
@@ -332,7 +332,7 @@ position = Vector2( -20.39, 510.59 )
 _sections_unfolded = [ "Collision", "Transform" ]
 turn_speed = 200
 forward_speed = 60
-fire_rate = 0.3
+fire_rate = 0.7
 
 [node name="Camera2D" parent="Player" index="2" instance=ExtResource( 14 )]
 

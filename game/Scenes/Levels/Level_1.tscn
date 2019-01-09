@@ -139,6 +139,7 @@ position = Vector2( -20.39, 510.59 )
 _sections_unfolded = [ "Collision", "Transform" ]
 turn_speed = 200
 forward_speed = 60
+fire_rate = 0.7
 
 [node name="Camera2D" parent="Player" index="2" instance=ExtResource( 8 )]
 

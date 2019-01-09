@@ -43,7 +43,7 @@ use_filter = true
 font_data = ExtResource( 6 )
 _sections_unfolded = [ "Font", "Settings" ]
 
-[node name="GameOverScreen" type="Node2D"]
+[node name="GameOverScreen" type="Node2D" index="0"]
 
 pause_mode = 2
 script = ExtResource( 1 )
@@ -275,6 +275,15 @@ group = null
 texture_normal = ExtResource( 10 )
 texture_hover = ExtResource( 11 )
 _sections_unfolded = [ "Pause", "Textures", "custom_fonts" ]
+
+[node name="Click" type="AudioStreamPlayer" parent="CanvasLayer/CenterContainer/NinePatchRect/VBoxContainer/CenterContainer3/MenuButton" index="0"]
+
+stream = ExtResource( 9 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
 
 [node name="CenterContainer2" type="CenterContainer" parent="CanvasLayer/CenterContainer/NinePatchRect/VBoxContainer" index="3"]
 
