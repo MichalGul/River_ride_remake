@@ -47,7 +47,7 @@ cell_quadrant_size = 16
 cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
 cell_half_offset = 2
 cell_tile_origin = 0
-cell_y_sort = false
+cell_y_sort = true
 cell_clip_uv = false
 collision_use_kinematic = true
 collision_friction = 1.0
@@ -61,13 +61,12 @@ _sections_unfolded = [ "Cell", "Collision", "Transform" ]
 
 [node name="Sounds" type="Node2D" parent="." index="1"]
 
-editor/display_folded = true
 position = Vector2( 13.5052, -9.8219 )
 
 [node name="Background_Sound" type="AudioStreamPlayer" parent="Sounds" index="0"]
 
 stream = ExtResource( 5 )
-volume_db = -20.0
+volume_db = -15.0
 pitch_scale = 1.0
 autoplay = false
 mix_target = 0

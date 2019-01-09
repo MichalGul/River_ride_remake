@@ -12,12 +12,13 @@ config_version=3
 
 config/name="RiverRideRemake"
 run/main_scene="res://Scenes/Levels/Menu.tscn"
-config/icon="res://icon.png"
+config/icon="res://GFX/Player/KROLEWNA.png"
 
 [autoload]
 
 Global="*res://Scripts/Global.gd"
 Transition="*res://Scenes/Transition.tscn"
+BackgroundMusic="*res://Scenes/BackgroundMusic.tscn"
 
 [display]
 

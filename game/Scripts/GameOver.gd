@@ -1,10 +1,12 @@
 extends Node2D
 
 
-
+func _ready():
+	BackgroundMusic.playing = true
 
 func init():
 	$CanvasLayer/Popup.popup()
+	
 
 func _on_NewGameButton_pressed():
 	Global.restart_stats()
@@ -16,7 +18,7 @@ func _on_NewGameButton_pressed():
 func _on_MenuButton_pressed():
 	get_tree().paused = false
 	#print("HALOOO")
-	$CanvasLayer/CenterContainer/NinePatchRect/VBoxContainer/CenterContainer3/MenuButton/Click
+	$CanvasLayer/CenterContainer/NinePatchRect/VBoxContainer/CenterContainer3/MenuButton/Click.play()
 	Transition.fade_to(Global.SplashScreen)
 	#get_tree().change_scene(Global.SplashScreen)
 

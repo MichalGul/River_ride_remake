@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://SFX/GameSounds_v1/OST - menu.wav" type="AudioStream" id=1]
+[ext_resource path="res://Scripts/MenuMusic.gd" type="Script" id=2]
+
+[node name="BackgroundMusic" type="AudioStreamPlayer"]
+
+stream = ExtResource( 1 )
+volume_db = -10.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+script = ExtResource( 2 )
+
+

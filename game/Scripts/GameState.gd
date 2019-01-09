@@ -34,7 +34,7 @@ var screen_size_y
 var last_checkpoint_position = Vector2()
 
 func _ready():
-	
+	BackgroundMusic.playing = false
 	Global.GameState = self
 	determine_level()
 	#init game scores
@@ -143,6 +143,7 @@ func _input(event):
 		pass
 	if Input.is_action_pressed("exit"):
 		get_tree().change_scene(Global.SplashScreen)
+		BackgroundMusic.playing = true
 		
 #	if Input.is_action_just_pressed("toggle_fullscreen"):
 #    	OS.window_fullscreen = !OS.window_fullscreen

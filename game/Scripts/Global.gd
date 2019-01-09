@@ -42,9 +42,10 @@ var Menu = "res://Scenes/Levels/Menu.tscn"
 var Credits = "res://Scenes/Levels/CreditsScreen.tscn"
 
 func _ready():
+	BackgroundMusic.playing = true
 	currentLevel = Level
 	#DEBUG REMOVE THIS IN NORMAL GAME
-	last_checkpoint_pos = Vector2(debug_Begin_x, debug_Begin_y)
+	#last_checkpoint_pos = Vector2(debug_Begin_x, debug_Begin_y)
 
 func restart_stats():
 	last_points = 0

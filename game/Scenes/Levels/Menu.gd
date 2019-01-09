@@ -2,7 +2,9 @@ extends CanvasLayer
 
 
 func _ready():
-	$AudioStreamPlayer.playing = true
+	#$AudioStreamPlayer.playing = true
+	#BackgroundMusic.playing = true
+	pass
 
 func _on_Exit_pressed():
 	get_tree().quit()

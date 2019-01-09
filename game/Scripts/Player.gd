@@ -138,7 +138,7 @@ func restart_player(position):
 	is_dying = false
 	$Particles2D.emitting = true
 	$CollisionShape2D.disabled = false
-	$AnimationPlayer.play("straight")
+	#$AnimationPlayer.play("straight")
 	#reposition player to last check_point
 	global_position = position
 	#save player stats
