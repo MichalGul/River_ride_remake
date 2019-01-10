@@ -18,6 +18,7 @@ export (int) var scout_down_timer_limit = 3
 export (int) var scout_up_timer_limit = 8
 export (int) var current_level = 1
 
+signal out_of_fuel
 
 export (PackedScene) var JetEnemy
 export (PackedScene) var ScoutEnemy
@@ -26,7 +27,7 @@ var lives
 var fuel 
 var current_score 
 var is_tanking = false
-
+var tank_empty = false
 onready var GUI = Global.GUI
 var screen_size_x 
 var screen_size_y
@@ -60,8 +61,7 @@ func _ready():
 func _process(delta):
 	update_GUI()
 	
-	
-	
+
 func determine_level():
 	match current_level:
     1:
@@ -85,8 +85,10 @@ func manage_fuel(delta, fly_speed):
 	
 func check_for_empty():
 	if fuel <= 0:
+		tank_empty = true
 		#Global.Player.end_game()
-		end_game()
+		emit_signal("out_of_fuel")
+		#print("Emitting")
 		
 func hurt():
 	if not Global.Player.is_dying:
@@ -105,7 +107,6 @@ func restart_player():
 func tank_fuel(delta):
 	if is_tanking and fuel <= 100:
 		fuel += fuel_tank_speed *delta
-
 		
 func update_GUI():
 	if lives >= 0:
@@ -203,5 +204,4 @@ func _on_ScoutSpawnerTimer_timeout():
 	if spawn_random_scouts:
 		spawn_scout()
 		print("spawn scouta")
-
 

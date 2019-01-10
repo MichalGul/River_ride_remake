@@ -218,6 +218,7 @@ _sections_unfolded = [ "Drawing", "Process Material", "Textures", "Time", "Trans
 
 frames = SubResource( 5 )
 animation = "straight"
+frame = 1
 playing = true
 script = ExtResource( 23 )
 _sections_unfolded = [ "Transform" ]

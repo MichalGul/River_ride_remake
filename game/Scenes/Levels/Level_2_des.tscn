@@ -16,7 +16,7 @@
 [ext_resource path="res://Scenes/Camera2D.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Scenes/EndGamePoint.tscn" type="PackedScene" id=15]
 
-[node name="Level_2" type="Node2D"]
+[node name="Level_2" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 starting_lives = 3
@@ -352,6 +352,8 @@ _sections_unfolded = [ "Drag Margin", "Editor", "Limit", "Visibility" ]
 [node name="EndGamePoint" parent="." index="10" instance=ExtResource( 15 )]
 
 position = Vector2( -14.3459, -3941.32 )
+
+[connection signal="out_of_fuel" from="." to="Player" method="_on_Level_2_out_of_fuel"]
 
 [connection signal="timeout" from="JetSpawnerTimer" to="." method="_on_JetSpawnerTimer_timeout"]
 

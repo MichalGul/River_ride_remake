@@ -102,7 +102,8 @@ func update_animation(motion):
 
 
 func manage_plane_fuel(delta):
-	Global.GameState.manage_fuel(delta, fly_type)
+	if not is_dying:
+		Global.GameState.manage_fuel(delta, fly_type)
 	
 #func _process(delta):
 #	# Called every frame. Delta is time since last frame.
@@ -148,3 +149,10 @@ func restart_player(position):
 	
 func end():
 	Global.GameState.end_game()
+
+func _on_Level_out_of_fuel():
+	end_game()
+
+
+func _on_Level_2_out_of_fuel():
+	end_game()

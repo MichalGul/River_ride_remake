@@ -397,6 +397,8 @@ position = Vector2( -17.1675, -2480.06 )
 
 position = Vector2( -17.4499, -3920.25 )
 
+[connection signal="out_of_fuel" from="." to="Player" method="_on_Level_out_of_fuel"]
+
 [connection signal="body_entered" from="FuelCollection2/Fuel2" to="FuelCollection2/Fuel2" method="_on_Fuel2_body_entered"]
 
 [connection signal="shoot" from="Player" to="." method="_on_Player_shoot"]
