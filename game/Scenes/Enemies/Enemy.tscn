@@ -1,21 +1,21 @@
 [gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://Scripts/Enemy.gd" type="Script" id=1]
-[ext_resource path="res://GFX/Enemies/Animations/kaczka/kaczka_animacja_001_0001.png" type="Texture" id=2]
-[ext_resource path="res://GFX/Enemies/Animations/kaczka/kaczka_animacja_001_0002.png" type="Texture" id=3]
-[ext_resource path="res://GFX/Enemies/Animations/kaczka/kaczka_animacja_001_0003.png" type="Texture" id=4]
-[ext_resource path="res://GFX/Enemies/Animations/kaczka/kaczka_animacja_001_0004.png" type="Texture" id=5]
-[ext_resource path="res://GFX/Enemies/Animations/kaczka/kaczka_animacja_001_0005.png" type="Texture" id=6]
-[ext_resource path="res://GFX/Enemies/Animations/kaczka/kaczka_animacja_001_0006.png" type="Texture" id=7]
-[ext_resource path="res://GFX/Enemies/Animations/kaczka/kaczka_animacja_001_0007.png" type="Texture" id=8]
-[ext_resource path="res://GFX/Enemies/Animations/kaczka/kaczka_animacja_001_0008.png" type="Texture" id=9]
-[ext_resource path="res://GFX/Enviroment/Animations/Explosion/wybuch_animacja_001_0001.png" type="Texture" id=10]
-[ext_resource path="res://GFX/Enviroment/Animations/Explosion/wybuch_animacja_001_0002.png" type="Texture" id=11]
-[ext_resource path="res://GFX/Enviroment/Animations/Explosion/wybuch_animacja_001_0003.png" type="Texture" id=12]
-[ext_resource path="res://GFX/Enviroment/Animations/Explosion/wybuch_animacja_001_0004.png" type="Texture" id=13]
-[ext_resource path="res://GFX/Enviroment/Animations/Explosion/wybuch_animacja_001_0005.png" type="Texture" id=14]
-[ext_resource path="res://GFX/Enviroment/Animations/Explosion/wybuch_animacja_001_0006.png" type="Texture" id=15]
-[ext_resource path="res://GFX/Enviroment/Animations/Explosion/wybuch_animacja_001_0007.png" type="Texture" id=16]
+[ext_resource path="res://GFX/Enviroment/Animations/Explosion/wybuch_animacja_001_0001.png" type="Texture" id=2]
+[ext_resource path="res://GFX/Enviroment/Animations/Explosion/wybuch_animacja_001_0002.png" type="Texture" id=3]
+[ext_resource path="res://GFX/Enviroment/Animations/Explosion/wybuch_animacja_001_0003.png" type="Texture" id=4]
+[ext_resource path="res://GFX/Enviroment/Animations/Explosion/wybuch_animacja_001_0004.png" type="Texture" id=5]
+[ext_resource path="res://GFX/Enviroment/Animations/Explosion/wybuch_animacja_001_0005.png" type="Texture" id=6]
+[ext_resource path="res://GFX/Enviroment/Animations/Explosion/wybuch_animacja_001_0006.png" type="Texture" id=7]
+[ext_resource path="res://GFX/Enviroment/Animations/Explosion/wybuch_animacja_001_0007.png" type="Texture" id=8]
+[ext_resource path="res://GFX/Enemies/Animations/kaczka/kaczka_animacja_001_0001.png" type="Texture" id=9]
+[ext_resource path="res://GFX/Enemies/Animations/kaczka/kaczka_animacja_001_0002.png" type="Texture" id=10]
+[ext_resource path="res://GFX/Enemies/Animations/kaczka/kaczka_animacja_001_0003.png" type="Texture" id=11]
+[ext_resource path="res://GFX/Enemies/Animations/kaczka/kaczka_animacja_001_0004.png" type="Texture" id=12]
+[ext_resource path="res://GFX/Enemies/Animations/kaczka/kaczka_animacja_001_0005.png" type="Texture" id=13]
+[ext_resource path="res://GFX/Enemies/Animations/kaczka/kaczka_animacja_001_0006.png" type="Texture" id=14]
+[ext_resource path="res://GFX/Enemies/Animations/kaczka/kaczka_animacja_001_0007.png" type="Texture" id=15]
+[ext_resource path="res://GFX/Enemies/Animations/kaczka/kaczka_animacja_001_0008.png" type="Texture" id=16]
 [ext_resource path="res://SFX/GameSounds_v1/kaczka śmierć.wav" type="AudioStream" id=17]
 
 [sub_resource type="RectangleShape2D" id=1]
@@ -83,14 +83,14 @@ tracks/3/keys = {
 [sub_resource type="SpriteFrames" id=3]
 
 animations = [ {
-"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ) ],
-"loop": true,
-"name": "alive",
-"speed": 10.0
-}, {
-"frames": [ ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ) ],
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ) ],
 "loop": true,
 "name": "dying",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ) ],
+"loop": true,
+"name": "alive",
 "speed": 10.0
 } ]
 
@@ -141,6 +141,7 @@ blend_times = [  ]
 position = Vector2( 1.57342, 0.174824 )
 frames = SubResource( 3 )
 animation = "alive"
+frame = 5
 playing = true
 _sections_unfolded = [ "Transform" ]
 

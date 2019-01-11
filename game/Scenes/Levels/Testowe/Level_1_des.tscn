@@ -199,182 +199,181 @@ score = 5000
 position = Vector2( -146.475, 143.857 )
 score = 5000
 
-[node name="Enemy7" parent="Enemies" index="4" instance=ExtResource( 10 )]
-
-position = Vector2( -80.731, 240.791 )
-score = 5000
-
-[node name="LongEnemy2" parent="Enemies" index="5" instance=ExtResource( 11 )]
+[node name="LongEnemy2" parent="Enemies" index="4" instance=ExtResource( 11 )]
 
 position = Vector2( -145.175, -1113.08 )
 score = 2000
 
-[node name="LongEnemy10" parent="Enemies" index="6" instance=ExtResource( 11 )]
+[node name="LongEnemy10" parent="Enemies" index="5" instance=ExtResource( 11 )]
 
 position = Vector2( -12.4102, -920.038 )
 move_right = true
 score = 2000
 
-[node name="ScoutEnemy4" parent="Enemies" index="7" instance=ExtResource( 3 )]
+[node name="ScoutEnemy4" parent="Enemies" index="6" instance=ExtResource( 3 )]
 
 position = Vector2( 380.18, -546.862 )
 
-[node name="JetEnemy" parent="Enemies" index="8" instance=ExtResource( 2 )]
+[node name="JetEnemy" parent="Enemies" index="7" instance=ExtResource( 2 )]
 
 position = Vector2( 313.318, 293.519 )
 
-[node name="LongEnemy4" parent="Enemies" index="9" instance=ExtResource( 11 )]
+[node name="LongEnemy4" parent="Enemies" index="8" instance=ExtResource( 11 )]
 
 position = Vector2( -68.2811, -122.384 )
 speed = 2
 
-[node name="LongEnemy11" parent="Enemies" index="10" instance=ExtResource( 11 )]
+[node name="LongEnemy11" parent="Enemies" index="9" instance=ExtResource( 11 )]
 
 position = Vector2( 25.3228, 421.297 )
 move_right = true
 
-[node name="ScoutEnemy" parent="Enemies" index="11" instance=ExtResource( 3 )]
+[node name="ScoutEnemy" parent="Enemies" index="10" instance=ExtResource( 3 )]
 
 position = Vector2( -52.228, 151.66 )
 
-[node name="ScoutEnemy2" parent="Enemies" index="12" instance=ExtResource( 3 )]
+[node name="ScoutEnemy2" parent="Enemies" index="11" instance=ExtResource( 3 )]
 
 position = Vector2( 151.287, -380.262 )
 
-[node name="StaticEnemy" parent="Enemies" index="13" instance=ExtResource( 12 )]
+[node name="StaticEnemy" parent="Enemies" index="12" instance=ExtResource( 12 )]
 
 position = Vector2( -17.5549, -656.177 )
 
-[node name="JetEnemyStationary" parent="Enemies" index="14" instance=ExtResource( 13 )]
+[node name="JetEnemyStationary" parent="Enemies" index="13" instance=ExtResource( 13 )]
 
 position = Vector2( 416.261, 196.852 )
 
-[node name="JetEnemyStationary2" parent="Enemies" index="15" instance=ExtResource( 13 )]
+[node name="JetEnemyStationary2" parent="Enemies" index="14" instance=ExtResource( 13 )]
 
 position = Vector2( 607.585, -322.419 )
 
-[node name="JetEnemyStationary4" parent="Enemies" index="16" instance=ExtResource( 13 )]
+[node name="JetEnemyStationary4" parent="Enemies" index="15" instance=ExtResource( 13 )]
 
 position = Vector2( 426.453, -1030.98 )
 
-[node name="JetEnemyStationary16" parent="Enemies" index="17" instance=ExtResource( 13 )]
+[node name="JetEnemyStationary16" parent="Enemies" index="16" instance=ExtResource( 13 )]
 
 position = Vector2( -608.696, -1712.01 )
 jet_speed = 600
 move_right = true
 raycast_launch_angle = 90
 
-[node name="JetEnemyStationary17" parent="Enemies" index="18" instance=ExtResource( 13 )]
+[node name="JetEnemyStationary17" parent="Enemies" index="17" instance=ExtResource( 13 )]
 
 position = Vector2( -595.897, -72.4506 )
 jet_speed = 600
 move_right = true
 raycast_launch_angle = 90
 
-[node name="JetEnemyStationary21" parent="Enemies" index="19" instance=ExtResource( 13 )]
+[node name="JetEnemyStationary21" parent="Enemies" index="18" instance=ExtResource( 13 )]
 
 position = Vector2( -595.824, -1099.75 )
 jet_speed = 600
 move_right = true
 raycast_launch_angle = 90
 
-[node name="JetEnemyStationary14" parent="Enemies" index="20" instance=ExtResource( 13 )]
+[node name="JetEnemyStationary14" parent="Enemies" index="19" instance=ExtResource( 13 )]
 
 position = Vector2( -595.628, -3592.9 )
 jet_speed = 600
 move_right = true
 
-[node name="JetEnemyStationary15" parent="Enemies" index="21" instance=ExtResource( 13 )]
+[node name="JetEnemyStationary15" parent="Enemies" index="20" instance=ExtResource( 13 )]
 
 position = Vector2( -587.686, -791.101 )
 move_right = true
 
-[node name="JetEnemyStationary5" parent="Enemies" index="22" instance=ExtResource( 13 )]
+[node name="JetEnemyStationary5" parent="Enemies" index="21" instance=ExtResource( 13 )]
 
 position = Vector2( 454.271, -1132.98 )
 
-[node name="JetEnemyStationary6" parent="Enemies" index="23" instance=ExtResource( 13 )]
+[node name="JetEnemyStationary6" parent="Enemies" index="22" instance=ExtResource( 13 )]
 
 position = Vector2( 510.139, -1529.17 )
 
-[node name="JetEnemyStationary7" parent="Enemies" index="24" instance=ExtResource( 13 )]
+[node name="JetEnemyStationary7" parent="Enemies" index="23" instance=ExtResource( 13 )]
 
 position = Vector2( -562.523, -2253.14 )
 move_right = true
 
-[node name="JetEnemyStationary12" parent="Enemies" index="25" instance=ExtResource( 13 )]
+[node name="JetEnemyStationary12" parent="Enemies" index="24" instance=ExtResource( 13 )]
 
 position = Vector2( -570.523, -2874.98 )
 move_right = true
 
-[node name="JetEnemyStationary3" parent="Enemies" index="26" instance=ExtResource( 13 )]
+[node name="JetEnemyStationary3" parent="Enemies" index="25" instance=ExtResource( 13 )]
 
 position = Vector2( -449.085, -116.054 )
 move_right = true
 
-[node name="Enemy10" parent="Enemies" index="27" instance=ExtResource( 10 )]
+[node name="Enemy10" parent="Enemies" index="26" instance=ExtResource( 10 )]
 
 position = Vector2( 48.3911, -3816.74 )
 
-[node name="Enemy9" parent="Enemies" index="28" instance=ExtResource( 10 )]
+[node name="Enemy9" parent="Enemies" index="27" instance=ExtResource( 10 )]
 
 position = Vector2( 168.677, -3642.04 )
 
-[node name="LongEnemy6" parent="Enemies" index="29" instance=ExtResource( 11 )]
+[node name="LongEnemy6" parent="Enemies" index="28" instance=ExtResource( 11 )]
 
 position = Vector2( -97.8211, -3528.69 )
 
-[node name="Enemy8" parent="Enemies" index="30" instance=ExtResource( 10 )]
+[node name="Enemy8" parent="Enemies" index="29" instance=ExtResource( 10 )]
 
 position = Vector2( 170.771, -2818.99 )
 
-[node name="LongEnemy8" parent="Enemies" index="31" instance=ExtResource( 11 )]
+[node name="LongEnemy8" parent="Enemies" index="30" instance=ExtResource( 11 )]
 
 position = Vector2( 65.4427, -3259.02 )
 
-[node name="Enemy12" parent="Enemies" index="32" instance=ExtResource( 10 )]
+[node name="Enemy12" parent="Enemies" index="31" instance=ExtResource( 10 )]
 
 position = Vector2( -104.25, -2851.2 )
 
-[node name="JetEnemy2" parent="Enemies" index="33" instance=ExtResource( 2 )]
+[node name="JetEnemy2" parent="Enemies" index="32" instance=ExtResource( 2 )]
 
 position = Vector2( -321.8, -2742.9 )
 
-[node name="Enemy13" parent="Enemies" index="34" instance=ExtResource( 10 )]
+[node name="Enemy13" parent="Enemies" index="33" instance=ExtResource( 10 )]
 
 position = Vector2( 9.74994, -2565.25 )
 
-[node name="LongEnemy3" parent="Enemies" index="35" instance=ExtResource( 11 )]
+[node name="LongEnemy3" parent="Enemies" index="34" instance=ExtResource( 11 )]
 
 position = Vector2( -94.75, -2391.4 )
 
-[node name="LongEnemy9" parent="Enemies" index="36" instance=ExtResource( 11 )]
+[node name="LongEnemy9" parent="Enemies" index="35" instance=ExtResource( 11 )]
 
 position = Vector2( -167.9, -2130.15 )
 
-[node name="LongEnemy" parent="Enemies" index="37" instance=ExtResource( 11 )]
+[node name="LongEnemy" parent="Enemies" index="36" instance=ExtResource( 11 )]
 
 position = Vector2( 150.35, -2010.45 )
 
-[node name="Enemy14" parent="Enemies" index="38" instance=ExtResource( 10 )]
+[node name="Enemy14" parent="Enemies" index="37" instance=ExtResource( 10 )]
 
 position = Vector2( -154.6, -1777.7 )
 
-[node name="Enemy15" parent="Enemies" index="39" instance=ExtResource( 10 )]
+[node name="Enemy15" parent="Enemies" index="38" instance=ExtResource( 10 )]
 
 position = Vector2( 94.3127, -1317.71 )
 
-[node name="Enemy2" parent="Enemies" index="40" instance=ExtResource( 10 )]
+[node name="Enemy2" parent="Enemies" index="39" instance=ExtResource( 10 )]
 
 position = Vector2( -108.064, -1297.12 )
 
-[node name="StaticEnemy2" parent="Enemies" index="41" instance=ExtResource( 12 )]
+[node name="StaticEnemy2" parent="Enemies" index="40" instance=ExtResource( 12 )]
 
 position = Vector2( -17.1675, -2480.06 )
 
-[node name="StaticEnemy3" parent="Enemies" index="42" instance=ExtResource( 12 )]
+[node name="StaticEnemy3" parent="Enemies" index="41" instance=ExtResource( 12 )]
 
 position = Vector2( -17.4499, -3920.25 )
+
+[node name="Enemy" parent="Enemies" index="42" instance=ExtResource( 10 )]
+
+position = Vector2( 78.1506, -322.874 )
 
 [node name="JetSpawnerTimer" type="Timer" parent="." index="6"]
 

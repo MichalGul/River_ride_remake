@@ -23,8 +23,16 @@ starting_fuel = 1000
 fuel_extinction_param = 5
 fuel_tank_speed = 20
 points_life_counter = 10000
-jet_spawn_timer = 8
+initial_spawn_timer = 3
+spawn_random_jets = false
+spawn_random_scouts = false
+jet_down_timer_limit = 3
+jet_up_timer_limit = 8
+scout_down_timer_limit = 3
+scout_up_timer_limit = 8
+current_level = 1
 JetEnemy = ExtResource( 2 )
+ScoutEnemy = null
 
 [node name="GroundTiles" type="TileMap" parent="." index="0"]
 

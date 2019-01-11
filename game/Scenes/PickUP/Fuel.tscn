@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://Scripts/Fuel.gd" type="Script" id=1]
 [ext_resource path="res://GFX/Items/Animations/PIXIE_DUST_animacja/pixieDust_animacja_001_001.png" type="Texture" id=2]
@@ -9,11 +9,15 @@
 [ext_resource path="res://GFX/Items/Animations/PIXIE_DUST_animacja/pixieDust_animacja_001_006.png" type="Texture" id=7]
 [ext_resource path="res://GFX/Items/Animations/PIXIE_DUST_animacja/pixieDust_animacja_001_007.png" type="Texture" id=8]
 [ext_resource path="res://GFX/Items/Animations/PIXIE_DUST_animacja/pixieDust_animacja_001_008.png" type="Texture" id=9]
-[ext_resource path="res://GFX/Enemies/Placeholders/explosion3.png" type="Texture" id=10]
-[ext_resource path="res://GFX/Enemies/Placeholders/explosion1.png" type="Texture" id=11]
-[ext_resource path="res://GFX/Enemies/Placeholders/explosion2.png" type="Texture" id=12]
-[ext_resource path="res://SFX/GameSounds_v1/paliwo.wav" type="AudioStream" id=13]
-[ext_resource path="res://SFX/Explosion_15.wav" type="AudioStream" id=14]
+[ext_resource path="res://GFX/Enviroment/Animations/Explosion_bigge/wybuch_animacja_001_0001.png" type="Texture" id=10]
+[ext_resource path="res://GFX/Enviroment/Animations/Explosion_bigge/wybuch_animacja_001_0002.png" type="Texture" id=11]
+[ext_resource path="res://GFX/Enviroment/Animations/Explosion_bigge/wybuch_animacja_001_0003.png" type="Texture" id=12]
+[ext_resource path="res://GFX/Enviroment/Animations/Explosion_bigge/wybuch_animacja_001_0004.png" type="Texture" id=13]
+[ext_resource path="res://GFX/Enviroment/Animations/Explosion_bigge/wybuch_animacja_001_0005.png" type="Texture" id=14]
+[ext_resource path="res://GFX/Enviroment/Animations/Explosion_bigge/wybuch_animacja_001_0006.png" type="Texture" id=15]
+[ext_resource path="res://GFX/Enviroment/Animations/Explosion_bigge/wybuch_animacja_001_0007.png" type="Texture" id=16]
+[ext_resource path="res://SFX/GameSounds_v1/paliwo.wav" type="AudioStream" id=17]
+[ext_resource path="res://SFX/Explosion_15.wav" type="AudioStream" id=18]
 
 [sub_resource type="SpriteFrames" id=1]
 
@@ -23,10 +27,10 @@ animations = [ {
 "name": "default",
 "speed": 12.0
 }, {
-"frames": [ ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ) ],
+"frames": [ ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ) ],
 "loop": true,
 "name": "dying",
-"speed": 5.0
+"speed": 10.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=2]
@@ -104,7 +108,7 @@ __meta__ = {
 
 frames = SubResource( 1 )
 animation = "default"
-frame = 3
+frame = 4
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
@@ -114,7 +118,7 @@ shape = SubResource( 2 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="2"]
 
-stream = ExtResource( 13 )
+stream = ExtResource( 17 )
 volume_db = -5.0
 pitch_scale = 1.0
 autoplay = false
@@ -133,7 +137,7 @@ blend_times = [  ]
 
 [node name="Death" type="AudioStreamPlayer" parent="." index="4"]
 
-stream = ExtResource( 14 )
+stream = ExtResource( 18 )
 volume_db = 0.0
 pitch_scale = 1.0
 autoplay = false

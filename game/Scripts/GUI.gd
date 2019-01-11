@@ -9,5 +9,5 @@ func _ready():
 
 func update_GUI(fuel, lives, points):
 	$TextureRect/Fuel.value= fuel
-	$TextureRect/Center/HBoxContainer/Lives.text = str(lives)
+	$TextureRect/Lives.text = str(lives)
 	$TextureRect/CenterContainer/Points.text = str(points)
