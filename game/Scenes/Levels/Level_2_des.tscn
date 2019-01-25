@@ -16,7 +16,7 @@
 [ext_resource path="res://Scenes/Camera2D.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Scenes/EndGamePoint.tscn" type="PackedScene" id=15]
 
-[node name="Level_2" type="Node2D"]
+[node name="Level_2" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 starting_lives = 3
@@ -87,6 +87,8 @@ position = Vector2( -606.524, -3072.88 )
 
 [node name="FuelCollection" type="Node2D" parent="." index="3"]
 
+editor/display_folded = true
+
 [node name="Fuel" parent="FuelCollection" index="0" instance=ExtResource( 7 )]
 
 position = Vector2( -14.9126, 229.547 )
@@ -146,6 +148,8 @@ position = Vector2( 70.949, -3050.87 )
 scale = Vector2( 1, 1.31891 )
 
 [node name="Enemies" type="Node2D" parent="." index="4"]
+
+editor/display_folded = true
 
 [node name="LongEnemy11" parent="Enemies" index="0" instance=ExtResource( 8 )]
 
@@ -456,17 +460,17 @@ fire_rate = 0.4
 [node name="Camera2D" parent="Player" index="2" instance=ExtResource( 14 )]
 
 modulate = Color( 0.992188, 0.992188, 0.992188, 1 )
-position = Vector2( 0.572021, 36.2311 )
+position = Vector2( 0, 120 )
 scale = Vector2( 1, 1.06409 )
 offset = Vector2( 0, -240 )
-zoom = Vector2( 1, 1.5 )
+zoom = Vector2( 1, 1 )
 limit_left = -500
 limit_top = -100000000
 limit_right = 350
 drag_margin_left = 1.0
 drag_margin_right = 1.0
 editor_draw_limits = true
-_sections_unfolded = [ "Drag Margin", "Editor", "Limit", "Visibility" ]
+_sections_unfolded = [ "Drag Margin", "Editor", "Limit", "Transform", "Visibility" ]
 
 [node name="EndGamePoint" parent="." index="10" instance=ExtResource( 15 )]
 
