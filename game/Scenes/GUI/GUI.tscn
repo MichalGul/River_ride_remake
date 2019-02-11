@@ -8,7 +8,7 @@
 [ext_resource path="res://GFX/Interface/MENU_V4/PASEK_pixel_dust_pod.png" type="Texture" id=6]
 [ext_resource path="res://GFX/Interface/MENU_V4/PASEK_pixel_dust_nad.png" type="Texture" id=7]
 
-[sub_resource type="DynamicFont" id=2]
+[sub_resource type="DynamicFont" id=1]
 
 size = 30
 use_mipmaps = false
@@ -16,7 +16,7 @@ use_filter = true
 font_data = ExtResource( 5 )
 _sections_unfolded = [ "Font", "Settings" ]
 
-[sub_resource type="DynamicFont" id=1]
+[sub_resource type="DynamicFont" id=2]
 
 size = 30
 use_mipmaps = true
@@ -146,7 +146,7 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
 theme = ExtResource( 4 )
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 1 )
 text = "00"
 align = 1
 percent_visible = 1.0
@@ -203,7 +203,7 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
 theme = ExtResource( 4 )
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = SubResource( 2 )
 text = "0"
 percent_visible = 1.0
 lines_skipped = 0

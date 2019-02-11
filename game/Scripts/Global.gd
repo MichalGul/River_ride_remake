@@ -12,6 +12,9 @@ var GameState
 var Player
 var GUI
 
+var highscore = 0
+var score_file = "user://highscore.txt"
+
 
 #Starting values of the stats
 var last_points = 0
@@ -44,6 +47,7 @@ var Credits = "res://Scenes/Levels/CreditsScreen.tscn"
 func _ready():
 	BackgroundMusic.playing = true
 	currentLevel = Level
+	setup()
 	#DEBUG REMOVE THIS IN NORMAL GAME
 	#last_checkpoint_pos = Vector2(debug_Begin_x, debug_Begin_y)
 
@@ -74,3 +78,24 @@ func change_level(level):
 #	# Called every frame. Delta is time since last frame.
 #	# Update game logic here.
 #	pass
+
+
+func setup():
+	var f = File.new()
+	if f.file_exists(score_file):
+		f.open(score_file, File.READ)
+		var content = f.get_as_text()
+		highscore = int(content)
+		f.close()
+
+func game_over():
+	if GameState.current_score > highscore:
+		highscore = GameState.current_score
+		save_score()
+
+
+func save_score():
+	var f = File.new()
+	f.open(score_file, File.WRITE)
+	f.store_string(str(highscore))
+	f.close()

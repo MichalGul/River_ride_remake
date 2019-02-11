@@ -55,7 +55,6 @@ func _physics_process(delta):
 func proces_border_collision(collision):
 	if(collision):
 		if collision.get_collider().is_in_group("Border") and not is_dying:
-
 			Global.GameState.hurt()
 		
 
@@ -134,6 +133,7 @@ func end_game():
 	$AnimationPlayer.play("die_end_game") #27.11.2018 ADD THIS ANIMATION TO END GAME
 	#play sound 
 	$Death.play()
+	Global.game_over()
 
 func restart_player(position):
 	is_dying = false

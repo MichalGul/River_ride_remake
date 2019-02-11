@@ -7,7 +7,7 @@
 [ext_resource path="res://GFX/Interface/MENU_V4/MENU_CREDITS_przycisk_MENU_wcisniety.png" type="Texture" id=5]
 [ext_resource path="res://SFX/GameSounds_v1/menu klik.wav" type="AudioStream" id=6]
 
-[node name="CanvasLayer" type="CanvasLayer"]
+[node name="CanvasLayer" type="CanvasLayer" index="0"]
 
 layer = 1
 offset = Vector2( 0, 0 )

@@ -4,7 +4,7 @@ extends CanvasLayer
 func _ready():
 	#$AudioStreamPlayer.playing = true
 	#BackgroundMusic.playing = true
-	pass
+	$CenterContainer/NinePatchRect/VBoxContainer/HBoxContainer/HighScore.text = "High Score: " + str(Global.highscore)
 
 func _on_Exit_pressed():
 	get_tree().quit()

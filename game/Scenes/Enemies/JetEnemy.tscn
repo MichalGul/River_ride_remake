@@ -181,7 +181,6 @@ blend_times = [  ]
 position = Vector2( 2.09109, 0.899586 )
 frames = SubResource( 3 )
 animation = "alive"
-frame = 2
 playing = true
 flip_h = true
 _sections_unfolded = [ "Transform" ]

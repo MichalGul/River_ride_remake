@@ -37,7 +37,7 @@ extents = Vector2( 24.5963, 9.45505 )
 [sub_resource type="Animation" id=3]
 
 resource_name = "Scout"
-length = 8.0
+length = 10.0
 loop = true
 step = 0.1
 tracks/0/type = "value"
@@ -122,7 +122,7 @@ tracks/3/keys = {
 "values": [ true ]
 }
 
-[node name="ScoutEnemy" type="Node2D"]
+[node name="ScoutEnemy" type="Node2D" index="0"]
 
 position = Vector2( -0.291977, -2.04391 )
 script = ExtResource( 1 )
@@ -134,7 +134,7 @@ __meta__ = {
 "Enemy",
 ]]
 
-position = Vector2( 79.1239, 0 )
+position = Vector2( -71.7594, 0 )
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -152,9 +152,8 @@ score = 2000
 
 frames = SubResource( 1 )
 animation = "default"
-frame = 1
+frame = 3
 playing = true
-flip_h = true
 _sections_unfolded = [ "Transform" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="1"]
