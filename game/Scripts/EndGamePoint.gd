@@ -8,4 +8,5 @@ func _ready():
 	pass
 
 func _on_EndGamePoint_body_entered(body):
+	Global.game_over()
 	Transition.fade_to(Global.Victory)
